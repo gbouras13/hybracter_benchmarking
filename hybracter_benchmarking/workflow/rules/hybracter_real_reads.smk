@@ -140,7 +140,7 @@ rule hybracter_long_16_threads_real:
 
 
 #### aggregation rule
-rule aggr_unicycler_real:
+rule aggr_hybracter_real:
     """aggregate lr"""
     input:
         expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
