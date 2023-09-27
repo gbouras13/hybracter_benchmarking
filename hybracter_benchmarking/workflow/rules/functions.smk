@@ -2,14 +2,7 @@
 Defines all functions used in hybracter
 """
 
-import gzip
-from Bio import SeqIO
-import sys
-import os
 
-# define functions
-# get long reads
-# define functions
 def get_genome(wildcards):
     return dictReads[wildcards.sample]["genome"]
 
