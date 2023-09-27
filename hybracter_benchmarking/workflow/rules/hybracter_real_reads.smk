@@ -2,14 +2,14 @@ rule hybracter_hybrid_1_threads_real:
     input:
         l = get_long,
         short_one = get_short_one,
-        short_two = get_short_two,
-        chromosome = get_length
+        short_two = get_short_two
     output:
         fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
         1
     params:
-        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread"),
+        chromosome = get_length
     benchmark:
         os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_1_threads.txt")
     resources:
@@ -19,7 +19,7 @@ rule hybracter_hybrid_1_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {input.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
 rule hybracter_hybrid_8_threads_real:
@@ -33,7 +33,8 @@ rule hybracter_hybrid_8_threads_real:
     threads:
         1
     params:
-        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread"),
+        chromosome = get_length
     benchmark:
         os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_8_threads.txt")
     resources:
@@ -43,7 +44,7 @@ rule hybracter_hybrid_8_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {input.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
 
@@ -51,14 +52,14 @@ rule hybracter_hybrid_16_threads_real:
     input:
         l = get_long,
         short_one = get_short_one,
-        short_two = get_short_two,
-        chromosome = get_length
+        short_two = get_short_two
     output:
         fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
         1
     params:
-        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "16_Thread")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "16_Thread"),
+        chromosome = get_length
     benchmark:
         os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_16_threads.txt")
     resources:
@@ -68,7 +69,7 @@ rule hybracter_hybrid_16_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {input.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
 rule hybracter_long_1_threads_real:
