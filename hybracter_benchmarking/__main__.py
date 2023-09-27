@@ -249,10 +249,10 @@ def simulate(_input, output, log, threads, **kwargs):
     ))
 @click.option("--input", "_input", help="Input file/directory", type=str, required=True)
 @common_options
-def assemble_simulated(_input, output, log, **kwargs):
+def assemble_simulated(_input, output, threads, log, **kwargs):
     """assemble simulated reads hybracter_benchmarking"""
     # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log}
+    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
     """Install databases"""
     run_snakemake(
         snakefile_path=snake_base(os.path.join('workflow','assemble_simulated.smk')),
@@ -269,10 +269,10 @@ def assemble_simulated(_input, output, log, **kwargs):
     ))
 @click.option("--input", "_input", help="Input file/directory", type=str, required=True)
 @common_options
-def assemble_real(_input, output, log, **kwargs):
+def assemble_real(_input, output, log, threads, **kwargs):
     """assemble real reads hybracter_benchmarking"""
     # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log}
+    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
     """Install databases"""
     run_snakemake(
         snakefile_path=snake_base(os.path.join('workflow','assemble_real.smk')),
@@ -288,10 +288,10 @@ def assemble_real(_input, output, log, **kwargs):
     ))
 @click.option("--input", "_input", help="Input file/directory", type=str, required=True)
 @common_options
-def assess_simulated(_input, output, log, **kwargs):
+def assess_simulated(_input, output, log, threads, **kwargs):
     """asssess simulated assembly output in hybracter_benchmarking"""
     # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log}
+    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
     """Install databases"""
     run_snakemake(
         snakefile_path=snake_base(os.path.join('workflow','assess_simulated.smk')),
@@ -308,33 +308,13 @@ def assess_simulated(_input, output, log, **kwargs):
     ))
 @click.option("--input", "_input", help="Input file/directory", type=str, required=True)
 @common_options
-def assess_real(_input, output, log, **kwargs):
+def assess_real(_input, output, log, threads, **kwargs):
     """asssess real assembly output in hybracter_benchmarking"""
     # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log}
+    merge_config = {"input": _input, "output": output, "log": log,  "threads": threads}
     """Install databases"""
     run_snakemake(
         snakefile_path=snake_base(os.path.join('workflow','assess_real.smk')),
-        merge_config=merge_config,
-        **kwargs)
-
-
-# raven
-
-@click.command(
-    epilog=help_msg_assess_real,
-    context_settings=dict(
-        help_option_names=["-h", "--help"], ignore_unknown_options=True
-    ))
-@click.option("--input", "_input", help="Input file/directory", type=str, required=True)
-@common_options
-def raven(_input, output, log, **kwargs):
-    """test raven in hybracter_benchmarking"""
-    # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log}
-    """Install databases"""
-    run_snakemake(
-        snakefile_path=snake_base(os.path.join('workflow','raven.smk')),
         merge_config=merge_config,
         **kwargs)
 
@@ -360,7 +340,6 @@ cli.add_command(assemble_simulated)
 cli.add_command(assemble_real)
 cli.add_command(assess_simulated)
 cli.add_command(assess_real)
-cli.add_command(raven)
 cli.add_command(config)
 cli.add_command(citation)
 
