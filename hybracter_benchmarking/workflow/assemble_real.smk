@@ -11,38 +11,16 @@ outTouch = os.path.join(config['output'], config['input'])
 ### DEFAULT CONFIG FILE
 configfile: os.path.join(workflow.basedir, '../', 'config', 'config.yaml')
 
-
+# need to specify the reads directory
 CSV = config['input']
 OUTPUT = config['output']
 THREADS = config['threads']
 
 
-# for assembly 
-PLASSEMBLER_BIN = config["PLASSEMBLER_BIN"]
-PLASSEMBLER_DB = config["PLASSEMBLER_DB"]
-
-
-# need to specify the reads directory
-CSV = config['input']
-
-# define functions
-
-def get_length(wildcards):
-    chrom = dictReads[wildcards.sample]["chromosome_length"]
-    return str(chrom)
-
-def get_long(wildcards):
-    return dictReads[wildcards.sample]["LR"]
-
-def get_short_one(wildcards):
-    return dictReads[wildcards.sample]["Short_One"]
-
-def get_short_two(wildcards):
-    return dictReads[wildcards.sample]["Short_Two"]
-
 
 ### DIRECTORIES
 include: "rules/directories.smk"
+include: "rules/functions.smk"
 
 # Parse the samples and read files
 include: "rules/samples.smk"
@@ -52,7 +30,8 @@ SAMPLES = list(dictReads.keys())
 
 # Import rules and functions
 include: "rules/targets.smk"
-include: "rules/plassembler_real_reads.smk"
+include: "rules/hybracter_install.smk"
+include: "rules/hybracter_real_reads.smk"
 include: "rules/unicycler_real_reads.smk"
 
 
