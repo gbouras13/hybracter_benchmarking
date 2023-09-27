@@ -1,0 +1,4 @@
+# Snakemake config
+input:
+output: 'hybracter_benchmarking.out/'
+log: 'hybracter_benchmarking/hybracter_benchmarking.log'

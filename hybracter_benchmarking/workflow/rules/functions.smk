@@ -1,0 +1,30 @@
+"""
+Defines all functions used in hybracter
+"""
+
+import gzip
+from Bio import SeqIO
+import sys
+import os
+
+# define functions
+# get long reads
+# define functions
+def get_genome(wildcards):
+    return dictReads[wildcards.sample]["genome"]
+
+def get_length(wildcards):
+    chrom = dictReads[wildcards.sample]["chromosome_length"]
+    return str(chrom)
+
+def get_long(wildcards):
+    return dictReads[wildcards.sample]["LR"]
+
+def get_short_one(wildcards):
+    return dictReads[wildcards.sample]["Short_One"]
+
+def get_short_two(wildcards):
+    return dictReads[wildcards.sample]["Short_Two"]
+
+
+

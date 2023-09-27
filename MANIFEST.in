@@ -1,0 +1,4 @@
+include hybracter_benchmarking/hybracter_benchmarking.LICENSE
+include hybracter_benchmarking/hybracter_benchmarking.CITATION
+include hybracter_benchmarking/hybracter_benchmarking.VERSION
+recursive-include hybracter_benchmarking *
