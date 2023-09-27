@@ -64,12 +64,12 @@ def real_from_csv(csvFile):
                 outDict[l[0]] = {}
                 if os.path.isfile(l[1]) and os.path.isfile(l[2]) and os.path.isfile(l[3]):
                     outDict[l[0]]['LR'] = l[1]
-                    outDict[l[0]]['Short_One'] = l[2]
-                    outDict[l[0]]['Short_Two'] = l[3]
-                    outDict[l[0]]['chromosome_length'] = l[4]
+                    outDict[l[0]]['chromosome_length'] = l[2]
+                    outDict[l[0]]['Short_One'] = l[3]
+                    outDict[l[0]]['Short_Two'] = l[4]
                 else:
                     sys.stderr.write("\n"
-                                     f"    FATAL: Error parsing {csvFile}. {l[1]} or {l[2]} or {l[3]} does not exist. \n"
+                                     f"    FATAL: Error parsing {csvFile}. {l[1]} or {l[3]} or {l[4]} does not exist. \n"
                                      "    Check formatting, and that \n" 
                                      "    file names and file paths are correct.\n"
                                      "\n")
