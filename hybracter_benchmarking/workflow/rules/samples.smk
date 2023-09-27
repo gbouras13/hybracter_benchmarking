@@ -62,7 +62,7 @@ def real_from_csv(csvFile):
             l = line.strip().split(',')
             if len(l) == 5:
                 outDict[l[0]] = {}
-                if os.path.isfile(l[1]) and os.path.isfile(l[2]) and os.path.isfile(l[3]):
+                if os.path.isfile(l[1]) and os.path.isfile(l[3]) and os.path.isfile(l[4]):
                     outDict[l[0]]['LR'] = l[1]
                     outDict[l[0]]['chromosome_length'] = l[2]
                     outDict[l[0]]['Short_One'] = l[3]
