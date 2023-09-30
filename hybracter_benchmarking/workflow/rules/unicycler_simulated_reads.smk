@@ -10,7 +10,7 @@ rule run_unicycler_1_threads_simulated:
     params:
         out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "1_Thread")
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_one_thread.txt")
+        os.path.join(BENCHMARKS,"{sample}_unicycler_one_thread_simulated.txt")
     resources:
         mem_mb=32000,
         time=4000 
@@ -33,7 +33,7 @@ rule run_unicycler_8_threads_simulated:
     params:
         out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "8_Threads")
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_8_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_unicycler8_threads_simulated.txt")
     resources:
         mem_mb=32000,
         time=4000 
@@ -56,7 +56,7 @@ rule run_unicycler_16_threads_simulated:
     params:
         out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "16_Threads")
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_sixteen_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_unicycler_sixteen_threads_simulated.txt")
     resources:
         mem_mb=32000,
         time=4000 

@@ -1,10 +1,10 @@
-# plassembler 
-rule quast_8_threads_plassembler_flye:
+# hybracter 
+rule quast_1_threads_hybracter:
     input:
-        plas_file = os.path.join(PLASSEMBLER_OUTPUT_8_THREADS_REAL_FLYE,"{sample}", "{sample}_plasmids.fasta"),
-        reference = os.path.join(QUAST_REFS,"{sample}")
+        plas_file = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"),
+        reference = os.path.join(GENOME,"{sample}.fasta")
     output:
-        quast_report = os.path.join(QUAST_PLASSEMBLER_FLYE_8_THREADS_REAL,"{sample}", "report.html")
+        quast_report = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL, "{sample}", "report.html")
     threads:
         1
     resources:

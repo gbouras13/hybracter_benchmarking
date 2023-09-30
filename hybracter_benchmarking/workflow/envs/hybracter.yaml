@@ -3,5 +3,7 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - snakemake >=7.14.0
+  - pip
+  - pip: 
+        - hybracter==0.1.0
 

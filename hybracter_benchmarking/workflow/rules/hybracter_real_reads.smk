@@ -11,7 +11,7 @@ rule hybracter_hybrid_1_threads_real:
         out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_1_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_1_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins
@@ -35,7 +35,7 @@ rule hybracter_hybrid_8_threads_real:
         out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_8_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_8_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins
@@ -60,7 +60,7 @@ rule hybracter_hybrid_16_threads_real:
         out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "16_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_16_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_16_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins
@@ -71,7 +71,7 @@ rule hybracter_hybrid_16_threads_real:
         hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
-rule hybracter_long_1_threads_real:
+rule unicycler_long_1_threads_real:
     input:
         l = get_long
     output:
@@ -82,7 +82,7 @@ rule hybracter_long_1_threads_real:
         out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "1_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_long_1_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_1_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins
@@ -104,7 +104,7 @@ rule hybracter_long_8_threads_real:
         out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_long_8_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_8_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins
@@ -127,7 +127,7 @@ rule hybracter_long_16_threads_real:
         out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "16_Thread"),
         chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_long_16_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_16_threads_real.txt")
     resources:
         mem_mb=32000,
         time=6000 # 6000 mins

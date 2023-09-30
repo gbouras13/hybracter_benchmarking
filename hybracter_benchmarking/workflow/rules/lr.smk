@@ -12,7 +12,7 @@ rule long_read_simulate:
         os.path.join('..', 'envs','badread.yaml')
     shell:
         '''
-         badread simulate --reference {input[0]}  --quantity 60x  --error_model nanopore2020 --qscore_model nanopore2020 --seed 43 \
+         badread simulate --reference {input[0]}  --quantity 60x  --error_model nanopore2023 --qscore_model nanopore2023 --seed 43 \
          --length 10000,10000 | gzip > {output[0]}
         '''
 

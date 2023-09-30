@@ -1,101 +1,156 @@
-
-rule install_hybracter:
+rule hybracter_hybrid_1_threads_SIMULATED:
+    input:
+        l = os.path.join(LR,"{sample}.fastq.gz"),
+        short_one = os.path.join(SR,"{sample}_R1.fastq.gz"),
+        short_two = os.path.join(SR,"{sample}_R2.fastq.gz")
     output:
-        flag = os.path.join(FLAGS, "hybracter_installed.txt")
+        fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
         1
     params:
-        out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "1_Thread")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "1_Thread"),
+        chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_one_thread.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_1_threads_simulated.txt")
     resources:
         mem_mb=32000,
-        time=4000 
+        time=6000 # 6000 mins
     conda:
-        os.path.join('..', 'envs','unicycler.yaml')
+        os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        unicycler -l {input.l} -1 {input.short_one} -2 {input.short_two} -o {params.out_dir} -t {threads}
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
-rule run_hybracter_1_threads_simulated:
+rule hybracter_hybrid_8_threads_SIMULATED:
     input:
         l = os.path.join(LR,"{sample}.fastq.gz"),
         short_one = os.path.join(SR,"{sample}_R1.fastq.gz"),
         short_two = os.path.join(SR,"{sample}_R2.fastq.gz")
     output:
-        uni_fasta = os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "1_Thread", "assembly.fasta")
+        fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
         1
     params:
-        out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "1_Thread")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "8_Thread"),
+        chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_one_thread.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_8_threads_simulated.txt")
     resources:
         mem_mb=32000,
-        time=4000 
+        time=6000 # 6000 mins
     conda:
-        os.path.join('..', 'envs','unicycler.yaml')
+        os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        unicycler -l {input.l} -1 {input.short_one} -2 {input.short_two} -o {params.out_dir} -t {threads}
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
-rule run_unicycler_8_threads_simulated:
+
+rule hybracter_hybrid_16_threads_SIMULATED:
     input:
         l = os.path.join(LR,"{sample}.fastq.gz"),
         short_one = os.path.join(SR,"{sample}_R1.fastq.gz"),
         short_two = os.path.join(SR,"{sample}_R2.fastq.gz")
     output:
-        uni_fasta = os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "8_Threads", "assembly.fasta")
+        fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        8
+        1
     params:
-        out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "8_Threads")
+        out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "16_Thread"),
+        chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_8_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_16_threads_simulated.txt")
     resources:
         mem_mb=32000,
-        time=4000 
+        time=6000 # 6000 mins
     conda:
-        os.path.join('..', 'envs','unicycler.yaml')
+        os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        unicycler -l {input.l} -1 {input.short_one} -2 {input.short_two} -o {params.out_dir} -t {threads}
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
 
-rule run_unicycler_16_threads_simulated:
+rule unicycler_long_1_threads_SIMULATED:
     input:
-        l = os.path.join(LR,"{sample}.fastq.gz"),
-        short_one = os.path.join(SR,"{sample}_R1.fastq.gz"),
-        short_two = os.path.join(SR,"{sample}_R2.fastq.gz")
+        l = os.path.join(LR,"{sample}.fastq.gz")
     output:
-        uni_fasta = os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "16_Threads", "assembly.fasta")
+        fasta = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        16
+        1
     params:
-        out_dir = os.path.join(UNICYCLER_OUTPUT_SIMULATED,"{sample}", "16_Threads")
+        out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "1_Thread"),
+        chromosome = get_length
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_simulated_sixteen_threads.txt")
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_1_threads_simulated.txt")
     resources:
         mem_mb=32000,
-        time=4000 
+        time=6000 # 6000 mins
     conda:
-        os.path.join('..', 'envs','unicycler.yaml')
+        os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        unicycler -l {input.l} -1 {input.short_one} -2 {input.short_two} -o {params.out_dir} -t {threads}
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
         '''
+
+rule hybracter_long_8_threads_SIMULATED:
+    input:
+        l = os.path.join(LR,"{sample}.fastq.gz")
+    output:
+        fasta = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
+    threads:
+        1
+    params:
+        out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "8_Thread"),
+        chromosome = get_length
+    benchmark:
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_8_threads_simulated.txt")
+    resources:
+        mem_mb=32000,
+        time=6000 # 6000 mins
+    conda:
+        os.path.join('..', 'envs','hybracter.yaml')
+    shell:
+        '''
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        '''
+
+
+rule hybracter_long_16_threads_SIMULATED:
+    input:
+        l = os.path.join(LR,"{sample}.fastq.gz")
+    output:
+        fasta = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
+    threads:
+        1
+    params:
+        out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "16_Thread"),
+        chromosome = get_length
+    benchmark:
+        os.path.join(BENCHMARKS,"{sample}_hybracter_long_16_threads_simulated.txt")
+    resources:
+        mem_mb=32000,
+        time=6000 # 6000 mins
+    conda:
+        os.path.join('..', 'envs','hybracter.yaml')
+    shell:
+        '''
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        '''
+
 
 #### aggregation rule
-rule aggr_unicycler_simulated:
+rule aggr_hybracter_SIMULATED:
     """aggregate lr"""
     input:
-        expand( os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "1_Thread", "assembly.fasta"), sample = SAMPLES),
-        expand( os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "8_Threads", "assembly.fasta"), sample = SAMPLES),
-        expand( os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "16_Threads", "assembly.fasta"), sample = SAMPLES)
+        expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        expand(os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        expand(os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        expand(os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES)
     output:
-        os.path.join(FLAGS, "unicycler_simulated_aggr.txt")
+        os.path.join(FLAGS, "hybracter_simulated_aggr.txt")
     threads:
         1
     shell:
