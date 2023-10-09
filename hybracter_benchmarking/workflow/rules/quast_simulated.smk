@@ -220,9 +220,9 @@ rule aggr_quast_simulated:
         expand(os.path.join(QUAST_HYBRACTER_LONG_SIMULATED,"{sample}", "1_Thread", "report.html"), sample = SAMPLES),
         expand(os.path.join(QUAST_HYBRACTER_LONG_SIMULATED,"{sample}", "8_Thread", "report.html"), sample = SAMPLES),
         expand(os.path.join(QUAST_HYBRACTER_LONG_SIMULATED,"{sample}", "16_Thread", "report.html"), sample = SAMPLES),
-        expand(os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "1_Thread", "report.html"), sample = SAMPLES),
-        expand(os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "8_Thread", "report.html"), sample = SAMPLES),
-        expand(os.path.join(UNICYCLER_OUTPUT_SIMULATED, "{sample}", "16_Thread", "report.html"), sample = SAMPLES))
+        expand(os.path.join(QUAST_UNICYCLER_SIMULATED, "{sample}", "1_Thread", "report.html"), sample = SAMPLES),
+        expand(os.path.join(QUAST_UNICYCLER_SIMULATED, "{sample}", "8_Thread", "report.html"), sample = SAMPLES),
+        expand(os.path.join(QUAST_UNICYCLER_SIMULATED, "{sample}", "16_Thread", "report.html"), sample = SAMPLES))
     output:
         os.path.join(FLAGS, "quast_simulated_aggr.txt")
     threads:
