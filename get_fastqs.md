@@ -173,7 +173,7 @@ rm -rf *.zip
 curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCA_032345935.1/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCA_032345935.1.zip" -H "Accept: application/zip"
 
 unzip GCA_032345935.1.zip 
-mv ncbi_dataset/data/GCA_032346775.1/GCA_032345935.1_ASM3234593v1_genomic.fna  IsolateH.fasta
+mv ncbi_dataset/data/GCA_032345935.1/GCA_032345935.1_ASM3234593v1_genomic.fna IsolateH.fasta
 rm -rf README.md 
 rm -rf ncbi_dataset 
 rm -rf *.zip
@@ -229,4 +229,6 @@ rm -rf README.md
 rm -rf ncbi_dataset 
 rm -rf *.zip
 ```
+
+* All contigs were modified to have "circular=True" in the header 
 
