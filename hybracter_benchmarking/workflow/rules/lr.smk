@@ -4,7 +4,7 @@ rule long_read_simulate:
     output:
         os.path.join(LR,"{sample}.fastq.gz")
     threads:
-        16
+        1
     resources:
         mem_mb=32000,
         time=300
