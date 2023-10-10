@@ -5,5 +5,5 @@ channels:
 dependencies:
   - pip
   - pip: 
-        - hybracter==0.1.0
+        - hybracter==0.1.2
 

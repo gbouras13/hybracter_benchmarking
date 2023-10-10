@@ -15,12 +15,12 @@ SimulateTargetFiles = [
 ]
 
 AssembleSimulateTargetFiles = [
-os.path.join(FLAGS, "hybracter_simulated_aggr.txt"),
+#os.path.join(FLAGS, "hybracter_simulated_aggr.txt"),
 os.path.join(FLAGS, "unicycler_simulated_aggr.txt")
 ]
 
 AssembleRealTargetFiles = [
-os.path.join(FLAGS, "hybracter_real_aggr.txt"),
+#os.path.join(FLAGS, "hybracter_real_aggr.txt"),
 os.path.join(FLAGS, "unicycler_real_aggr.txt")
 ]
 
