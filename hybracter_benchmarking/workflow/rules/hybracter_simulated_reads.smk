@@ -30,7 +30,7 @@ rule hybracter_hybrid_8_threads_SIMULATED:
     output:
         fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        1
+        8
     params:
         out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "8_Thread"),
         chromosome = get_length
@@ -55,7 +55,7 @@ rule hybracter_hybrid_16_threads_SIMULATED:
     output:
         fasta = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        1
+        16
     params:
         out_dir = os.path.join(HYBRACTER_HYBRID_OUTPUT_SIMULATED,"{sample}", "16_Thread"),
         chromosome = get_length
@@ -99,7 +99,7 @@ rule hybracter_long_8_threads_SIMULATED:
     output:
         fasta = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        1
+        8
     params:
         out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "8_Thread"),
         chromosome = get_length
@@ -122,7 +122,7 @@ rule hybracter_long_16_threads_SIMULATED:
     output:
         fasta = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta")
     threads:
-        1
+        16
     params:
         out_dir = os.path.join(HYBRACTER_LONG_OUTPUT_SIMULATED,"{sample}", "16_Thread"),
         chromosome = get_length
