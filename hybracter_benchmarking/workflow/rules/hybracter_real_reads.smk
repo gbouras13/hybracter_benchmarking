@@ -143,10 +143,10 @@ rule hybracter_long_16_threads_real:
 rule aggr_hybracter_real:
     """aggregate lr"""
     input:
-        expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        #expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
         expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
         expand(os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
-        expand(os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
+        #expand(os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "1_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
         expand(os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES),
         expand(os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "16_Thread", "FINAL_OUTPUT", "complete",  "{sample}_final.fasta"), sample = SAMPLES)
     output:
