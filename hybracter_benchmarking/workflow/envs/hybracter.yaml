@@ -3,7 +3,5 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - pip
-  - pip: 
-        - hybracter==0.1.2
+  - hybracter==0.1.2
 
