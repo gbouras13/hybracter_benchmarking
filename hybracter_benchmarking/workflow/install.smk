@@ -22,6 +22,7 @@ GENOME = os.path.join(workflow.basedir, '../../', 'genomes')
 include: "rules/directories.smk"
 
 # Import rules and functions
+include: "rules/targets.smk"
 include: "rules/hybracter_install.smk"
 
 rule all:
