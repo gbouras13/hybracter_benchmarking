@@ -17,6 +17,8 @@ rule install_hybracter:
 
 
 rule hybracter_tests:
+    input:
+        flag = os.path.join(FLAGS, "hybracter_installed.txt")
     output:
         flag = os.path.join(FLAGS, "hybracter_tested.txt")
     threads:
