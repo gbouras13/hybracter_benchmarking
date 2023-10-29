@@ -240,6 +240,7 @@ Available targets:
         help_option_names=["-h", "--help"], ignore_unknown_options=True
     ),
 )
+@click.option("--input", "_input", help="Input file/directory", type=str, required=False)
 @common_options
 def install(_input, output, log, threads, **kwargs):
     """install hybracter hybracter_benchmarking"""
