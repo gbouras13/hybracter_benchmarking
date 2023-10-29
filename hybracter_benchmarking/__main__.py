@@ -114,6 +114,25 @@ def cli():
     hybracter_benchmarking --help"""
     pass
 
+help_msg_install = """
+\b
+CLUSTER EXECUTION:
+hybracter_benchmarking install ... --profile [profile]
+For information on Snakemake profiles see:
+https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles
+\b
+RUN EXAMPLES:
+Required:           hybracter_benchmarking install --output [directory]
+Specify threads:    hybracter_benchmarking install ... --threads [threads]
+Disable conda:      hybracter_benchmarking install ... --no-use-conda 
+Change defaults:    hybracter_benchmarking install ... --snake-default="-k --nolock"
+Add Snakemake args: hybracter_benchmarking siminstallulate ... --dry-run --keep-going --touch
+Specify targets:    hybracter_benchmarking install ... all print_targets
+Available targets:
+    all             install everything (default)
+    print_targets   List available targets
+"""
+
 
 help_msg_simulate = """
 \b
@@ -212,6 +231,30 @@ Available targets:
 """
 
 
+
+#### install
+
+@click.command(
+    epilog=help_msg_install,
+    context_settings=dict(
+        help_option_names=["-h", "--help"], ignore_unknown_options=True
+    ),
+)
+@common_options
+def install(_input, output, log, threads, **kwargs):
+    """install hybracter hybracter_benchmarking"""
+    # Config to add or update in configfile
+    merge_config = { "output": output, "log": log, "threads": threads}
+
+    # run!
+    run_snakemake(
+        # Full path to Snakefile
+        snakefile_path=snake_base(os.path.join("workflow", "install.smk")),
+        merge_config=merge_config,
+        log=log,
+        threads=threads,
+        **kwargs
+    )
 
 
 #### simulate

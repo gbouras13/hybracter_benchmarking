@@ -9,15 +9,15 @@ InstallTargetFiles = [
 
 
 SimulateTargetFiles = [
- InstallTargetFiles,
+ # InstallTargetFiles,
  os.path.join(FLAGS, "sr_aggr.txt"),
  os.path.join(FLAGS, "lr_aggr.txt")
 ]
 
-AssembleSimulateTargetFiles = [
-#os.path.join(FLAGS, "hybracter_simulated_aggr.txt"),
-os.path.join(FLAGS, "unicycler_simulated_aggr.txt")
-]
+# AssembleSimulateTargetFiles = [
+# os.path.join(FLAGS, "hybracter_simulated_aggr.txt"),
+# os.path.join(FLAGS, "unicycler_simulated_aggr.txt")
+# ]
 
 AssembleRealTargetFiles = [
 os.path.join(FLAGS, "hybracter_real_aggr.txt"),
