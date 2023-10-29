@@ -378,6 +378,7 @@ def citation(**kwargs):
     print_citation()
 
 
+cli.add_command(install)
 cli.add_command(simulate)
 cli.add_command(assemble_simulated)
 cli.add_command(assemble_real)
