@@ -16,4 +16,4 @@ ATCC_33560,wick_judd_fastqs/ATCC_33560_100x.fastq.gz,1500000,wick_judd_fastqs/AT
 ATCC_25922,wick_judd_fastqs/ATCC_25922_100x.fastq.gz,4000000,wick_judd_fastqs/ATCC_25922_100x_1.fastq.gz,wick_judd_fastqs/ATCC_25922_100x_2.fastq.gz
 ATCC_BAA_679,wick_judd_fastqs/ATCC_BAA_679_100x.fastq.gz,2500000,wick_judd_fastqs/ATCC_BAA_679_100x_1.fastq.gz,wick_judd_fastqs/ATCC_BAA_679_100x_2.fastq.gz
 ATCC_10708,wick_judd_fastqs/ATCC_10708_100x.fastq.gz,4000000,wick_judd_fastqs/ATCC_10708_100x_1.fastq.gz,wick_judd_fastqs/ATCC_10708_100x_2.fastq.gz
-ATCC_17802,wick_judd_fastqs/ATCC_17802_100x.fastq.gz,4000000,wick_judd_fastqs/ATCC_17802_100x_1.fastq.gz,wick_judd_fastqs/ATCC_17802_100x_2.fastq.gz
+ATCC_17802,wick_judd_fastqs/ATCC_17802_100x.fastq.gz,1500000,wick_judd_fastqs/ATCC_17802_100x_1.fastq.gz,wick_judd_fastqs/ATCC_17802_100x_2.fastq.gz
