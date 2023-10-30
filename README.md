@@ -98,6 +98,30 @@ export CUDA_VISIBLE_DEVICES=""
 hybracter_benchmarking assemble-real --input real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 8 --cores 8
 ```
 
+# Wick and Judd
+```
+GENOME_SIZE="5.2mb"
 
+rasusa --input ATCC_25922.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x.fastq.gz
+rasusa -i ATCC_25922_1.fastq.gz -i ATCC_25922_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x_1.fastq.gz  -o ATCC_25922_100x_2.fastq.gz 
+
+GENOME_SIZE="5.2mb"
+
+rasusa --input ATCC_17802.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x.fastq.gz
+rasusa -i ATCC_17802_1.fastq.gz -i ATCC_17802_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x_1.fastq.gz  -o ATCC_17802_100x_2.fastq.gz 
+
+GENOME_SIZE="3mb"
+rasusa --input ATCC_BAA_679.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x.fastq.gz
+rasusa -i ATCC_BAA_679_1.fastq.gz -i ATCC_BAA_679_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x_1.fastq.gz  -o ATCC_BAA_679_100x_2.fastq.gz 
+
+GENOME_SIZE="4.8mb"
+rasusa --input ATCC_10708.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x.fastq.gz
+rasusa -i ATCC_10708_1.fastq.gz -i ATCC_10708_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x_1.fastq.gz  -o ATCC_10708_100x_2.fastq.gz 
+
+GENOME_SIZE="1.8mb"
+rasusa --input ATCC_33560.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x.fastq.gz
+rasusa -i ATCC_33560_1.fastq.gz -i ATCC_33560_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x_1.fastq.gz  -o ATCC_33560_100x_2.fastq.gz 
+
+```
 
 

@@ -72,7 +72,7 @@ rule run_unicycler_16_threads_real:
 rule aggr_unicycler_real:
     """aggregate lr"""
     input:
-        #expand(os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "1_Thread", "assembly.fasta"), sample = SAMPLES),
+        #giexpand(os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "1_Thread", "assembly.fasta"), sample = SAMPLES),
         expand(os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "8_Threads", "assembly.fasta"), sample = SAMPLES),
         expand(os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "16_Threads", "assembly.fasta"), sample = SAMPLES)
     output:
