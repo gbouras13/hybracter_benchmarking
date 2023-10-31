@@ -21,7 +21,7 @@ SimulateTargetFiles = [
 
 AssembleRealTargetFiles = [
 os.path.join(FLAGS, "hybracter_real_aggr.txt"),
-#os.path.join(FLAGS, "unicycler_real_aggr.txt")
+os.path.join(FLAGS, "unicycler_real_aggr.txt")
 ]
 
 # SimulateQuastTargetFiles = [os.path.join(FLAGS, "quast_ref_aggr.txt"),
