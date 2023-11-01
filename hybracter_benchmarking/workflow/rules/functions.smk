@@ -19,5 +19,8 @@ def get_short_one(wildcards):
 def get_short_two(wildcards):
     return dictReads[wildcards.sample]["Short_Two"]
 
+def get_medaka_model(wildcards):
+    return dictReads[wildcards.sample]["Medaka_Model"]
+
 
 

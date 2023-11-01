@@ -49,24 +49,26 @@ def parseSamplesSimulate(csvfile):
 def real_from_csv(csvFile):
     """
     Read samples and files from CSV 
-    5 cols
+    6 cols
     1 = sample 
     2 = long reads
     3 = short reads 1
     4 = short reads 2
     5 = chromosome length
+    6 = medala model
     """
     outDict = {}
     with open(csvFile,'r') as csv:
         for line in csv:
             l = line.strip().split(',')
-            if len(l) == 5:
+            if len(l) == 6:
                 outDict[l[0]] = {}
                 if os.path.isfile(l[1]) and os.path.isfile(l[3]) and os.path.isfile(l[4]):
                     outDict[l[0]]['LR'] = l[1]
                     outDict[l[0]]['chromosome_length'] = l[2]
                     outDict[l[0]]['Short_One'] = l[3]
                     outDict[l[0]]['Short_Two'] = l[4]
+                    outDict[l[0]]['Medaka_Model'] = l[5]
                 else:
                     sys.stderr.write("\n"
                                      f"    FATAL: Error parsing {csvFile}. {l[1]} or {l[3]} or {l[4]} does not exist. \n"

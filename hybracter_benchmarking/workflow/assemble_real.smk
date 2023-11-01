@@ -33,6 +33,7 @@ include: "rules/targets.smk"
 include: "rules/hybracter_install.smk"
 include: "rules/hybracter_real_reads.smk"
 include: "rules/unicycler_real_reads.smk"
+include: "rules/dragonflye_real_reads.smk"
 
 
 rule all:
