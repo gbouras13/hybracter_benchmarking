@@ -124,4 +124,26 @@ rasusa -i ATCC_33560_1.fastq.gz -i ATCC_33560_2.fastq.gz --coverage 100 --genome
 
 ```
 
+#### Chitale et al
 
+From the paper:
+
+_Using the >50x coverage, Dnadiff indicated that Bact-Builder’s assembly of the three independent H37Rv samples produced were identical in size and whole genome sequence (No SNPs were found between H37Rv.1, H37Rv.2 and H37Rv.3) except for one sample (H37Rv.1) that was one nucleotide shorter than the other two (Table 1)._
+
+* Therefore I used H37Rv.2 ONT FASTQs
+* https://www.nature.com/articles/s41467-022-34853-x#Sec7
+
+```
+# to download the H37R.2 ONT FASTQs
+fastq-dl -a SRR20082804
+# to download the Illumina
+fastq-dl -a SRR20082813
+
+
+# run rasusa
+GENOME_SIZE="4.4mb"
+rasusa --input SRR20082804_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082804_100x.fastq.gz
+rasusa -i ATCC_33560_1.fastq.gz -i ATCC_33560_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x_1.fastq.gz  -o ATCC_33560_100x_2.fastq.gz 
+
+
+```

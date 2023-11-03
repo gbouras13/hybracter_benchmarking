@@ -21,7 +21,7 @@ rule hybracter_hybrid_8_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads}  --skip_qc
         '''
 
 
@@ -47,7 +47,7 @@ rule hybracter_hybrid_16_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} 
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads} --skip_qc
         '''
 
 
@@ -71,7 +71,7 @@ rule hybracter_long_8_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads} 
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads}   --skip_qc
         '''
 
 
@@ -95,7 +95,7 @@ rule hybracter_long_16_threads_real:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads} 
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads}  --skip_qc
         '''
 
 

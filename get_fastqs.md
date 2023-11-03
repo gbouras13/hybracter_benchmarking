@@ -65,8 +65,6 @@ rasusa --input  SRR21386012_1.fastq.gz  --coverage 250 --genome-size 2.8m -o SRR
 ```
 
 
-
-
 # Lerminiaux et al preprint
 
 ## Fastqs
