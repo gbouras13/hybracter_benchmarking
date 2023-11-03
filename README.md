@@ -143,7 +143,7 @@ fastq-dl -a SRR20082813
 # run rasusa
 GENOME_SIZE="4.4mb"
 rasusa --input SRR20082804_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082804_100x.fastq.gz
-rasusa -i ATCC_33560_1.fastq.gz -i ATCC_33560_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x_1.fastq.gz  -o ATCC_33560_100x_2.fastq.gz 
+rasusa -i SRR20082813_1.fastq.gz -i SRR20082813_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082813_100x_1.fastq.gz  -o SRR20082813_100x_2.fastq.gz 
 
 
 ```

@@ -17,4 +17,4 @@ ATCC_25922,wick_judd_fastqs/ATCC_25922_100x.fastq.gz,4000000,wick_judd_fastqs/AT
 ATCC_BAA_679,wick_judd_fastqs/ATCC_BAA_679_100x.fastq.gz,2500000,wick_judd_fastqs/ATCC_BAA_679_100x_1.fastq.gz,wick_judd_fastqs/ATCC_BAA_679_100x_2.fastq.gz,r1041_e82_400bps_sup_v4.0.0 
 ATCC_10708,wick_judd_fastqs/ATCC_10708_100x.fastq.gz,4000000,wick_judd_fastqs/ATCC_10708_100x_1.fastq.gz,wick_judd_fastqs/ATCC_10708_100x_2.fastq.gz,r1041_e82_400bps_sup_v4.0.0 
 ATCC_17802,wick_judd_fastqs/ATCC_17802_100x.fastq.gz,1500000,wick_judd_fastqs/ATCC_17802_100x_1.fastq.gz,wick_judd_fastqs/ATCC_17802_100x_2.fastq.gz,r1041_e82_400bps_sup_v4.0.0
-H37R2,Chitale/SRR20082804_100x.fastq.gz,Chitale/SRR20082813_100x_1.fastq.gz,Chitale/SRR20082813_100x_2.fastq.gz,4000000,r941_min_high_g360
+H37R2,Chitale/SRR20082804_100x.fastq.gz,4000000,Chitale/SRR20082813_100x_1.fastq.gz,Chitale/SRR20082813_100x_2.fastq.gz,r941_min_high_g360
