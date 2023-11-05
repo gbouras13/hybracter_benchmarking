@@ -145,5 +145,4 @@ GENOME_SIZE="4.4mb"
 rasusa --input SRR20082804_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082804_100x.fastq.gz
 rasusa -i SRR20082813_1.fastq.gz -i SRR20082813_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082813_100x_1.fastq.gz  -o SRR20082813_100x_2.fastq.gz 
 
-
 ```
