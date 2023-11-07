@@ -30,7 +30,7 @@ SAMPLES = list(dictReads.keys())
 # Import rules and functions
 include: "rules/targets.smk"
 include: "rules/dnadiff_real.smk"
-
+include: "rules/real_plasmid_analysis.smk"
 
 rule all:
     input:
