@@ -176,7 +176,7 @@ rule parse_per_contig_summaries:
 rule per_contig_parsed:
     """aggregate per contig stats"""
     input:
-        os.path.join(PLASMID_PARSED_OUTPUT,"{sample}_per_contig_parsed_output.tsv")
+        expand(os.path.join(PLASMID_PARSED_OUTPUT,"{sample}_per_contig_parsed_output.tsv"), sample = SAMPLES)
     output:
         os.path.join(FLAGS, "per_contig_parsed_aggr.txt")
     threads:
