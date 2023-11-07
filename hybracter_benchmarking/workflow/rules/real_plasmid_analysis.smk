@@ -52,7 +52,7 @@ rule extract_unicycler_plasmids:
         fasta=os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}",  "8_Threads", "assembly.fasta"),
     output:
         fasta=os.path.join(UNICYCLER_PLASMIDS,"{sample}", "plasmid.fasta"),
-        per_conting_summary = os.path.join(UNICYCLER_SUMMARIES, "{sample}_per_contig_summary.tsv"),
+        per_conting_summary = os.path.join(UNICYCLER_SUMMARIES, "{sample}_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
     conda:
@@ -94,7 +94,7 @@ rule extract_dragonflye_hybrid_plasmids:
         fasta=os.path.join(DRAGONFLYE_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "contigs.fa"),
     output:
         fasta=os.path.join(DRAGONFLYE_PLASMIDS, "{sample}_hybrid_plasmids.fasta"),
-        per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_hybrid_per_contig_summary.tsv"),
+        per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
     conda:
@@ -135,7 +135,7 @@ rule extract_dragonflye_long_plasmids:
         fasta=os.path.join(DRAGONFLYE_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "contigs.fa"),
     output:
         fasta=os.path.join(DRAGONFLYE_PLASMIDS, "{sample}_long_plasmids.fasta"),
-        per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_long_per_contig_summary.tsv"),
+        per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
     conda:
@@ -152,14 +152,14 @@ rule extract_dragonflye_long_plasmids:
 # hybracter 
 rule parse_per_contig_summaries:
     input:
-        unicycler = os.path.join(UNICYCLER_SUMMARIES, "{sample}_per_contig_summary.tsv"),
-        dragonflye_hybrid = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_hybrid_per_contig_summary.tsv"),
-        dragonflye_long = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_long_per_contig_summary.tsv"),
+        unicycler = os.path.join(UNICYCLER_SUMMARIES, "{sample}_per_contig_stats.tsv"),
+        dragonflye_hybrid = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_per_contig_stats.tsv"),
+        dragonflye_long = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_per_contig_stats.tsv"),
     output:
         tsv = os.path.join(PLASMID_PARSED_OUTPUT,"{sample}_per_contig_parsed_output.tsv")
     params:
-        hybracter_hybrid = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.tsv"),
-        hybracter_long =  os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.tsv")
+        hybracter_hybrid = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_stats.tsv"),
+        hybracter_long =  os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_stats.tsv")
     threads:
         1
     resources:
