@@ -215,7 +215,7 @@ rule per_contig_parsed:
 #         '''
 
 #### aggregation rule
-rule aggr_dnadiff_REAL:
+rule aggr_plasmid_dnadiff_REAL:
     """aggregate dnadiff"""
     input:
         expand(os.path.join(DNADIFF,"{sample}_hybracter_long.report"), sample = SAMPLES),
@@ -240,7 +240,7 @@ parse dnadiff output
 
 
 # hybracter 
-rule parse_dnadiff:
+rule parse_plasmid_dnadiff:
     input:
         hybracter_hybrid = os.path.join(DNADIFF,"{sample}_hybracter_hybrid.report"),
         hybracter_long =  os.path.join(DNADIFF,"{sample}_hybracter_long.report"),
@@ -261,7 +261,7 @@ rule parse_dnadiff:
 
 
 #### aggregation rule
-rule aggr_dnadiff_parsed:
+rule aggr_plasmid_dnadiff_parsed:
     """aggregate dnadiff"""
     input:
         expand(os.path.join(DNADIFF_PARSED_OUTPUT,"{sample}_dnadiff_parsed_output.tsv"), sample = SAMPLES),
