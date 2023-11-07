@@ -26,7 +26,8 @@ os.path.join(FLAGS, "dragonflye_real_aggr.txt")
 ]
 
 RealAssessTargetFiles = [os.path.join(FLAGS, "dnadiff_real_aggr.txt"),
-os.path.join(FLAGS, "dnadiff_real_parsed_aggr.txt")
+os.path.join(FLAGS, "dnadiff_real_parsed_aggr.txt"),
+os.path.join(FLAGS, "per_contig_parsed_aggr.txt")
 
     ]
 

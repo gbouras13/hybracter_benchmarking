@@ -51,11 +51,18 @@ UNICYCLER_OUTPUT_REAL = os.path.join(REAL, 'UNICYCLER_OUTPUT')
 UNICYCLER_CHROMOSOMES = os.path.join(REAL, 'UNICYCLER_CHROMOSOMES')
 DRAGONFLYE_CHROMOSOMES = os.path.join(REAL, 'DRAGONFLYE_CHROMOSOMES')
 
+UNICYCLER_PLASMIDS = os.path.join(REAL, 'UNICYCLER_PLASMIDS')
+DRAGONFLYE_PLASMIDS = os.path.join(REAL, 'DRAGONFLYE_PLASMIDS')
+
+UNICYCLER_SUMMARIES = os.path.join(REAL, 'UNICYCLER_SUMMARIES')
+DRAGONFLYE_SUMMARIES = os.path.join(REAL, 'DRAGONFLYE_SUMMARIES')
+
+
 # genome dir 
 GENOME = os.path.join(workflow.basedir, '../../', 'genomes')
 CHROMOSOMES = os.path.join(workflow.basedir, '../../', 'reference_genome_chromosomes')
 
 DNADIFF_PARSED_OUTPUT = os.path.join(OUTPUT, 'DNADIFF_PARSED_OUTPUT')
-
+PLASMID_PARSED_OUTPUT = os.path.join(OUTPUT, 'PLASMID_PARSED_OUTPUT')
 
 
