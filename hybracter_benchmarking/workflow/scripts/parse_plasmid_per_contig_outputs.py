@@ -18,7 +18,8 @@ def parse_per_contig(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hyb
 
     i = 0 
 
-    combined_df = pd.DataFrame()
+
+    dfs = []
 
     for report in reports:
 
@@ -30,11 +31,11 @@ def parse_per_contig(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hyb
         # Add a new column 'Sample' with the file name
         df['Sample'] = sample
         df['Run'] = run
-        combined_df = combined_df.concat(df)
+        dfs.append(df)
 
 
-    # Reset the index of the combined DataFrame
-    combined_df.reset_index(drop=True, inplace=True)
+
+    combined_df = pd.concat(dfs, ignore_index=True)
 
     # Reorder the columns with 'Sample' as the first column and Run in the second
     combined_df = combined_df[['Sample'] + ['Run'] + [col for col in combined_df.columns if col != ['Sample', 'Run']]]
