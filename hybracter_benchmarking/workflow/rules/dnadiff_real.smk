@@ -52,7 +52,7 @@ rule extract_unicycler_chromosomes:
     output:
         fasta=os.path.join(UNICYCLER_CHROMOSOMES,"{sample}", "chromosome.fasta"),
     params:
-        min_chrom_length=getMinChromLength,
+        min_chrom_length=get_length,
     conda:
         os.path.join(dir.env, "scripts.yaml")
     threads:
@@ -92,7 +92,7 @@ rule extract_dragonflye_hybrid_chromosomes:
     output:
         fasta=os.path.join(DRAGONFLYE_CHROMOSOMES, "{sample}_hybrid_chromosome.fasta"),
     params:
-        min_chrom_length=getMinChromLength,
+        min_chrom_length=get_length,
     conda:
         os.path.join(dir.env, "scripts.yaml")
     threads:
@@ -132,7 +132,7 @@ rule extract_dragonflye_long_chromosomes:
     output:
         fasta=os.path.join(DRAGONFLYE_CHROMOSOMES, "{sample}_long_chromosome.fasta"),
     params:
-        min_chrom_length=getMinChromLength,
+        min_chrom_length=get_length,
     conda:
         os.path.join(dir.env, "scripts.yaml")
     threads:
