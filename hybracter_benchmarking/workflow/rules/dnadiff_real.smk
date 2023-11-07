@@ -168,7 +168,7 @@ rule aggr_dnadiff_REAL:
     """aggregate dnadiff"""
     input:
         expand(os.path.join(DNADIFF,"{sample}_hybracter_long.report"), sample = SAMPLES),
-        expand(os.path.join(DNADIFF,"{sample}_hybracter_hybracter.report"), sample = SAMPLES),
+        expand(os.path.join(DNADIFF,"{sample}_hybracter_hybrid.report"), sample = SAMPLES),
         expand(os.path.join(DNADIFF,"{sample}_unicycler.report"), sample = SAMPLES),
         expand(os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"), sample = SAMPLES),
         expand(os.path.join(DNADIFF,"{sample}_dragonflye_long.report"), sample = SAMPLES),
