@@ -11,38 +11,28 @@ outTouch = os.path.join(config['output'], config['input'])
 ### DEFAULT CONFIG FILE
 configfile: os.path.join(workflow.basedir, '../', 'config', 'config.yaml')
 
-
 CSV = config['input']
 OUTPUT = config['output']
 THREADS = config['threads']
 
-def get_length(wildcards):
-    chrom = dictReads[wildcards.sample]["chromosome_length"]
-    return str(chrom)
 
-# need to specify the reads directory
-CSV = config['input']
-# genome dir 
-GENOME = os.path.join(workflow.basedir, '../../', 'plasmid_genomes_for_quast')
-
-
-### DIRECTORIES
+### DIRECTORIES and functions
 include: "rules/directories.smk"
+include: "rules/functions.smk"
+
 
 # Parse the samples and read files
+# csv is the same as assemble_real
 include: "rules/samples.smk"
-dictReads = parseSamplesSimulate(CSV)
+dictReads = parseSamplesReal(CSV)
 SAMPLES = list(dictReads.keys())
 
 # Import rules and functions
 include: "rules/targets.smk"
-include: "rules/generate_quast_reference_directory.smk"
-include: "rules/get_plasmids_unicycler_real.smk"
-include: "rules/quast_real.smk"
-include: "rules/get_all_fasta_lengths_real.smk"
+include: "rules/assess_real.smk"
 
 
 rule all:
     input:
-        RealQuastTargetFiles
+        RealAssessTargetFiles
         

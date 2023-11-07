@@ -25,16 +25,15 @@ os.path.join(FLAGS, "unicycler_real_aggr.txt"),
 os.path.join(FLAGS, "dragonflye_real_aggr.txt")
 ]
 
+RealAssessTargetFiles = [os.path.join(FLAGS, "dnadiff_real_aggr.txt")
+
+    ]
+
 # SimulateQuastTargetFiles = [os.path.join(FLAGS, "quast_ref_aggr.txt"),
 # os.path.join(FLAGS, "quast_simulated_aggr.txt"),
 # os.path.join(FLAGS, "get_plasmids_unicycler_sim_aggr.txt"),
 # os.path.join(FLAGS, "get_fasta_lengths_sim_aggr.txt")
 #     ]
 
-# RealQuastTargetFiles = [os.path.join(FLAGS, "quast_ref_aggr.txt"),
-# os.path.join(FLAGS, "get_plasmids_unicycler_aggr.txt"),
-# os.path.join(FLAGS, "quast_real_aggr.txt"),
-# os.path.join(FLAGS, "get_fasta_lengths_real_aggr.txt") 
 
-#     ]
 

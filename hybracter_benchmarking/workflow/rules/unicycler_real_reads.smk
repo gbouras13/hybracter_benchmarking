@@ -1,26 +1,3 @@
-rule run_unicycler_1_threads_real:
-    input:
-        l = get_long,
-        short_one = get_short_one,
-        short_two = get_short_two
-    output:
-        uni_fasta = os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "1_Thread", "assembly.fasta")
-    threads:
-        1
-    params:
-        out_dir = os.path.join(UNICYCLER_OUTPUT_REAL,"{sample}", "1_Thread" )
-    benchmark:
-        os.path.join(BENCHMARKS,"{sample}_unicycler_1_threads_real.txt")
-    resources:
-        mem_mb=32000,
-        time=6000 # 6000 mins
-    conda:
-        os.path.join('..', 'envs','unicycler.yaml')
-    shell:
-        '''
-        unicycler -l {input.l} -1 {input.short_one} -2 {input.short_two} -o {params.out_dir} -t {threads} 
-        '''
-
 rule run_unicycler_8_threads_real:
     input:
         l = get_long,

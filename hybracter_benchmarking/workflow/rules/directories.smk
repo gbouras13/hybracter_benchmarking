@@ -12,7 +12,7 @@ BENCHMARKS = os.path.join(OUTPUT, 'BENCHMARKS')
 
 REAL = os.path.join(OUTPUT, 'REAL')
 SIMULATED = os.path.join(OUTPUT, 'SIMULATED')
-QUAST = os.path.join(OUTPUT, 'QUAST')
+DNADIFF = os.path.join(OUTPUT, 'DNADIFF')
 
 #################
 # assembly
@@ -27,9 +27,9 @@ HYBRACTER_HYBRID_OUTPUT_REAL = os.path.join(REAL, 'HYBRACTER_HYBRID_OUTPUT')
 DRAGONFLYE_HYBRID_OUTPUT_REAL = os.path.join(REAL, 'DRAGONFLYE_HYBRID_OUTPUT')
 DRAGONFLYE_LONG_OUTPUT_REAL = os.path.join(REAL, 'DRAGONFLYE_LONG_OUTPUT')
 
-# simulated
-HYBRACTER_LONG_OUTPUT_SIMULATED = os.path.join(SIMULATED, 'HYBRACTER_LONG_OUTPUT')
-HYBRACTER_HYBRID_OUTPUT_SIMULATED = os.path.join(SIMULATED, 'HYBRACTER_HYBRID_OUTPUT')
+# # simulated
+# HYBRACTER_LONG_OUTPUT_SIMULATED = os.path.join(SIMULATED, 'HYBRACTER_LONG_OUTPUT')
+# HYBRACTER_HYBRID_OUTPUT_SIMULATED = os.path.join(SIMULATED, 'HYBRACTER_HYBRID_OUTPUT')
 
 # for install
 HYBRACTER_OUTPUT_TESTS = os.path.join(OUTPUT, 'HYBRACTER_TESTS')
@@ -38,25 +38,23 @@ HYBRACTER_OUTPUT_TESTS = os.path.join(OUTPUT, 'HYBRACTER_TESTS')
 # real
 UNICYCLER_OUTPUT_REAL = os.path.join(REAL, 'UNICYCLER_OUTPUT')
 
-#sim
-UNICYCLER_OUTPUT_SIMULATED = os.path.join(REAL, 'UNICYCLER_OUTPUT_SIMULATED')
+# sim
+# UNICYCLER_OUTPUT_SIMULATED = os.path.join(REAL, 'UNICYCLER_OUTPUT_SIMULATED')
 
-#
-
-###########################
-# QUAST
-##################
-
-# QUAST hybracter
-
-QUAST_HYBRACTER_HYBRID_REAL = os.path.join(QUAST, 'HYBRACTER_HYBRID_REAL')
-QUAST_HYBRACTER_HYBRID_SIMULATED = os.path.join(QUAST, 'HYBRACTER_HYBRID_SIMULATED')
-
-QUAST_HYBRACTER_LONG_REAL = os.path.join(QUAST, 'HYBRACTER_LONG_REAL')
-QUAST_HYBRACTER_LONG_SIMULATED = os.path.join(QUAST, 'HYBRACTER_LONG_SIMULATED')
+################
+# dnadiff
+###############
 
 
-# unicycler
-QUAST_UNICYCLER_LONG_REAL = os.path.join(QUAST, 'UNICYCLER_LONG_REAL')
-QUAST_UNICYCLER_LONG_SIMULATED = os.path.join(QUAST, 'UNICYCLER_LONG_SIMULATED')
+# unicycler and dragonflye chromosomes for dnadiff
+
+UNICYCLER_CHROMOSOMES = os.path.join(REAL, 'UNICYCLER_CHROMOSOMES')
+DRAGONFLYE_CHROMOSOMES = os.path.join(REAL, 'DRAGONFLYE_CHROMOSOMES')
+
+# genome dir 
+GENOME = os.path.join(workflow.basedir, '../../', 'genomes')
+
+CHROMOSOMES = os.path.join(workflow.basedir, '../../', 'reference_genome_chromosomes')
+
+
 
