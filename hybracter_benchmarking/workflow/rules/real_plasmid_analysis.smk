@@ -55,6 +55,7 @@ rule extract_unicycler_plasmids:
         per_conting_summary = os.path.join(UNICYCLER_SUMMARIES, "{sample}_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
+        dragonflye_flag=False
     conda:
         os.path.join('..', 'envs','scripts.yaml')
     threads:
@@ -97,6 +98,7 @@ rule extract_dragonflye_hybrid_plasmids:
         per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_hybrid_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
+        dragonflye_flag=True
     conda:
         os.path.join('..', 'envs','scripts.yaml')
     threads:
@@ -138,6 +140,7 @@ rule extract_dragonflye_long_plasmids:
         per_conting_summary = os.path.join(DRAGONFLYE_SUMMARIES, "{sample}_long_per_contig_stats.tsv"),
     params:
         min_chrom_length=get_length,
+        dragonflye_flag=True
     conda:
         os.path.join('..', 'envs','scripts.yaml')
     threads:
