@@ -2,7 +2,6 @@
 #!/usr/bin/env python3
 
 import sys
-from loguru import logger
 import csv
 
 
@@ -40,10 +39,9 @@ import csv
 def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid, dragonflye_long, tsv_path, sample):
 
     # preamble
-    logger.add(lambda _: sys.exit(1), level="ERROR")
-    logger.info("beginning parse_dnadiff_outputs.py")
-    logger.info("this is a helper script")
-    logger.info("Written by George Bouras: george.bouras@adelaide.edu.au")
+    print("beginning parse_dnadiff_outputs.py")
+    print("this is a helper script")
+    print("Written by George Bouras: george.bouras@adelaide.edu.au")
 
 
     dnadiff_dict = {}
