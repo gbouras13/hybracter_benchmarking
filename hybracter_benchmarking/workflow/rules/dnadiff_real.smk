@@ -54,14 +54,14 @@ rule extract_unicycler_chromosomes:
     params:
         min_chrom_length=get_length,
     conda:
-        os.path.join(dir.env, "scripts.yaml")
+        os.path.join('..', 'envs','scripts.yaml')
     threads:
         1
     resources:
         mem_mb=8000,
         time=10 
     script:
-        os.path.join(dir.scripts, "extract_chromosome.py")
+        os.path.join('..', 'scripts', "extract_chromosome.py")
 
 rule dnadiff_unicycler:
     input:
@@ -94,14 +94,14 @@ rule extract_dragonflye_hybrid_chromosomes:
     params:
         min_chrom_length=get_length,
     conda:
-        os.path.join(dir.env, "scripts.yaml")
+        os.path.join('..', 'envs','scripts.yaml')
     threads:
         1
     resources:
         mem_mb=8000,
         time=10 
     script:
-        os.path.join(dir.scripts, "extract_chromosome.py")
+        os.path.join('..', 'scripts', "extract_chromosome.py")
 
 rule dnadiff_dragonflye_hybrid:
     input:
@@ -134,14 +134,14 @@ rule extract_dragonflye_long_chromosomes:
     params:
         min_chrom_length=get_length,
     conda:
-        os.path.join(dir.env, "scripts.yaml")
+        os.path.join('..', 'envs','scripts.yaml')
     threads:
         1
     resources:
         mem_mb=8000,
         time=10 
     script:
-        os.path.join(dir.scripts, "extract_chromosome.py")
+        os.path.join('..', 'scripts', "extract_chromosome.py")
 
 rule dnadiff_dragonflye_long:
     input:
