@@ -195,7 +195,7 @@ rule parse_dnadiff:
         hybracter_long =  os.path.join(DNADIFF,"{sample}_hybracter_long.report"),
         unicycler = os.path.join(DNADIFF,"{sample}_unicycler.report"),
         dragonflye_hybrid = os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"),
-        dragonflye_long = os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"),
+        dragonflye_long = os.path.join(DNADIFF,"{sample}_dragonflye_long.report"),
     output:
         tsv = os.path.join(DNADIFF_PARSED_OUTPUT,"{sample}_dnadiff_parsed_output.tsv")
     threads:
