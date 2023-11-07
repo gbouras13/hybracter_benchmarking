@@ -158,8 +158,8 @@ rule parse_per_contig_summaries:
     output:
         tsv = os.path.join(PLASMID_PARSED_OUTPUT,"{sample}_per_contig_parsed_output.tsv")
     params:
-        hybracter_hybrid = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.fasta"),
-        hybracter_long =  os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.fasta")
+        hybracter_hybrid = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.tsv"),
+        hybracter_long =  os.path.join(HYBRACTER_LONG_OUTPUT_REAL,"{sample}", "8_Thread", "FINAL_OUTPUT", "complete",  "{sample}_per_contig_summary.tsv")
     threads:
         1
     resources:
