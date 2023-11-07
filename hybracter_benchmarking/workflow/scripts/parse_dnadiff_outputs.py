@@ -80,26 +80,18 @@ def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid
             elif line.strip().startswith("Insertions"):
                 parts = line.strip().split()
                 dnadiff_dict[run]['InsertionsRef'] = int(parts[1])
-            elif line.strip().startswith("Insertions"):
-                parts = line.strip().split()
                 dnadiff_dict[run]['InsertionsQry'] = int(parts[2])
-            elif line.strip().startswith("InsertionSumRef"):
+            elif line.strip().startswith("InsertionSum"):
                 parts = line.strip().split()
                 dnadiff_dict[run]['InsertionSumRef'] = int(parts[1])
-            elif line.strip().startswith("InsertionSumQry"):
-                parts = line.strip().split()
                 dnadiff_dict[run]['InsertionSumQry'] = int(parts[2])
             elif line.strip().startswith("TotalBases"): # gets the size  of ref
                 parts = line.strip().split()
                 dnadiff_dict[run]['TotalBasesRef'] = int(parts[1])
-            elif line.strip().startswith("TotalBases"): # gets the size of qry
-                parts = line.strip().split()
                 dnadiff_dict[run]['TotalBasesQry'] = int(parts[2])
             elif line.strip().startswith("UnalignedBases"):
                 parts = line.strip().split()
                 dnadiff_dict[run]['UnalignedBasesRef'] = int(parts[1].split('(')[0] )
-            elif line.strip().startswith("UnalignedBases"):
-                parts = line.strip().split()
                 dnadiff_dict[run]['UnalignedBasesQry'] =  int(parts[2].split('(')[0] )
             elif line.strip().startswith("Breakpoints"):
                 parts = line.strip().split()
