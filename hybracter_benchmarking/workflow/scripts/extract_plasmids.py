@@ -27,22 +27,18 @@ def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_l
                 for part in parts:
                     if part.startswith("len="):
                         contig_length = int(part[4:])  # Extract the length value after 'len='
-                    elif part.startswith("circular="):
-                        circular_info = part[8:]  # Extract the completeness value after 'circular='
-                        if circular_info == "Y":
-                            circular = True
-                        elif circular_info == "N":
-                            circular = False
+                if "circular=Y" in dna_record.description:
+                    circular = True
+                else:
+                    circular = False
             else:
                 for part in parts:
                     if part.startswith("length="):
                         contig_length = int(part[7:])  # Extract the length value after 'len='
-                    elif part.startswith("circular="):
-                        circular_info = part[8:]  # Extract the completeness value after 'circular='
-                        if circular_info == "True":
-                            circular = True
-                        else:
-                            circular = False
+                if "circular=true" in dna_record.description:
+                    circular = True
+                else:
+                    circular = False
 
 
             gc_content = round(gc_fraction(dna_record.seq) * 100, 2)
