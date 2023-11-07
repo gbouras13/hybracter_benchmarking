@@ -30,7 +30,7 @@ def parse_per_contig(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hyb
         # Add a new column 'Sample' with the file name
         df['Sample'] = sample
         df['Run'] = run
-        combined_df = combined_df.append(df)
+        combined_df = combined_df.concat(df)
 
 
     # Reset the index of the combined DataFrame
