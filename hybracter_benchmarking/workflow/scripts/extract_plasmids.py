@@ -6,7 +6,7 @@ import pandas as pd
 # get plasmids if length < min chrom length
 
 
-def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_length):
+def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_length, dragonflye_flag):
 
     # gets the per contig stats dict
     stats_dict = {}
@@ -23,15 +23,27 @@ def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_l
             contig_type = "chromosome"
 
             # Iterate through the parts and extract information
-            for part in parts:
-                if part.startswith("len="):
-                    contig_length = int(part[4:])  # Extract the length value after 'len='
-                elif part.startswith("circular="):
-                    circular_info = part[8:]  # Extract the completeness value after 'circular='
-                    if circular_info == "Y":
-                        circular = True
-                    elif circular_info == "N":
-                        circular = False
+            if dragonflye_flag is True:
+                for part in parts:
+                    if part.startswith("len="):
+                        contig_length = int(part[4:])  # Extract the length value after 'len='
+                    elif part.startswith("circular="):
+                        circular_info = part[8:]  # Extract the completeness value after 'circular='
+                        if circular_info == "Y":
+                            circular = True
+                        elif circular_info == "N":
+                            circular = False
+            else:
+                for part in parts:
+                    if part.startswith("length="):
+                        contig_length = int(part[7:])  # Extract the length value after 'len='
+                    elif part.startswith("circular="):
+                        circular_info = part[8:]  # Extract the completeness value after 'circular='
+                        if circular_info == "True":
+                            circular = True
+                        else:
+                            circular = False
+
 
             gc_content = round(gc_fraction(dna_record.seq) * 100, 2)
 
@@ -43,11 +55,12 @@ def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_l
                 SeqIO.write(dna_record, fa, "fasta")
                 contig_type = "plasmid"
 
-        stats_dict[dna_record.id] = {}
-        stats_dict[dna_record.id]["contig_type"] = contig_type
-        stats_dict[dna_record.id]["length"] = contig_length
-        stats_dict[dna_record.id]["gc"] = gc_content
-        stats_dict[dna_record.id]["circular"] = circular
+            # append
+            stats_dict[dna_record.id] = {}
+            stats_dict[dna_record.id]["contig_type"] = contig_type
+            stats_dict[dna_record.id]["length"] = contig_length
+            stats_dict[dna_record.id]["gc"] = gc_content
+            stats_dict[dna_record.id]["circular"] = circular
 
    
     # stats dict
@@ -62,6 +75,8 @@ def get_plasmids(input_fasta, chromosome_fasta, per_conting_summary, min_chrom_l
 
 
 
+
 get_plasmids(
-    snakemake.input.fasta, snakemake.output.fasta, snakemake.output.per_conting_summary, snakemake.params.min_chrom_length
+    snakemake.input.fasta, snakemake.output.fasta, snakemake.output.per_conting_summary, snakemake.params.min_chrom_length,
+    snakemake.params.dragonflye_flag
 )
