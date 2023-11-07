@@ -53,8 +53,9 @@ DRAGONFLYE_CHROMOSOMES = os.path.join(REAL, 'DRAGONFLYE_CHROMOSOMES')
 
 # genome dir 
 GENOME = os.path.join(workflow.basedir, '../../', 'genomes')
-
 CHROMOSOMES = os.path.join(workflow.basedir, '../../', 'reference_genome_chromosomes')
+
+DNADIFF_PARSED_OUTPUT = os.path.join(OUTPUT, 'DNADIFF_PARSED_OUTPUT')
 
 
 
