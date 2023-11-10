@@ -21,7 +21,7 @@ rule hybracter_hybrid_real_last:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads}  --skip_qc
+        hybracter hybrid-single -l {input.l} -1 {input.short_one} -2 {input.short_two} --medakaModel {params.medaka_model}  -c {params.chromosome} -s {wildcards.sample} -o {params.out_dir} -t {threads}  --skip_qc --logic last
         '''
 
 
@@ -45,7 +45,7 @@ rule hybracter_long_8_threads_real_last:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads}   --skip_qc
+        hybracter long-single -l {input.l} -c {params.chromosome} -s {wildcards.sample} --medakaModel {params.medaka_model}  -o {params.out_dir} -t {threads}   --skip_qc --logic last
         '''
 
 
