@@ -143,3 +143,4 @@ ENV/
 
 # DSstore
 .DS_Store
+.Rproj.user
