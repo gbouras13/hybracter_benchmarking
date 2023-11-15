@@ -1,8 +1,8 @@
 
 rule hybracter_hybrid_real_bulk:
-"""
-assembles the 12 lerminiaux isolates in one go to show the benefits of hybracter's bulk approach
-"""
+    """
+    assembles the 12 lerminiaux isolates in one go to show the benefits of hybracter's bulk approach
+    """
     input:
         csv = BULK_CSV
     output:
