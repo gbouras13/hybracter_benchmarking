@@ -331,7 +331,9 @@ rasusa -i SRR26162850_1.fastq.gz -i SRR26162850_2.fastq.gz --coverage 100 --geno
 # to disable GPU for a fair bechmarking with medaka 
 export CUDA_VISIBLE_DEVICES=""
 
-hybracter_benchmarking assemble-real --input real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 8 --cores 8
+hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+ 
+
 ```
 
 # Wick and Judd
@@ -370,3 +372,32 @@ rasusa --input SRR20082804_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE 
 rasusa -i SRR20082813_1.fastq.gz -i SRR20082813_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082813_100x_1.fastq.gz  -o SRR20082813_100x_2.fastq.gz 
 
 ```
+
+
+# Run the QC for nanoq
+
+``````
+nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_10708_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_10708_report.txt
+nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_17802_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_17802_report.txt
+nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_25922_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_25922_report.txt
+nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_33560_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_33560_report.txt
+nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_BAA_679_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_BAA_679_report.txt
+
+nanoq -i hybracter_benchmarking_data/Chitale/SRR20082804_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/H37R2_report.txt
+
+nanoq -i hybracter_benchmarking_data/JKD6159/SRR21386010_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/JKD6159_R9_report.txt
+nanoq -i hybracter_benchmarking_data/JKD6159/SRR21386012_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/JKD6159_R10_report.txt
+
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162846_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateA_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162845_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateB_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162844_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateC_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162843_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateD_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162842_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateE_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162841_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateF_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162840_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateG_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162839_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateH_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162837_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateI_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162836_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateJ_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162835_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateK_report.txt
+nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162834_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/Lerminiaux_isolateL_report.txt
+

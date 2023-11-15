@@ -26,8 +26,9 @@ hybracter_benchmarking --help
 # Install
 
 ```
-hybracter_benchmarking --output hybracter_benchmarking_results
+hybracter_benchmarking install
 ```
+
 
 # Run the benchmarking pipeline 
 

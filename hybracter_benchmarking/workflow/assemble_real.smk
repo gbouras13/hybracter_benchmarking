@@ -15,7 +15,7 @@ configfile: os.path.join(workflow.basedir, '../', 'config', 'config.yaml')
 CSV = config['input']
 OUTPUT = config['output']
 THREADS = config['threads']
-
+BULK_CSV = config['bulk_lerminiaux_csv']
 
 
 ### DIRECTORIES
@@ -32,6 +32,7 @@ SAMPLES = list(dictReads.keys())
 include: "rules/targets.smk"
 include: "rules/hybracter_install.smk"
 include: "rules/hybracter_real_reads.smk"
+include: "rules/hybracter_real_reads_bulk.smk"
 include: "rules/hybracter_real_reads_last.smk"
 include: "rules/unicycler_real_reads.smk"
 include: "rules/dragonflye_real_reads.smk"
