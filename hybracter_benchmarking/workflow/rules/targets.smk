@@ -23,7 +23,8 @@ AssembleRealTargetFiles = [
 os.path.join(FLAGS, "hybracter_real_aggr.txt"),
 os.path.join(FLAGS, "unicycler_real_aggr.txt"),
 os.path.join(FLAGS, "dragonflye_real_aggr.txt"),
-os.path.join(FLAGS, "hybracter_real_last_aggr.txt")
+os.path.join(FLAGS, "hybracter_real_last_aggr.txt"),
+os.path.join(FLAGS, "hybracter_real_bulk_aggr.txt")
 ]
 
 RealAssessTargetFiles = [os.path.join(FLAGS, "dnadiff_real_aggr.txt"),
