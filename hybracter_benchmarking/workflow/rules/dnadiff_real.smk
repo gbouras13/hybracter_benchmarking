@@ -237,6 +237,8 @@ rule parse_dnadiff:
     input:
         hybracter_hybrid = os.path.join(DNADIFF,"{sample}_hybracter_hybrid.report"),
         hybracter_long =  os.path.join(DNADIFF,"{sample}_hybracter_long.report"),
+        hybracter_hybrid_last = os.path.join(DNADIFF,"{sample}_hybracter_hybrid_last.report"),
+        hybracter_long_last =  os.path.join(DNADIFF,"{sample}_hybracter_long_last.report"),
         unicycler = os.path.join(DNADIFF,"{sample}_unicycler.report"),
         dragonflye_hybrid = os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"),
         dragonflye_long = os.path.join(DNADIFF,"{sample}_dragonflye_long.report"),

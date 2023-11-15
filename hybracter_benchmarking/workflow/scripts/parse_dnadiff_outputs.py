@@ -36,7 +36,7 @@ import csv
 #                snakemake.input.dragonflye_long, snakemake.output.report)
 
 
-def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid, dragonflye_long, tsv_path, sample):
+def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid, dragonflye_long, hybracter_hybrid_last, hybracter_long_last, tsv_path, sample):
 
     # preamble
     print("beginning parse_dnadiff_outputs.py")
@@ -46,8 +46,8 @@ def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid
 
     dnadiff_dict = {}
 
-    reports = [hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid, dragonflye_long ]
-    names = ["hybracter_hybrid", "hybracter_long", "unicycler", "dragonflye_hybrid", "dragonflye_long" ]
+    reports = [hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid, dragonflye_long, hybracter_hybrid_last, hybracter_long_last ]
+    names = ["hybracter_hybrid", "hybracter_long", "unicycler", "dragonflye_hybrid", "dragonflye_long", "hybracter_hybrid_last", "hybracter_long_last" ]
 
 
     i = 0 
@@ -188,7 +188,8 @@ def parse_dnadiff(hybracter_hybrid, hybracter_long, unicycler, dragonflye_hybrid
 
 parse_dnadiff(snakemake.input.hybracter_hybrid, snakemake.input.hybracter_long,
                snakemake.input.unicycler, snakemake.input.dragonflye_hybrid,
-               snakemake.input.dragonflye_long, snakemake.output.tsv, snakemake.wildcards.sample)
+               snakemake.input.dragonflye_long, snakemake.input.hybracter_hybrid_last, snakemake.input.hybracter_long_last, 
+               snakemake.output.tsv, snakemake.wildcards.sample)
 
 
 
