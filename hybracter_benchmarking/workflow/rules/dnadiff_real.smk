@@ -19,7 +19,7 @@ rule dnadiff_hybracter_hybrid:
         dnadiff -p {params.out} {params.reference} {input.chrom}
         '''
  
-rule dnadiff_hybracter_long_last:
+rule dnadiff_hybracter_hybrid_last:
     input:
         chrom = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL_LAST,"{sample}", "FINAL_OUTPUT", "complete",  "{sample}_chromosome.fasta"),
     output:
