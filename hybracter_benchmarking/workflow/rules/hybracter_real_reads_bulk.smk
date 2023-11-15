@@ -13,7 +13,7 @@ rule hybracter_hybrid_real_bulk:
         out_dir = HYBRACTER_HYBRID_OUTPUT_REAL_BULK,
         medaka_model = "r1041_e82_400bps_sup_g615"
     benchmark:
-        os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_bulk_real.txt")
+        os.path.join(BENCHMARKS,"bulk_lermininaux_hybracter_hybrid_real.txt")
     resources:
         mem_mb=64000,
         time=6000 # 6000 mins
