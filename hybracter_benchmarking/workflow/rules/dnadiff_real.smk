@@ -18,6 +18,48 @@ rule dnadiff_hybracter_hybrid:
         '''
         dnadiff -p {params.out} {params.reference} {input.chrom}
         '''
+ 
+rule dnadiff_hybracter_long_last:
+    input:
+        chrom = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL_LAST,"{sample}", "FINAL_OUTPUT", "complete",  "{sample}_chromosome.fasta"),
+    output:
+        report = os.path.join(DNADIFF,"{sample}_hybracter_hybrid_last.report")
+    threads:
+        1
+    resources:
+        mem_mb=8000,
+        time=10 
+    params:
+        out = os.path.join(DNADIFF,"{sample}_hybracter_hybrid_last"),
+        reference = os.path.join(CHROMOSOMES,"{sample}.fasta")
+    conda:
+        os.path.join('..', 'envs','dnadiff.yaml')
+    shell:
+        '''
+        dnadiff -p {params.out} {params.reference} {input.chrom}
+        '''
+
+
+# hybracter 
+rule dnadiff_hybracter_long_last:
+    input:
+        chrom = os.path.join(HYBRACTER_LONG_OUTPUT_REAL_LAST,"{sample}", "FINAL_OUTPUT", "complete",  "{sample}_chromosome.fasta"),
+    output:
+        report = os.path.join(DNADIFF,"{sample}_hybracter_long_last.report")
+    threads:
+        1
+    resources:
+        mem_mb=8000,
+        time=10 
+    params:
+        out = os.path.join(DNADIFF,"{sample}_hybracter_long_last"),
+        reference = os.path.join(CHROMOSOMES,"{sample}.fasta")
+    conda:
+        os.path.join('..', 'envs','dnadiff.yaml')
+    shell:
+        '''
+        dnadiff -p {params.out} {params.reference} {input.chrom}
+        '''
 
 rule dnadiff_hybracter_long:
     input:
@@ -172,6 +214,8 @@ rule aggr_dnadiff_REAL:
         expand(os.path.join(DNADIFF,"{sample}_unicycler.report"), sample = SAMPLES),
         expand(os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"), sample = SAMPLES),
         expand(os.path.join(DNADIFF,"{sample}_dragonflye_long.report"), sample = SAMPLES),
+        expand(os.path.join(DNADIFF,"{sample}_hybracter_long_last.report"), sample = SAMPLES),
+        expand(os.path.join(DNADIFF,"{sample}_hybracter_hybrid_last.report"), sample = SAMPLES),
 
     output:
         os.path.join(FLAGS, "dnadiff_real_aggr.txt")
