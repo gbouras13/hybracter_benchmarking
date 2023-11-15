@@ -313,7 +313,7 @@ def assemble_simulated(_input, output, threads, log, **kwargs):
     ))
 @click.option("--input", "_input", help="Input file/directory", type=str, required=True)
 @common_options
-@click.option("--bulk_lerminiaux_csv", help="Input bulk csv file with Lerminiaux samples", type=str, required=True)
+@click.option("--bulk_lerminiaux_csv", "bulk_lerminiaux_csv", help="Input bulk csv file with Lerminiaux samples", type=str, required=True)
 def assemble_real(_input, output, log, threads, **kwargs):
     """assemble real reads hybracter_benchmarking"""
     # Config to add or update in configfile
