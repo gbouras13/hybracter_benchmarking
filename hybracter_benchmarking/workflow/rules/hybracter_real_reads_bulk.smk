@@ -10,7 +10,7 @@ rule hybracter_hybrid_real_bulk:
     threads:
         16
     params:
-        out_dir = HYBRACTER_HYBRID_OUTPUT_REAL_BULK
+        out_dir = HYBRACTER_HYBRID_OUTPUT_REAL_BULK,
         medaka_model = "r1041_e82_400bps_sup_g615"
     benchmark:
         os.path.join(BENCHMARKS,"{sample}_hybracter_hybrid_bulk_real.txt")
@@ -27,7 +27,7 @@ rule hybracter_hybrid_real_bulk:
 
 #### aggregation rule
 rule aggr_hybracter_real_bulk:
-    """aggregate lr"""
+    """aggregate bulk"""
     input:
         os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL_BULK, "FINAL_OUTPUT", "hybracter_summary.tsv")
     output:
