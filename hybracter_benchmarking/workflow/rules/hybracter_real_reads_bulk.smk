@@ -4,7 +4,8 @@ rule hybracter_hybrid_real_bulk:
     assembles the 12 lerminiaux isolates in one go to show the benefits of hybracter's bulk approach
     """
     input:
-        csv = BULK_CSV
+        csv = BULK_CSV,
+        config = BULK_CONFIG
     output:
         tsv = os.path.join(HYBRACTER_HYBRID_OUTPUT_REAL_BULK, "FINAL_OUTPUT", "hybracter_summary.tsv")
     threads:
@@ -15,13 +16,13 @@ rule hybracter_hybrid_real_bulk:
     benchmark:
         os.path.join(BENCHMARKS,"bulk_lermininaux_hybracter_hybrid_real.txt")
     resources:
-        mem_mb=64000,
+        mem_mb=32000,
         time=6000 # 6000 mins
     conda:
         os.path.join('..', 'envs','hybracter.yaml')
     shell:
         '''
-        hybracter hybrid --input {input.csv} --medakaModel {params.medaka_model} -o {params.out_dir} -t {threads}  --skip_qc
+        hybracter hybrid --input {input.csv} --configfile {input.config} --medakaModel {params.medaka_model} -o {params.out_dir} -t {threads}  --skip_qc
         '''
 
 

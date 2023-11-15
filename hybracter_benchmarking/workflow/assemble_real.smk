@@ -16,6 +16,7 @@ CSV = config['input']
 OUTPUT = config['output']
 THREADS = config['threads']
 BULK_CSV = config['bulk_lerminiaux_csv']
+BULK_CONFIG = config['bulk_lerminiaux_config']
 
 
 ### DIRECTORIES
