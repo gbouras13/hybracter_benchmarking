@@ -13,6 +13,7 @@ BENCHMARKS = os.path.join(OUTPUT, 'BENCHMARKS')
 REAL = os.path.join(OUTPUT, 'REAL')
 SIMULATED = os.path.join(OUTPUT, 'SIMULATED')
 DNADIFF = os.path.join(OUTPUT, 'DNADIFF')
+DNADIFF_PLASMIDS = os.path.join(OUTPUT, 'DNADIFF_PLASMIDS')
 
 #################
 # assembly
@@ -67,6 +68,7 @@ DRAGONFLYE_SUMMARIES = os.path.join(REAL, 'DRAGONFLYE_SUMMARIES')
 # genome dir 
 GENOME = os.path.join(workflow.basedir, '../../', 'genomes')
 CHROMOSOMES = os.path.join(workflow.basedir, '../../', 'reference_genome_chromosomes')
+PLASMIDS = os.path.join(workflow.basedir, '../../', 'reference_genome_plasmids')
 
 DNADIFF_PARSED_OUTPUT = os.path.join(OUTPUT, 'DNADIFF_PARSED_OUTPUT')
 PLASMID_PARSED_OUTPUT = os.path.join(OUTPUT, 'PLASMID_PARSED_OUTPUT')

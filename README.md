@@ -33,7 +33,9 @@ hybracter_benchmarking install
 # Run the benchmarking pipeline 
 
 ```
-hybracter_benchmarking assemble-real --input hybracter_benchmarking/real_assemble.csv --output  hybracter_benchmarking_results/real_results --threads 16 --cores 16
+hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --bulk_lerminiaux_csv ../hybracter_benchmarking/bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config ../hybracter_benchmarking/bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+ 
+
 ```
 
 # Run the assessment
@@ -41,5 +43,15 @@ hybracter_benchmarking assemble-real --input hybracter_benchmarking/real_assembl
 * This needs to be done after the `hybracter_benchmarking assemble-real` is complete or else it will not work
 * The same input csv and output directory needs to be used as `hybracter_benchmarking assemble-real`
 
+```
+hybracter_benchmarking assess-real --input ../hybracter_benchmarking/real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+```
 
 
+# pharokka on JKD6159
+
+```
+pharokka.py -i extra_phage_contigs.fasta -o JKD6159_extra_phage_contigs -t 8 -d ../pharokka_v1.4.0_databases
+```
+
+# bakta on JKD6159

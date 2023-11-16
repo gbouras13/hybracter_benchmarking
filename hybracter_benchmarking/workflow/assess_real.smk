@@ -31,6 +31,7 @@ SAMPLES = list(dictReads.keys())
 include: "rules/targets.smk"
 include: "rules/dnadiff_real.smk"
 include: "rules/real_plasmid_analysis.smk"
+include: "rules/dnadiff_plasmids.smk"
 
 rule all:
     input:

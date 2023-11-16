@@ -29,7 +29,8 @@ os.path.join(FLAGS, "hybracter_real_bulk_aggr.txt")
 
 RealAssessTargetFiles = [os.path.join(FLAGS, "dnadiff_real_aggr.txt"),
 os.path.join(FLAGS, "dnadiff_real_parsed_aggr.txt"),
-os.path.join(FLAGS, "per_contig_parsed_aggr.txt")
+os.path.join(FLAGS, "per_contig_parsed_aggr.txt"),
+os.path.join(FLAGS, "dnadiff_plasmids_real_aggr.txt")
 
     ]
 
