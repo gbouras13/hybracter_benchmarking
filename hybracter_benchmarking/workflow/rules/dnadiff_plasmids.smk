@@ -16,7 +16,11 @@ rule dnadiff_hybracter_hybrid_plasmid:
         os.path.join('..', 'envs','dnadiff.yaml')
     shell:
         '''
-        dnadiff -p {params.out} {params.reference} {input.chrom}
+        if dnadiff -p {params.out} {params.reference} {input.chrom}; then
+            dnadiff -p {params.out} {params.reference} {input.chrom}
+        else
+            touch {output.report}
+        fi
         '''
 
 
@@ -37,7 +41,11 @@ rule dnadiff_hybracter_long_plasmid:
         os.path.join('..', 'envs','dnadiff.yaml')
     shell:
         '''
-        dnadiff -p {params.out} {params.reference} {input.chrom}
+        if dnadiff -p {params.out} {params.reference} {input.chrom}; then
+            dnadiff -p {params.out} {params.reference} {input.chrom}
+        else
+            touch {output.report}
+        fi
         '''
 
 ####
@@ -61,7 +69,11 @@ rule dnadiff_unicycler_plasmids:
         os.path.join('..', 'envs','dnadiff.yaml')
     shell:
         '''
-        dnadiff -p {params.out} {params.reference} {input.chrom}
+        if dnadiff -p {params.out} {params.reference} {input.chrom}; then
+            dnadiff -p {params.out} {params.reference} {input.chrom}
+        else
+            touch {output.report}
+        fi
         '''
 
 rule dnadiff_dragonflye_hybrid_plasmid:
@@ -81,10 +93,17 @@ rule dnadiff_dragonflye_hybrid_plasmid:
         os.path.join('..', 'envs','dnadiff.yaml')
     shell:
         '''
-        dnadiff -p {params.out} {params.reference} {input.chrom}
+        if dnadiff -p {params.out} {params.reference} {input.chrom}; then
+            dnadiff -p {params.out} {params.reference} {input.chrom}
+        else
+            touch {output.report}
+        fi
         '''
 
 rule dnadiff_dragonflye_long_plasmid:
+    """
+    in case no output
+    """
     input:
         chrom = os.path.join(DRAGONFLYE_PLASMIDS, "{sample}_long_plasmids.fasta"),
     output:
@@ -101,7 +120,11 @@ rule dnadiff_dragonflye_long_plasmid:
         os.path.join('..', 'envs','dnadiff.yaml')
     shell:
         '''
-        dnadiff -p {params.out} {params.reference} {input.chrom}
+        if dnadiff -p {params.out} {params.reference} {input.chrom}; then
+            dnadiff -p {params.out} {params.reference} {input.chrom}
+        else
+            touch {output.report}
+        fi
         '''
 
 #### aggregation rule
