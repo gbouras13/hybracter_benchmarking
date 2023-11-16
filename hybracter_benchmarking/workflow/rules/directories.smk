@@ -71,6 +71,7 @@ CHROMOSOMES = os.path.join(workflow.basedir, '../../', 'reference_genome_chromos
 PLASMIDS = os.path.join(workflow.basedir, '../../', 'reference_genome_plasmids')
 
 DNADIFF_PARSED_OUTPUT = os.path.join(OUTPUT, 'DNADIFF_PARSED_OUTPUT')
+DNADIFF_PARSED_OUTPUT_PLASMID = os.path.join(OUTPUT, 'DNADIFF_PARSED_OUTPUT_PLASMID')
 PLASMID_PARSED_OUTPUT = os.path.join(OUTPUT, 'PLASMID_PARSED_OUTPUT')
 
 

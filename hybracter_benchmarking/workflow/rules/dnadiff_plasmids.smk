@@ -130,17 +130,15 @@ parse dnadiff output
 
 
 # hybracter 
-rule parse_dnadiff:
+rule parse_dnadiff_plasmids:
     input:
-        hybracter_hybrid = os.path.join(DNADIFF,"{sample}_hybracter_hybrid.report"),
-        hybracter_long =  os.path.join(DNADIFF,"{sample}_hybracter_long.report"),
-        hybracter_hybrid_last = os.path.join(DNADIFF,"{sample}_hybracter_hybrid_last.report"),
-        hybracter_long_last =  os.path.join(DNADIFF,"{sample}_hybracter_long_last.report"),
-        unicycler = os.path.join(DNADIFF,"{sample}_unicycler.report"),
-        dragonflye_hybrid = os.path.join(DNADIFF,"{sample}_dragonflye_hybrid.report"),
-        dragonflye_long = os.path.join(DNADIFF,"{sample}_dragonflye_long.report"),
+        hybracter_hybrid = os.path.join(DNADIFF_PLASMIDS,"{sample}_hybracter_hybrid.report"),
+        hybracter_long =  os.path.join(DNADIFF_PLASMIDS,"{sample}_hybracter_long.report"),
+        unicycler = os.path.join(DNADIFF_PLASMIDS,"{sample}_unicycler.report"),
+        dragonflye_hybrid = os.path.join(DNADIFF_PLASMIDS,"{sample}_dragonflye_hybrid.report"),
+        dragonflye_long = os.path.join(DNADIFF_PLASMIDS,"{sample}_dragonflye_long.report"),
     output:
-        tsv = os.path.join(DNADIFF_PARSED_OUTPUT,"{sample}_dnadiff_parsed_output.tsv")
+        tsv = os.path.join(DNADIFF_PARSED_OUTPUT_PLASMID,"{sample}_dnadiff_parsed_output.tsv")
     threads:
         1
     resources:
@@ -153,12 +151,12 @@ rule parse_dnadiff:
 
 
 #### aggregation rule
-rule aggr_dnadiff_parsed:
+rule aggr_dnadiff_parsed_plasmid:
     """aggregate dnadiff"""
     input:
-        expand(os.path.join(DNADIFF_PARSED_OUTPUT,"{sample}_dnadiff_parsed_output.tsv"), sample = SAMPLES),
+        expand(os.path.join(DNADIFF_PARSED_OUTPUT_PLASMID,"{sample}_dnadiff_parsed_output.tsv"), sample = SAMPLES),
     output:
-        os.path.join(FLAGS, "dnadiff_real_parsed_aggr.txt")
+        os.path.join(FLAGS, "dnadiff_real_parsed_plasmid_aggr.txt")
     threads:
         1
     shell:
