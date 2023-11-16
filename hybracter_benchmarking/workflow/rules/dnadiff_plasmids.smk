@@ -105,7 +105,7 @@ rule dnadiff_dragonflye_long_plasmid:
         '''
 
 #### aggregation rule
-rule aggr_dnadiff_REAL:
+rule aggr_dnadiff_REAL_plasmid:
     """aggregate dnadiff"""
     input:
         expand(os.path.join(DNADIFF_PLASMIDS,"{sample}_hybracter_long.report"), sample = SAMPLES),
