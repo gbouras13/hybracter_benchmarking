@@ -147,7 +147,7 @@ rule parse_dnadiff_plasmids:
     conda:
         os.path.join('..', 'envs','scripts.yaml')
     script:
-        os.path.join('..', 'scripts', "parse_dnadiff_outputs.py")
+        os.path.join('..', 'scripts', "parse_dnadiff_outputs_plasmids.py")
 
 
 #### aggregation rule
