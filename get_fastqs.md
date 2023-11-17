@@ -1,10 +1,10 @@
 # Instructions How to Download Fastqs
 
-## JKD6159 
+## JKD6159 (Wick et al 2023)
 
-doi: https://doi.org/10.1128/mra.01129-22
+* Paper doi: https://doi.org/10.1128/mra.01129-22
 
-Reference Genome: GCF_000144955.1 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000144955.1/
+R* eference Genome: GCF_000144955.1 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000144955.1/
 
 #### Downloading the Reference Genome
 
@@ -22,9 +22,9 @@ rm -rf GCF_000144955.1.zip
 
 ```
 
-#### FASTQs
+#### Downloading FASTQs
 
-Install `fastq-dl`
+* Install `fastq-dl`
 
 ```
 mamba create -n fastq-dl fastq-dl
@@ -32,25 +32,23 @@ mamba create -n fastq-dl fastq-dl
 conda activate fastq-dl
 ```
 
-Illumina reads
+* Illumina reads
 
 ```
 fastq-dl -a SRR21386014
 ```
 
-ONT R9.4.1
+* ONT R9.4.1
 
 ```
 fastq-dl -a SRR21386010
 ```
 
-ONT R10.4 Guppy v6.1.7 SUP
+* ONT R10.4 Guppy v6.1.7 SUP
 
 ```
 fastq-dl -a SRR21386012
 ```
-
-
 
 # Lerminiaux et al preprint
 
@@ -215,9 +213,6 @@ rm -rf ncbi_dataset
 rm -rf *.zip
 ```
 
-* All contigs were modified to have "circular=True" in the header 
-
-
 
 ## Chitale et al
 
@@ -237,7 +232,7 @@ fastq-dl -a SRR20082813
 
 ```
 
-To get the reference genome"
+To get the reference genome
 
 ```
 curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCA_026185275.1/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCA_026185275.1.zip" -H "Accept: application/zip"
@@ -331,7 +326,7 @@ rasusa -i SRR26162850_1.fastq.gz -i SRR26162850_2.fastq.gz --coverage 100 --geno
 # to disable GPU for a fair bechmarking with medaka 
 export CUDA_VISIBLE_DEVICES=""
 
-hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --bulk_lerminiaux_csv ../hybracter_benchmarking/bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config ../bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --bulk_lerminiaux_csv ../hybracter_benchmarking/bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config ../hybracter_benchmarking/bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
  
 
 ```

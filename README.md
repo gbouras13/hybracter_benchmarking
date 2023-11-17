@@ -1,14 +1,17 @@
 # hybracter_benchmarking
-Benchmarking Pipeline for `hybracter`
+
+This repository holds the benchmarking pipeline for `hybracter`
 
 This directory contains the pipeline used to benchmark [hybracter](https://github.com/gbouras13/hybracter).
 
-I used [Snaketool](https://github.com/beardymcjohnface/Snaketool) to make this, and would highly recommend it!
+I used [Snaketool](https://github.com/beardymcjohnface/Snaketool) to make this pipeline (and also hybracter), and would highly recommend it!
 
-It should work 'out of the box' for the simulated reads. For the real read sets, you will need to change the `csv` input files in this directory with the correct FASTQ paths of the required files on your system. 
+You will need to change the 2 `csv` input files in this directory with the correct FASTQ paths of the required files on your system. 
+
+You can get the FASTQs from the Zenodo repository (coming soon) or follow the instructions in [get_fastqs.md](get_fastqs.md).
 
 
-# Download hybracter_benchmarking and install it in a conda env
+# Step 1: Download hybracter_benchmarking and install it from source in a conda env
 
 ```
 # creates conda env
@@ -23,22 +26,22 @@ pip install -e .
 hybracter_benchmarking --help
 ```
 
-# Install
+# Step 2: Install
 
 ```
 hybracter_benchmarking install
 ```
 
 
-# Run the benchmarking pipeline 
+# Step 3: Run the benchmarking assess pipeline 
 
 ```
+# to disable GPU on my system for a fair bechmarking with medaka 
+export CUDA_VISIBLE_DEVICES=""
 hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --bulk_lerminiaux_csv ../hybracter_benchmarking/bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config ../hybracter_benchmarking/bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
- 
-
 ```
 
-# Run the assessment
+# Step4: Run the assessments
 
 * This needs to be done after the `hybracter_benchmarking assemble-real` is complete or else it will not work
 * The same input csv and output directory needs to be used as `hybracter_benchmarking assemble-real`
@@ -47,11 +50,21 @@ hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_asse
 hybracter_benchmarking assess-real --input ../hybracter_benchmarking/real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
 ```
 
+* You should get the following output directories:
+  * `BENCHMARKS` - contains the time etc benchmarking for each run (sample x tool)
+  * `DNADIFF` - contains raw chromosome Dnadiff results for each run (sample x tool)
+  * `DNADIFF_PARSED_OUTPUT` - contains parsed chromosome Dnadiff results for each sample
+  * `DNADIFF_PLASMIDS` - contains plasmid Dnadiff results for each run (sample x tool)
+  * `DNADIFF_PARSED_OUTPUT_PLASMID` - contains parsed plasmid Dnadiff results for each sample
+  * `REAL` - this contains all the actual output for each assembler. The following 5 directories will contain the all the raw output:
+    * `HYBRACTER_HYBRID_OUTPUT`
+    * `HYBRACTER_LONG_OUTPUT`
+    * `DRAGONFLYE_HYBRID_OUTPUT`
+    * `DRAGONFLYE_LONG_OUTPUT`
+    * `UNICYCLER_OUTPUT`
+    * 
+* It will also contain a number of other subdirectories with summary outputs and specific plasmids and chromosome assemblies for Unicycler and Dragonflye
 
-# pharokka on JKD6159
+# Other Utilities
 
-```
-pharokka.py -i extra_phage_contigs.fasta -o JKD6159_extra_phage_contigs -t 8 -d ../pharokka_v1.4.0_databases
-```
 
-# bakta on JKD6159

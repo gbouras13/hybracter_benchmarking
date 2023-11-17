@@ -126,49 +126,10 @@ Required:           hybracter_benchmarking install --output [directory]
 Specify threads:    hybracter_benchmarking install ... --threads [threads]
 Disable conda:      hybracter_benchmarking install ... --no-use-conda 
 Change defaults:    hybracter_benchmarking install ... --snake-default="-k --nolock"
-Add Snakemake args: hybracter_benchmarking siminstallulate ... --dry-run --keep-going --touch
+Add Snakemake args: hybracter_benchmarking install ... --dry-run --keep-going --touch
 Specify targets:    hybracter_benchmarking install ... all print_targets
 Available targets:
     all             install everything (default)
-    print_targets   List available targets
-"""
-
-
-help_msg_simulate = """
-\b
-CLUSTER EXECUTION:
-hybracter_benchmarking simulate ... --profile [profile]
-For information on Snakemake profiles see:
-https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles
-\b
-RUN EXAMPLES:
-Required:           hybracter_benchmarking simulate --input [file]
-Specify threads:    hybracter_benchmarking simulate ... --threads [threads]
-Disable conda:      hybracter_benchmarking simulate ... --no-use-conda 
-Change defaults:    hybracter_benchmarking simulate ... --snake-default="-k --nolock"
-Add Snakemake args: hybracter_benchmarking simulate ... --dry-run --keep-going --touch
-Specify targets:    hybracter_benchmarking simulate ... all print_targets
-Available targets:
-    all             simulate everything (default)
-    print_targets   List available targets
-"""
-
-help_msg_assemble_simulated = """
-\b
-CLUSTER EXECUTION:
-hybracter_benchmarking assemble-simulated ... --profile [profile]
-For information on Snakemake profiles see:
-https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles
-\b
-RUN EXAMPLES:
-Required:           hybracter_benchmarking assemble-simulated --input [file]
-Specify threads:    hybracter_benchmarking assemble-simulated ... --threads [threads]
-Disable conda:      hybracter_benchmarking assemble-simulated ... --no-use-conda 
-Change defaults:    hybracter_benchmarking assemble-simulated ... --snake-default="-k --nolock"
-Add Snakemake args: hybracter_benchmarking assemble-simulated ... --dry-run --keep-going --touch
-Specify targets:    hybracter_benchmarking assemble-simulated ... all print_targets
-Available targets:
-    all             assemble everything (default)
     print_targets   List available targets
 """
 
@@ -191,24 +152,6 @@ Available targets:
     print_targets   List available targets
 """
 
-help_msg_assess_simulated = """
-\b
-CLUSTER EXECUTION:
-hybracter_benchmarking assess-simulated ... --profile [profile]
-For information on Snakemake profiles see:
-https://snakemake.readthedocs.io/en/stable/executing/cli.html#profiles
-\b
-RUN EXAMPLES:
-Required:           hybracter_benchmarking assess-simulated --input [file]
-Specify threads:    hybracter_benchmarking assess-simulated ... --threads [threads]
-Disable conda:      hybracter_benchmarking assess-simulated ... --no-use-conda 
-Change defaults:    hybracter_benchmarking assess-simulated ... --snake-default="-k --nolock"
-Add Snakemake args: hybracter_benchmarking assess-simulated ... --dry-run --keep-going --touch
-Specify targets:    hybracter_benchmarking assess-simulated ... all print_targets
-Available targets:
-    all             assemble everything (default)
-    print_targets   List available targets
-"""
 
 
 help_msg_assess_real = """
@@ -258,51 +201,6 @@ def install(_input, output, log, threads, **kwargs):
     )
 
 
-#### simulate
-
-@click.command(
-    epilog=help_msg_simulate,
-    context_settings=dict(
-        help_option_names=["-h", "--help"], ignore_unknown_options=True
-    ),
-)
-@click.option("--input", "_input", help="Input file/directory", type=str, required=True)
-@common_options
-def simulate(_input, output, log, threads, **kwargs):
-    """simulate hybracter_benchmarking"""
-    # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
-
-    # run!
-    run_snakemake(
-        # Full path to Snakefile
-        snakefile_path=snake_base(os.path.join("workflow", "simulate.smk")),
-        merge_config=merge_config,
-        log=log,
-        threads=threads,
-        **kwargs
-    )
-
-
-##### assemble simulated
-
-@click.command(
-    epilog=help_msg_assemble_simulated,
-    context_settings=dict(
-        help_option_names=["-h", "--help"], ignore_unknown_options=True
-    ))
-@click.option("--input", "_input", help="Input file/directory", type=str, required=True)
-@common_options
-def assemble_simulated(_input, output, threads, log, **kwargs):
-    """assemble simulated reads hybracter_benchmarking"""
-    # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
-    """Install databases"""
-    run_snakemake(
-        snakefile_path=snake_base(os.path.join('workflow','assemble_simulated.smk')),
-        merge_config=merge_config,
-        **kwargs)
-
 
 ##### assemble real reads
 
@@ -324,26 +222,6 @@ def assemble_real(_input, output,bulk_lerminiaux_csv, bulk_lerminiaux_config, lo
         snakefile_path=snake_base(os.path.join('workflow','assemble_real.smk')),
         merge_config=merge_config,
         **kwargs)
-
-# assess simulated
-
-@click.command(
-    epilog=help_msg_assess_simulated,
-    context_settings=dict(
-        help_option_names=["-h", "--help"], ignore_unknown_options=True
-    ))
-@click.option("--input", "_input", help="Input file/directory", type=str, required=True)
-@common_options
-def assess_simulated(_input, output, log, threads, **kwargs):
-    """asssess simulated assembly output in hybracter_benchmarking"""
-    # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "log": log, "threads": threads}
-    """Install databases"""
-    run_snakemake(
-        snakefile_path=snake_base(os.path.join('workflow','assess_simulated.smk')),
-        merge_config=merge_config,
-        **kwargs)
-
 
 # assess real
 
@@ -367,7 +245,6 @@ def assess_real(_input, output, log, threads, **kwargs):
 
 
 
-
 @click.command()
 @common_options
 def config(configfile, **kwargs):
@@ -382,10 +259,7 @@ def citation(**kwargs):
 
 
 cli.add_command(install)
-cli.add_command(simulate)
-cli.add_command(assemble_simulated)
 cli.add_command(assemble_real)
-cli.add_command(assess_simulated)
 cli.add_command(assess_real)
 cli.add_command(config)
 cli.add_command(citation)
