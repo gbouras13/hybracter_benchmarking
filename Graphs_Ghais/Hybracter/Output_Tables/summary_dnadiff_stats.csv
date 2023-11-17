@@ -1,0 +1,8 @@
+"Run","min_SNPs_per_hundredkbp","median_SNPs_per_hundredkbp","max_SNPs_per_hundredkbp","min_indels_per_hundredkbp","median_indels_per_hundredkbp","max_indels__per_hundredkbp","min_indels_plus_snps_per_hundredkbp","median_indels_plus_snps_per_hundredkbp","max_indels_plus_snps_per_hundredkbp","min_Total_Large_Insertions_Deletions","median_Total_Large_Insertions_Deletions","max_Total_Large_Insertions_Deletions","sum_Total_Large_Insertions_Deletions"
+"dragonflye_hybrid",0,0.03,2.21,0,0.485,11.56,0,0.74,13.41,1,1.5,29,91
+"dragonflye_long",0.33,0.985,10.86,1.61,3.01,43.8,2.01,3.81,53.1,1,2,30,92
+"hybracter_hybrid",0,0.16,3.52,0,0.05,12.34,0,0.24,15.79,0,0,26,59
+"hybracter_hybrid_last",0,0,3.27,0,0,8.43,0,0.01,11.7,0,0,27,60
+"hybracter_long",0.07,1.07,10.46,0.06,0.49,24.82,0.37,2.08,35.29,0,1,27,66
+"hybracter_long_last",0.09,1.07,10.24,0.06,0.48,24.49,0.37,2.08,34.72,0,0,27,60
+"unicycler",0.25,1.245,4.13,0,0.28,9.5,0.43,1.49,13.62,0,2.5,41,134

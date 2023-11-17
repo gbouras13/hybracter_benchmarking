@@ -24,7 +24,7 @@ def get_input():
     :return: args
     """
     parser = argparse.ArgumentParser(
-        description="pharokka_plotter.py: pharokka plotting function",
+        description="parse_genomes.py: ",
         formatter_class=RawTextHelpFormatter,
     )
     parser.add_argument(

@@ -1,0 +1,11 @@
+"","Run","Threads","median_Wall_Clock_seconds","min_Wall_Clock_seconds","max_Wall_Clock_seconds"
+"1","dragonflye_hybrid","16",440.51,212.63,568.34
+"2","dragonflye_hybrid","8",654.74,242.1,813.81
+"3","dragonflye_long","16",420.17,201.99,535.62
+"4","dragonflye_long","8",563.7,231.97,812.33
+"5","hybracter_hybrid","16",2418.92,762.72,4865.28
+"6","hybracter_hybrid","8",3263.31,861.56,7296.52
+"7","hybracter_long","16",2095.95,589.33,3561.28
+"8","hybracter_long","8",2729.25,652.39,5028.98
+"9","unicycler","16",3968.47,1297.56,5438.31
+"10","unicycler","8",7381.54,2348.66,10096.39

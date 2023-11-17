@@ -38,7 +38,8 @@ hybracter_benchmarking install
 ```
 # to disable GPU on my system for a fair bechmarking with medaka 
 export CUDA_VISIBLE_DEVICES=""
-hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_assemble.csv --bulk_lerminiaux_csv ../hybracter_benchmarking/bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config ../hybracter_benchmarking/bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+cd ..
+hybracter_benchmarking assemble-real --input real_assemble.csv --bulk_lerminiaux_csv bulk_assemble_lerminiaux.csv --bulk_lerminiaux_config bulk_assemble_lerminiaux_config.yaml --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
 ```
 
 # Step4: Run the assessments
@@ -47,7 +48,7 @@ hybracter_benchmarking assemble-real --input ../hybracter_benchmarking/real_asse
 * The same input csv and output directory needs to be used as `hybracter_benchmarking assemble-real`
 
 ```
-hybracter_benchmarking assess-real --input ../hybracter_benchmarking/real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
+hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybracter_benchmarking_results/real_results --threads 16 --cores 16
 ```
 
 * You should get the following output directories:
@@ -67,4 +68,31 @@ hybracter_benchmarking assess-real --input ../hybracter_benchmarking/real_assemb
 
 # Other Utilities
 
+* `genomes` directory contains the reference genomes
+* `reference_genome_chromosomes` directory contains the reference chromosomes
+* `reference_genome_plasmids` directory contains the reference plasmids
+
+* `parse_genomes.py` was used to generate per contig and overall genome lengths for all reference genomes (contained in the `genome_info` directory).
+* `Graphs_Ghais` contains R scripts used to make plots for the Hybracter manuscript.
+
+
+# Usage
+
+```
+Usage: hybracter_benchmarking [OPTIONS] COMMAND [ARGS]...
+
+  hybracter_benchmarking For more options, run: hybracter_benchmarking
+  --help
+
+Options:
+  -v, --version  Show the version and exit.
+  -h, --help     Show this message and exit.
+
+Commands:
+  install        install hybracter hybracter_benchmarking
+  assemble-real  assemble real reads hybracter_benchmarking
+  assess-real    asssess real assembly output in hybracter_benchmarking
+  config         Copy the system default config file
+  citation       Print the citation(s) for this tool
+```
 
