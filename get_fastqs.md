@@ -249,7 +249,7 @@ rm -rf *.zip
 
 * Link to Ryan Wick's blogpost https://rrwick.github.io/2023/05/05/ont-only-accuracy-with-r10.4.1.html. DOI: https://doi.org/10.5281/zenodo.7898220
 * These will be publicly available with the hybracter manuscript.
-* All genomes were manually downloaded from 
+* All genomes were manually downloaded from the ATCC [website](https://www.atcc.org).
 
 
 
