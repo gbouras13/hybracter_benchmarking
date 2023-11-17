@@ -20,7 +20,7 @@ conda activate hybracter_benchmarking
 
 # download the repository
 git clone "https://github.com/gbouras13/hybracter_benchmarking"
-cd hybracter_benchmarking/hybracter_benchmarking
+cd hybracter_benchmarking
 
 pip install -e .
 hybracter_benchmarking --help
