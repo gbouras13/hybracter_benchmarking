@@ -4,7 +4,7 @@
 
 * Paper doi: https://doi.org/10.1128/mra.01129-22
 
-R* eference Genome: GCF_000144955.1 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000144955.1/
+* Reference Genome: GCF_000144955.1 https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000144955.1/
 
 #### Downloading the Reference Genome
 
@@ -52,7 +52,7 @@ fastq-dl -a SRR21386012
 
 # Lerminiaux et al preprint
 
-* Preprint linke: https://www.biorxiv.org/content/10.1101/2023.09.25.559359v1 
+* Preprint link: https://www.biorxiv.org/content/10.1101/2023.09.25.559359v1 
 
 ## Download all Fastqs
 
@@ -146,7 +146,6 @@ rm -rf ncbi_dataset
 rm -rf *.zip
 ```
 
- 
 #### Isolate H
 
 ```
@@ -255,10 +254,7 @@ rm -rf *.zip
 
 # Subsampling 
 
-
-## subsampling to 100x 
-
-* Done with [Rasusa](https://github.com/mbhall88/rasusa) v0.7.0
+* Done with [Rasusa](https://github.com/mbhall88/rasusa) v0.7.0 to 100x approximate genome size
 
 #### Install rasusa
 
@@ -297,10 +293,10 @@ rasusa --input SRR26162845.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o
 rasusa --input SRR26162846.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR26162846_100x.fastq.gz
 ```
 
-* SRR26162836 no subsampling done actual coverage is 52.92x 
-* SRR26162839 no subsampling done actual coverage is 97.78x 
-* SRR26162841 no subsampling done actual coverage is 53.24x 
-* SRR26162844 no subsampling done actual coverage is 33.25x
+* SRR26162836 no subsampling was actually done, the estimated coverage was 52.92x 
+* SRR26162839 no subsampling was actually done, the estimated coverage was 97.78x 
+* SRR26162841 no subsampling was actually done, the estimated coverage was 53.24x 
+* SRR26162844 no subsampling was actually done, the estimated coverage was 33.25x
 
 
 ##### Short Reads
@@ -320,17 +316,17 @@ rasusa -i SRR26162849_1.fastq.gz -i SRR26162849_2.fastq.gz --coverage 100 --geno
 rasusa -i SRR26162850_1.fastq.gz -i SRR26162850_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR26162850_100x_1.fastq.gz  -o SRR26162850_100x_2.fastq.gz 
 ```
 
-* SRR26162836 no subsampling done actual coverage is 77.65x
-* SRR26162827 no subsampling done actual coverage is 58.22x
-* SRR26162828 no subsampling done actual coverage is 61.95x
-* SRR26162829 no subsampling done actual coverage is 79.96x
-* SRR26162830 no subsampling done actual coverage is 86.12x
-* SRR26162831 no subsampling done actual coverage is 43.19x
-* SRR26162832 no subsampling done actual coverage is 71.97x
-* SRR26162833 no subsampling done actual coverage is 62.42x
-* SRR26162847 no subsampling done actual coverage is 65.02x
-* SRR26162849 no subsampling done actual coverage is 61.22x
-* SRR26162850 no subsampling done actual coverage is 40.72x
+* SRR26162836 no subsampling was actually done, the estimated coverage was 77.65x
+* SRR26162827 no subsampling was actually done, the estimated coverage was 58.22x
+* SRR26162828 no subsampling was actually done, the estimated coverage was 61.95x
+* SRR26162829 no subsampling was actually done, the estimated coverage was 79.96x
+* SRR26162830 no subsampling was actually done, the estimated coverage was 86.12x
+* SRR26162831 no subsampling was actually done, the estimated coverage was 43.19x
+* SRR26162832 no subsampling was actually done, the estimated coverage was 71.97x
+* SRR26162833 no subsampling was actually done, the estimated coverage was 62.42x
+* SRR26162847 no subsampling was actually done, the estimated coverage was 65.02x
+* SRR26162849 no subsampling was actually done, the estimated coverage was 61.22x
+* SRR26162850 no subsampling was actually done, the estimated coverage was 40.72x
 
 
 
@@ -338,12 +334,10 @@ rasusa -i SRR26162850_1.fastq.gz -i SRR26162850_2.fastq.gz --coverage 100 --geno
 
 ```
 GENOME_SIZE="5.2mb"
-
 rasusa --input ATCC_25922.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x.fastq.gz
 rasusa -i ATCC_25922_1.fastq.gz -i ATCC_25922_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x_1.fastq.gz  -o ATCC_25922_100x_2.fastq.gz 
 
 GENOME_SIZE="5.2mb"
-
 rasusa --input ATCC_17802.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x.fastq.gz
 rasusa -i ATCC_17802_1.fastq.gz -i ATCC_17802_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x_1.fastq.gz  -o ATCC_17802_100x_2.fastq.gz 
 
@@ -382,6 +376,7 @@ mamba create -n nanoq nanoq
 conda activate nanoq
 ```
 
+#### Run nanoq
 
 ```
 mkdir nanoq_hybracter_benchmarking
