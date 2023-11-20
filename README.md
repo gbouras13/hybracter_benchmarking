@@ -12,7 +12,7 @@ I used [Snaketool](https://github.com/beardymcjohnface/Snaketool) to make this p
 
 To use this repository, you will need to change the 2 `csv` input files in this directory with the correct FASTQ paths of the required files on your system. 
 
-You can get the FASTQs from the Zenodo repository (coming soon) or follow the instructions in [get_fastqs.md](get_fastqs.md).
+You can get the FASTQs from the Zenodo repository [here](https://doi.org/10.5281/zenodo.10158013) or follow the instructions in [get_fastqs.md](get_fastqs.md).
 
 # Step 1: Download hybracter_benchmarking and install it from source in a conda env
 
@@ -55,7 +55,7 @@ hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybrac
 
 # Outputs
 
-* You should get the following output directories:
+* You should get the following output directories (as per the output you can find [here](https://doi.org/10.5281/zenodo.10158013)):
   * `BENCHMARKS` - contains the time etc benchmarking for each run (sample x tool)
   * `DNADIFF` - contains raw chromosome Dnadiff results for each run (sample x tool)
   * `DNADIFF_PARSED_OUTPUT` - contains parsed chromosome Dnadiff results for each sample

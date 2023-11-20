@@ -1,5 +1,7 @@
 # Instructions How to Download, Subsample and QC Fastqs
 
+* You can find the FASTQs [here](https://doi.org/10.5281/zenodo.10158013).
+
 ## JKD6159 (Wick et al 2023)
 
 * Paper doi: https://doi.org/10.1128/mra.01129-22
