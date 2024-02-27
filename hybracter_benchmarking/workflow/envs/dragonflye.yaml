@@ -4,4 +4,4 @@ channels:
   - defaults
 dependencies:
   - dragonflye==1.1.2
-
+  - polypolish==0.5.0
