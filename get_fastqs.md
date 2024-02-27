@@ -11,16 +11,16 @@
 #### Downloading the Reference Genome
 
 ```
-curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCF_000144955.1/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCF_000144955.1.zip" -H "Accept: application/zip"
+curl -OJX GET "https://api.ncbi.nlm.nih.gov/datasets/v2alpha/genome/accession/GCF_000144955.2/download?include_annotation_type=GENOME_FASTA,GENOME_GFF,RNA_FASTA,CDS_FASTA,PROT_FASTA,SEQUENCE_REPORT&filename=GCF_000144955.1.zip" -H "Accept: application/zip"
 
-unzip GCF_000144955.1.zip 
+unzip GCF_000144955.2.zip 
 
-mv ncbi_dataset/data/GCF_000144955.1/GCF_000144955.1_ASM14495v1_genomic.fna JDK6159.fasta
+mv ncbi_dataset/data/GCF_000144955.2/GCF_000144955.2_ASM14495v2_genomic.fna JDK6159.fasta
 
 # cleanup
 rm -rf README.md 
 rm -rf ncbi_dataset 
-rm -rf GCF_000144955.1.zip
+rm -rf GCF_000144955.2.zip
 
 ```
 
