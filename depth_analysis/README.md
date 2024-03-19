@@ -38,3 +38,11 @@ export CUDA_VISIBLE_DEVICES=""
 hybracter_benchmarking assemble-real --input depth_assemble.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output hybracter_depth_Lerminiaux_isolate_benchmarking_results --threads 32 --cores 16
 ```
 
+* removing the 15x and 20x - hybracter failed to completely circularise the genome here
+
+```bash
+# hybracter_benchmarking assess-real --input depth_assemble.csv --output  hybracter_depth_Lerminiaux_isolate_benchmarking_results --threads 32 --cores 16
+
+hybracter_benchmarking assess-real --input depth_assemble_assess.csv --output  hybracter_depth_Lerminiaux_isolate_benchmarking_results --threads 32 --cores 16
+```
+
