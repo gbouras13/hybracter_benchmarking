@@ -17,7 +17,7 @@ OUTPUT = config['output']
 THREADS = config['threads']
 BULK_CSV = config['bulk_lerminiaux_csv']
 BULK_CONFIG = config['bulk_lerminiaux_config']
-
+DUPLEX = config['duplex']
 
 ### DIRECTORIES
 include: "rules/directories.smk"
@@ -32,9 +32,12 @@ SAMPLES = list(dictReads.keys())
 # Import rules and functions
 include: "rules/targets.smk"
 include: "rules/hybracter_install.smk"
-include: "rules/hybracter_real_reads.smk"
+if DUPLEX is True:
+    include: "rules/hybracter_real_reads_duplex.smk"
+    
+else:
+    include: "rules/hybracter_real_reads.smk"
 include: "rules/hybracter_real_reads_bulk.smk"
-include: "rules/hybracter_real_reads_last.smk"
 include: "rules/unicycler_real_reads.smk"
 include: "rules/dragonflye_real_reads.smk"
 

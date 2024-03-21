@@ -213,10 +213,11 @@ def install(_input, output, log, threads, **kwargs):
 @common_options
 @click.option("--bulk_lerminiaux_csv", "bulk_lerminiaux_csv", help="Input bulk csv file with Lerminiaux samples", type=str, required=True)
 @click.option("--bulk_lerminiaux_config", "bulk_lerminiaux_config", help="Input bulk config file with Lerminiaux samples", type=str, required=True)
-def assemble_real(_input, output,bulk_lerminiaux_csv, bulk_lerminiaux_config, log, threads, **kwargs):
+@click.option("--duplex", "duplex", help="Whether duplex reads were used. Turns off Medaka.", type=bool)
+def assemble_real(_input, output,bulk_lerminiaux_csv, duplex, bulk_lerminiaux_config, log, threads, **kwargs):
     """assemble real reads hybracter_benchmarking"""
     # Config to add or update in configfile
-    merge_config = {"input": _input, "output": output, "bulk_lerminiaux_csv": bulk_lerminiaux_csv, "bulk_lerminiaux_config": bulk_lerminiaux_config, "log": log, "threads": threads}
+    merge_config = {"input": _input, "output": output, "duplex": duplex, "bulk_lerminiaux_csv": bulk_lerminiaux_csv, "bulk_lerminiaux_config": bulk_lerminiaux_config, "log": log, "threads": threads}
     """Install databases"""
     run_snakemake(
         snakefile_path=snake_base(os.path.join('workflow','assemble_real.smk')),
