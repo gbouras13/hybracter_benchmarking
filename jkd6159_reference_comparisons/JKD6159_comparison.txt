@@ -1,0 +1,235 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 16:07:42)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  jkd6159_reference_comparisons/JDK6159_Chua_2010.fasta
+
+Assembly 2:
+  jkd6159_reference_comparisons/JKD6159_Wick_2023.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 16:07:42)[0m
+jkd6159_reference_comparisons/JDK6159_Chua_2010.fasta
+  NC_017338.1: 2,811,435 bp
+  NC_017339.1: 20,730 bp
+
+jkd6159_reference_comparisons/JKD6159_Wick_2023.fasta
+  NC_017338.2: 2,818,670 bp
+  NC_017339.1: 20,730 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 16:07:42)[0m
+Aligning NC_017338.1 to NC_017338.2:
+  8,255 differences
+  worst 10 bp identity:   0.0%
+  worst 100 bp identity:  0.0%
+  worst 1000 bp identity: 0.0%
+
+  NC_017338.1 490815-490845: AATACAAAGGGCAGCGAAACCGCGAGGTCAA
+  NC_017338.2 490815-490845: AATACAAAGGGCAGCAAAACCGCGAGGTCAA
+                                            *               
+
+  NC_017338.1 491400-491484: ATTAATAACGCGTTTAAATCTTTTTATAAAAGAACGTAACTTCATGTGAACGTTTGACTTATAAAAATGG-TGGAAACATAGATTA
+  NC_017338.2 491400-491438: ATTAATAACGCGTTT------------------------------------------CCTGTA-----GGATGGAAACATAGATTA
+                                            ****************************************** * *  *****  *               
+
+  NC_017338.1 492441-492471: AATGCCAATTAATTTAACTTGGGAGTCAGAA
+  NC_017338.2 492395-492425: AATGCCAATTAATTTGACTTGGGAGTCAGAA
+                                            *               
+
+  NC_017338.1 494907-494936: CTCTTTTTTTTTATG--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------TCTAAAACGTCAAAA
+  NC_017338.2 494861-495168: CTCTTTTTTTTTATGTCTAAAACGTCAAAATAAAAAGCAAACACAAAGAAAAATGGCTTGGCGAAGTGAAAACGTTTGAATCTGACGAAACAAGAAAAGAGCGCAACGATTTTAGTAGAGCTAAATGAGTAAGCGAGAGCCGAAGGAGAGGAAAGAAGCAAGCGATTGTCACAAGTCAAGAAAGGTTCTTAGCGACGATGGTAGCCAACTTACGTTCCGCTAGAGTAGAACGTTGCCAGGCAAAAAATGGATGCGATGAGCCGCATTGAGACCGCAAGGTCTCTTTTTTTATATCTAAAACGTCAAAA
+                                            **************************************************************************************************************************************************************************************************************************************************************************************               
+
+  NC_017338.1 533447-533485: TATGGCTCATTACGA--TAATGTTTGTATATTTAGCAAAAT
+  NC_017338.2 533679-533717: TATGGCTCATTACGATTTAAT-TCT-TATATTTAGCAAAAT
+                                            **    * * *               
+
+  NC_017338.1 533934-533963: ATTTATTTTTACACG----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ATGAACATTGAAAAC
+  NC_017338.2 534166-539407: ATTTATTTTTACACGATGAACATTGAAAACTGAATGACAATATGTCAACGTTAATTCCAAAAAACGTAACTATAAGTTACAAACATTATTTAGTATTTATGAGCTAATCAAACATCATAATTTTTATGGAGAGTTTGATCCTGGCTCAGGATGAACGCTGGCGGCGTGCCTAATACATGCAAGTCGAGCGAACGGACGAGAAGCTTGCTTCTCTGATGTTAGCGGCGGACGGGTGAGTAACACGTGGATAACCTACCTATAAGACTGGGATAACTTCGGGAAACCGGAGCTAATACCGGATAATATTTTGGACCGCATGGTTCAAAAGTGAAAGACGGTCTTGCTGTCACTTATAGATGGATCCGCGCTGCATTAGCTAGTTGGTAAGGTAACGGCTTACCAAGGCAACGATGCATAGCCGACCTGAGAGGGTGATCGGCCACACTGGAACTGAGACACGGTCCAGACTCCTACGGGAGGCAGCAGTAGGGAATCTTCCGCAATGGGCGAAAGCCTGACGGAGCAACGCCGCGTGAGTGATGAAGGTCTTCGGATCGTAAAACTCTGTTATTAGGGAAGAACATATGTGTAAGTAACTGTGCACATCTTGACGGTACCTAATCAGAAAGCCACGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGTGGCAAGCGTTATCCGGAATTATTGGGCGTAAAGCGCGCGTAGGCGGTTTTTTAAGTCTGATGTGAAAGTCCACGGCTCAACCGTGGAGGGTCATTGGAAACTGGAAAACTTGAGTGCAGAAGAGGAAAGTGGAATTCCATGTGTAGCGGTGAAATGCGCAGAGATATGGAGGAACACCAGTGGCGAAGGCGACTTTCTGGTCTGTAACTGACGCTGATGTGCGAAAGCGTGGGGATCAAACAGGATTAGATACCCTGGTAGTCCACGCCGTAAACGATGAGTGCTAAGTGTTAGGGGGTTTCCGCCCCTTAGTGCTGCAGCTAACGCATTAAGCACTCCGCCTGGGGAGTACGACCGCAAGGTTGAAACTCAAAGGAATTGACGGGGACCCGCACAAGCGGTGGAGCATGTGGTTTAATTCGAAGCAACGCGAAGAACCTTACCAAATCTTGACATCCTTTGACAACTCTAGAGATAGAGCCTTCCCCTTCGGGGGACAAAGTGACAGGTGGTGCATGGTTGTCGTCAGCTCGTGTCGTGAGATGTTGGGTTAAGTCCCGCAACGAGCGCAACCCTTAAGCTTAGTTGCCATCATTAAGTTGGGCACTCTAAGTTGACTGCCGGTGACAAACCGGAGGAAGGTGGGGATGACGTCAAATCATCATGCCCCTTATGATTTGGGCTACACACGTGCTACAATGGACAATACAAAGGGCAGCGAAACCGCGAGGTCAAGCAAATCCCATAAAGTTGTTCTCAGTTCGGATTGTAGTCTGCAACTCGACTACATGAAGCTGGAATCGCTAGTAATCGTAGATCAGCATGCTACGGTGAATACGTTCCCGGGTCTTGTACACACCGCCCGTCACACCACGAGAGTTTGTAACACCCGAAGCCGGTGGAGTAACCTTTTAGGAGCTAGCCGTCGAAGGTGGGACAAATGATTGGGGTGAAGTCGTAACAAGGTAGCCGTATCGGAAGGTGCGGCTGGATCACCTCCTTTCTAAGGATATATTCGGAACATCTTCTTCAGAAGATGCGGAATAACGTGACATATTGTATTCAGTTTTGAATGTTTATTTAACATTCAAAAAAATGGGCCTATAGCTCAGCTGGTTAGAGCGCACGCCTGATAAGCGTGAGGTCGGTGGTTCGAGTCCACTTAGGCCCACCATTATTTGTACATTGAAAACTAGATAAGTAAGTAAAATATAGATTTTACCAAGCAAAACCGAGTGAATAAAGAGTTTTAAATAAGCTTGAATTCATAAGAAATAATCGCTAGTGTTCGAAAGAACACTCACAAGATTAATAACGCGTTTCCTGTAGGATGGAAACATAGATTAAGTTATTAAGGGCGCACGGTGGATGCCTTGGCACTAGAAGCCGATGAAGGACGTTACTAACGACGATATGCTTTGGGGAGCTGTAAGTAAGCTTTGATCCAGAGATTTCCGAATGGGGAAACCCAGCATGAGTTATGTCATGTTATCGATATGTGAATACATAGCATATCAGAAGGCACACCCGGAGAACTGAAACATCTTAGTACCCGGAGGAAGAGAAAGAAAATTCGATTCCCTTAGTAGCGGCGAGCGAAACGGGAAGAGCCCAAACCAACAAGCTTGCTTGTTGGGGTTGTAGGACACTCTATACGGAGTTACAAAGGACGACATTAGACGAATCATCTGGAAAGATGAATCAAAGAAGGTAATAATCCTGTAGTCGAAAATGTTGTCTCTCTTGAGTGGATCCTGAGTACGACGGAGCACGTGAAATTCCGTCGGAATCTGGGAGGACCATCTCCTAAGGCTAAATACTCTCTAGTGACCGATAGTGAACCAGTACCGTGAGGGAAAGGTGAAAAGCACCCCGGAAGGGGAGTGAAATAGAACCTGAAACCGTGTGCTTACAAGTAGTCAGAGCCCGTTAATGGGTGATGGCGTGCCTTTTGTAGAATGAACCGGCGAGTTACGATTTGATGCAAGGTTAAGCAGTAAATGTGGAGCCGTAGCGAAAGCGAGTCTGAATAGGGCGTTTAGTATTTGGTCGTAGACCCGAAACCAGGTGATCTACCCTTGGTCAGGTTGAAGTTCAGGTAACACTGAATGGAGGACCGAACCGACTTACGTTGAAAAGTGAGCGGATGAACTGAGGGTAGCGGAGAAATTCCAATCGAACCTGGAGATAGCTGGTTCTCTCCGAAATAGCTTTAGGGCTAGCCTCAAGTGATGATTATTGGAGGTAGAGCACTGTTTGGACGAGGGGCCCCTCTCGGGTTACCGAATTCAGACAAACTCCGAATGCCAATTAATTTAACTTGGGAGTCAGAACATGGGTGATAAGGTCCGTGTTCGAAAGGGAAACAGCCCAGACCACCAGCTAAGGTCCCAAAATATATGTTAAGTGGAAAAGGATGTGGCGTTGCCCAGACAACTAGGATGTTGGCTTAGAAGCAGCCATCATTTAAAGAGTGCGTAATAGCTCACTAGTCGAGTGACACTGCGCCGAAAATGTACCGGGGCTAAACATATTACCGAAGCTGTGGATTGTCCTTTGGACAATGGTAGGAGAGCGTTCTAAGGGCGTTGAAGCATGATCGTAAGGACATGTGGAGCGCTTAGAAGTGAGAATGCCGGTGTGAGTAGCGAAAGACGGGTGAGAATCCCGTCCACCGATTGACTAAGGTTTCCAGAGGAAGGCTCGTCCGCTCTGGGTTAGTCGGGTCCTAAGCTGAGGCCGACAGGCGTAGGCGATGGATAACAGGTTGATATTCCTGTACCACCTATAATCGTTTTAATCGATGGGGGGACGCAGTAGGATAGGCGAAGCGTGCGATTGGATTGCACGTCTAAGCAGTAAGGCTGAGTATTAGGCAAATCCGGTACTCGTTAAGGCTGAGCTGTGATGGGGAGAAGACATTGTGTCTTCGAGTCGTTGATTTCACACTGCCGAGAAAAGCCTCTAGATAGAAAATAGGTGCCCGTACCGCAAACCGACACAGGTAGTCAAGATGAGAATTCTAAGGTGAGCGAGCGAACTCTCGTTAAGGAACTCGGCAAAATGACCCCGTAACTTCGGGAGAAGGGGTGCTCTTTAGGGTTAACGCCCAGAAGAGCCGCAGTGAATAGGCCCAAGCGACTGTTTATCAAAAACACAGGTCTCTGCTAAACCGTAAGGTGATGTATAGGGGCTGACGCCTGCCCGGTGCTGGAAGGTTAAGAGGAGTGGTTAGCTTCTGCGAAGCTACGAATCGAAGCCCCAGTAAACGGCGGCCGTAACTATAACGGTCCTAAGGTAGCGAAATTCCTTGTCGGGTAAGTTCCGACCCGCACGAAAGGCGTAACGATTTGGGCACTGTCTCAACGAGAGACTCGGTGAAATCATAGTACCTGTGAAGATGCAGGTTACCCGCGACAGGACGGAAAGACCCCGTGGAGCTTTACTGTAGCCTGATATTGAAATTCGGCACAGCTTGTACAGGATAGGTAGGAGCCTTTGAAACGTGAGCGCTAGCTTACGTGGAGGCGCTGGTGGGATACTACCCTAGCTGTGTTGGCTTTCTAACCCGCACCACTTATCGTGGTGGGAGACAGTGTCAGGCGGGCAGTTTGACTGGGGCGGTCGCCTCCTAAAAGGTAACGGAGGCGCTCAAAGGTTCCCTCAGAATGGTTGGAAATCATTCATAGAGTGTAAAGGCATAAGGGAGCTTGACTGCGAGACCTACAAGTCGAGCAGGGTCGAAAGACGGACTTAGTGATCCGGTGGTTCCGCATGGAAGGGCCATCGCTCAACGGATAAAAGCTACCCCGGGGATAACAGGCTTATCTCCCCCAAGAGTTCACATCGACGGGGAGGTTTGGCACCTCGATGTCGGCTCATCGCATCCTGGGGCTGTAGTCGGTCCCAAGGGTTGGGCTGTTCGCCCATTAAAGCGGTACGCGAGCTGGGTTCAGAACGTCGTGAGACAGTTCGGTCCCTATCCGTCGTGGGCGTAGGAAATTTGAGAGGAGCTGTCCTTAGTACGAGAGGACCGGGATGGACATACCTCTGGTGTACCAGTTGTCGTGCCAACGGCATAGCTGGGTAGCTATGTGTGGACGGGATAAGTGCTGAAAGCATCTAAGCATGAAGCCCCCCTCAAGATGAGATTTCCCAACTTCGGTTATAAGATCCCTCAAAGATGATGAGGTTAATAGGTTCGAGGTGGAAGCATGGTGACATGTGGAGCTGACGAATACTAATCGATCGAAGACTTAATCAAAATAAATGTTTTGCGAAGCAAAATCACTTTTACTTACTATCTAGTTTTGAATGTATAATCTACATTCATATGTCTGGTGACTATAGCAAGGAGGTCACACCTGTTCCCATGCCGAACACAGAAGTTAAGCTCCTTAGCGTCGATGGTAGTCGAACTTACGTTCCGCTAGAGTAGAACGTTGCCAGGCAGTTTTTTAATCAAATTCTGATTAAAAAATAAAATAGACAAGATAAAAAAAGTTATTGACTTAAATGTTAATAAAATGTATAATCAATTCTTGTCGGTAAGAAAAATGAACATTGAAAAC
+                                            ****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************               
+
+  NC_017338.1 535698-535739: ATTTTTTGGTTAAAGTGATATTGCTTA---------------------------------------------------------------------------------------------------------TGAAAATAAAGCAGT
+  NC_017338.2 541142-541288: ATTTTTTGGTTAAAGCGATATTGTTTATGCGAGCGCTTGACAATCTATTCTTTTTAAAGAAAGCGGTTGTCAGACAATGCATTGAAAAAAATTAAAGCGGAGTTTACTTTTGTAAATGAGCATTTGATTTTTTGAAAATAAAGCAGT
+                                            *       *   *********************************************************************************************************               
+
+  NC_017338.1 535894-535978: ATTAATAACGCGTTTAAATCTTTTTATAAAAGAACGTAACTTCATGTTAACGTTTGACTTATAAAAATGG-TGGAAACATAGATTA
+  NC_017338.2 541443-541481: ATTAATAACGCGTTT------------------------------------------CCTGTA-----GGATGGAAACATAGATTA
+                                            ****************************************** * *  *****  *               
+
+  NC_017338.1 591849-592058: ATTCAGACAGTGATTCCGACTCAGACAGTGACTCAGACTCAGATAGCGATTCCGACTCAGATAGCGACTCAGACTCAGACAGCGATTCAGACTCAGATAGCGATTCCGACTCAGACAGTGACTCAGACTCAGATAGCGATTCCGACTCAGATAGCGACTCAGACTCAGACAGCGATTCAGACTCAGATAGCGATCCCGACTCAGACAGTG
+  NC_017338.2 597352-597381: ATTCAGACAGTGATT------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------CCGACTCAGACAGTG
+                                            ************************************************************************************************************************************************************************************               
+
+  NC_017338.1 707774-707803: AAGGGGATAAAGGAT---------------------------------------------------------------------TACAGTTGGTTGCTA
+  NC_017338.2 713097-713195: AAGGGGATAAAGGATTACAGTTGGTTGCTAATGCATCGACTGCATAAGAGCCCCTAATTAATAAATTAAAAGGGGATAAAGGAATACAGTTGGTTGCTA
+                                            *********************************************************************               
+
+  NC_017338.1 836871-836904: TGATTCAGATTCAGCGAGTGATTCAGATTCAGCA
+  NC_017338.2 842263-842296: TGATTCAGATTCAGCAAGCGATTCAGATTCAGCA
+                                            *  *               
+
+NC_017338.1 1038841-1038931: CTTAATGTCCCAAGCTCATTTAAATTAATTTAGTGTATCTTGGATATCTTGTTTTGTTTGATTAATATCTTCTGTTTCATTTAAATTAATT
+NC_017338.2 1044233-1044262: CTTAATGTCCCAAGC-------------------------------------------------------------TCATTTAAATTAATT
+                                            *************************************************************               
+
+NC_017338.1 1195411-1195440: TTATCTGGCTTAATT--AAAAAAAAATAGAGA
+NC_017338.2 1200742-1200773: TTATCTGGCTTAATTAAAAAAAAAAATAGAGA
+                                            **               
+
+NC_017338.1 1355826-1355855: TCCATATAAATTTTT-AAAAAAGAGTTCGGT
+NC_017338.2 1361159-1361189: TCCATATAAATTTTTAAAAAAAGAGTTCGGT
+                                            *               
+
+NC_017338.1 1426769-1426798: AAAGCTTGAACTTGT---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------TTATCAACATCTTGT
+NC_017338.2 1432103-1432363: AAAGCTTGAACTTGTTTATCAACATCTTGTTTCGCATCTTCTTTAGCTTTCACTAAATCTTTAATGTCTTGTAATGCTTGTGCAAGGCGTTCTTTTGCTTGTTCTATTTCTTCTTTAGTCATCGCATTGTTAATGTCGTTATGACCTTGTTGTAGAATTTGATTGATTCGATCTTTAAGCGCTTGTTTTTCCTTGTCTGTTAGATTTGGATTTCGATCAATTTCATCAATTAATGCTTGCACTCGGTTATCAACATCTTGT
+                                            ***************************************************************************************************************************************************************************************************************************************               
+
+NC_017338.1 1715526-1715555: GTGACATTTCGTTAT------------------------------------------------------------------------------------------------------------------------------TGAGTCAAGCGTTTG
+NC_017338.2 1721091-1721246: GTGACATTTCGTTATTGAGTCAAGCGTTTGCACTCTACGTTGTTTCGGTCGCAACTCGAGTCATTTATAAAGATAAACTCTTCTCGTTTCTTCCTTCAACGCCTTGATTGACAATCGCTTTCTTTCAATAACTTCTGCAAATGAGTCAAGCGTTTG
+                                            ******************************************************************************************************************************               
+
+NC_017338.1 1743859-1743888: CGAACATTTTTGTCT-AAAAAAAACAAAAAT
+NC_017338.2 1749550-1749580: CGAACATTTTTGTCTAAAAAAAAACAAAAAT
+                                            *               
+
+NC_017338.1 1814802-1814831: CTTCTTTTATCGCTG---------------------------------------------------------------------------------------------------------------------------------------------------------------CTTGTTGTGCCTTTA
+NC_017338.2 1820494-1820682: CTTCTTTTATCGCTGCTTGTTGTGCTTTCAATGCCACTGCTTTTGATTCTTCATTTGATACTTCTGCACTTTTATTTGTTTCTGCTTGTGCTTCTCTTTTAGCTTCTTGAATCTCTTGTGCCTCTTGTGATGTATCACTTAAATTATTTGCACTTGCTTCTTCTTTTATCGCTACTTGTTGTGCCTTTA
+                                            ***************************************************************************************************************************************************************               
+
+NC_017338.1 1860409-1860439: GGTATAGTTTCAACACTTTCATTAACATATC
+NC_017338.2 1866260-1866290: GGTATAGTTTCAACAATTTCATTAACATATC
+                                            *               
+
+NC_017338.1 1884117-1884150: TCTCAGGCGTCAATTCAGACGCAGAGAGGAGGTG
+NC_017338.2 1889968-1890001: TCTCAGGCGTCAATTTAGGCGCAGAGAGGAGGTG
+                                            *  *               
+
+NC_017338.1 1950600-1950634: CTGAGCTAATGGCTCAAAAGATGGTGCCGGCCAGA
+NC_017338.2 1956451-1956484: CTGAGCTAATGGCTC-TTCCATGGTGCCGGCCAGA
+                                            *****               
+
+NC_017338.1 1950779-1950814: CTAATTCTCCGATTTGTCATTTGCCTGGCAACGTTC
+NC_017338.2 1956629-1956663: CTAATTCTCCGATTT-AAAACTGCCTGGCAACGTTC
+                                            *** **               
+
+NC_017338.1 1951071-1951101: TTGAGGGATCTTATAGCCGAAGTTGGGAAAT
+NC_017338.2 1956920-1956950: TTGAGGGATCTTATAACCGAAGTTGGGAAAT
+                                            *               
+
+NC_017338.1 1952430-1952460: TCCTACTGCGTCCCCCCATCGATTAAAACGA
+NC_017338.2 1958279-1958309: TCCTACTGCGTCCCCTCATCGATTAAAACGA
+                                            *               
+
+NC_017338.1 1953328-1953358: TCTGACTACTTGTAAGCACACGGTTTCAGGT
+NC_017338.2 1959177-1959207: TCTGACTACTTGTAAACACACGGTTTCAGGT
+                                            *               
+
+NC_017338.1 1953635-1953665: GTTTGGGCTCTTCCCATTTCGCTCGCCGCTA
+NC_017338.2 1959484-1959514: GTTTGGGCTCTTCCCGTTTCGCTCGCCGCTA
+                                            *               
+
+NC_017338.1 1953933-1953971: GTCAAACGCTCACATGAAG--TT--------------------------------------------------------------------------ACG--TTCTTTTATAAAAAG
+NC_017338.2 1959782-1959897: GTCAAACGCTCACAT-ACGGCTTCGTTTTCATTATTTTAAATGCTCATTTACATAAGTAAACTCTGCTTTAAAATAATTTAACTCATTGTCTGCTAAACGTTTTCTTTTATAAAAAG
+                                            * * **  **************************************************************************   **               
+
+NC_017338.1 1954105-1954216: GTTTTCAATGTACAATTTCTTTT------TAG-----TC-AAGCGCTCGCATACTGCTTTATTTTCATAAGCA--------------------------------------------------------------------------------------AT-A----T-CGCTTTAACCA----A---AAA-----AT--ATTTGAATGTTAAATAAACATTCAAAACTG
+NC_017338.2 1960031-1960251: GTTTTCAATGTACAAATAATGGTGGAGACTAGCGGGATCGAACCGCTGACCTCCTGC-----GTGCA-AAGCAGGCGCTCTCCCAGCTGAGCTAAGCCCCCAAACAGGTATTAAATTAATGGTGGGCCTAAGTGGACTCGAACCACCGACCTCACGCTTATCAGGCGTGCGCTCTAACCAGCTGAGCTATAGGCCCATTAATTTGAATG---AACAAACATTCAAAACTG
+                                            * ** ** ******   *****  *  *    ** * *    ****** *  *     **************************************************************************************  * **** *    *      **** *** * *****  **         ***  *               
+
+NC_017338.1 1954545-1954575: TTGACCTCGCGGTTTCGCTGCCCTTTGTATT
+NC_017338.2 1960580-1960610: TTGACCTCGCGGTTTTGCTGCCCTTTGTATT
+                                            *               
+
+NC_017338.1 1955227-1955257: TAAAAAACCGCCTACGCGCGCTTTACGCCCA
+NC_017338.2 1961262-1961292: TAAAAAACCGCCTACACGCGCTTTACGCCCA
+                                            *               
+
+NC_017338.1 1978442-1978477: TAGGTACGAATATGAACTCGTTACTAATGCAACACA
+NC_017338.2 1984477-1984512: TAGGTACGAATATGATGAAGGTACTAATGCAACACA
+                                            **** *               
+
+NC_017338.1 2086481-2086510: CTAAGCAGGTAGTTT----TTTATTTTAGGCCGA
+NC_017338.2 2092516-2092549: CTAAGCAGGTAGTTTTTTATTTATTTTAGGCCGA
+                                            ****               
+
+NC_017338.1 2123379-2123408: TCATCGCATCCATTT----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------TTGCCTGGCAACGTT
+NC_017338.2 2129418-2129703: TCATCGCATCCATTTTTGCCTGGCAACGTTCTACTCTAGCGGAACGTAAGTTGGCTACCATCGTCGCTAAGAACCTTTCTTGACTTGTGACAATCGCTTGCTTCTTTCCTCTTCTTCGGCTCTCACTTACTCATTTAGCTCTACTAAACTCGTTGCGCTCTTTTCTCGTTTCGTCAGATTCAAACGTTTTCACTTCGCCAAGCCATTTTTCTTTGTGTTTGCTTTTATTTTGACGTTTTAGACATAAAAAAAGAGACCTTGCGGTCTCAACTTGCCTGGCAACGTT
+                                            ****************************************************************************************************************************************************************************************************************************************************************               
+
+NC_017338.1 2123509-2123539: GACATATGAATGTAATTTATACATTCAAAAC
+NC_017338.2 2129804-2129834: GACATATGAATGTAAATTATACATTCAAAAC
+                                            *               
+
+NC_017338.1 2126231-2126261: GTTTGGGCTCTTCCCATTTCGCTCGCCGCTA
+NC_017338.2 2132526-2132556: GTTTGGGCTCTTCCCGTTTCGCTCGCCGCTA
+                                            *               
+
+NC_017338.1 2126522-2126567: TTTATAAGTCAAACGTTAACATGAAG--TT--------------------------------------------------------------------------ACG--TTCTTTTATAAAAAG
+NC_017338.2 2132817-2132939: TTTATAAGTCAAACGCTCACAT-ACGGCTTCGTTTTCATTATTTTAAATGCTCATTTACATAAGTAAACTCTGCTTTAAAATAATTTAACTCATTGTCTGCTAAACGTTTTCTTTTATAAAAAG
+                                            * *    * * **  **************************************************************************   **               
+
+NC_017338.1 2126739-2126782: ATACTGCTTTATTTT---------------------------------------------------------------------------------------------------------CATAAGCAATATCACTTTAACCAAAAAAT
+NC_017338.2 2133111-2133259: ATACTGCTTTATTTTCAAAAAATCAAATGCTCATTTACAAAAGTAAACTCCGCTTTAATTTTTCTCAATGCATTGTCTGACAACCGCTTTCTTTAAAAAGAATATATTGTCAAGCGCTCGCATAAACAATATCGCTTTAACCAAAAAAT
+                                            *********************************************************************************************************     *       *               
+
+NC_017338.1 2238559-2238589: AACGACTCGAAGACACAATGTCTTCTCCCCA
+NC_017338.2 2245036-2245066: AACGACTCGAAGACATAATGTCTTCTCCCCA
+                                            *               
+
+NC_017338.1 2239881-2239911: GTTTGGGCTCTTCCCATTTCGCTCGCCGCTA
+NC_017338.2 2246358-2246388: GTTTGGGCTCTTCCCGTTTCGCTCGCCGCTA
+                                            *               
+
+NC_017338.1 2240172-2240217: TTTATAAGTCAAACGTTAACATGAAG--TT--------------------------------------------------------------------------ACG--TTCTTTTATAAAAAG
+NC_017338.2 2246649-2246771: TTTATAAGTCAAACGCTCACAT-ACGGCTTCGTTTTCATTATTTTAAATGCTCATTTACATAAGTAAACTCTGCTTTAAAATAATTTAACTCATTGTCTGCTAAACGTTTTCTTTTATAAAAAG
+                                            * *    * * **  **************************************************************************   **               
+
+NC_017338.1 2240389-2240432: ATACTGCTTTATTTT---------------------------------------------------------------------------------------------------------CATAAGCAATATCACTTTAACCAAAAAAT
+NC_017338.2 2246943-2247091: ATACTGCTTTATTTTCAAAAAATCAAATGCTCATTTACAAAAGTAAACTCCGCTTTAATTTTTCTCAATGCATTGTCTGACAACCGCTTTCTTTAAAAAGAATATATTGTCAAGCGCTCGCATAAACAATATCGCTTTAACCAAAAAAT
+                                            *********************************************************************************************************     *       *               
+
+NC_017338.1 2564144-2564173: CATCTGAAATGATTA------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------TAACTTTTACAGGTG
+NC_017338.2 2570803-2571408: CATCTGAAATGATTATAACTTTTACAGGTGTTTCTTCTGTTGAACCATCTGGATATGTTACTTTTACTGGAATATCTACTTCTGTTCCTGGTGTTACGTCCGCCGGTGGCGTTACTGATACTTTCCCATCTGGGTCTACTGTTACTGTCCATCCTTCTGGTACTCGATCTTTTGGAATTTCAAAGTTCGTTCCTGGTGGTAAGTCTTTATCTCCTGTTTGCGGAATCTCTACTTTTTGACCTGGTTTCGTTCTTCCATCTTCATATCCTGGTGTGTTATCTTGCGCATCATTTGGAATGATTGTAACTTTTACAGGTGTTTCTTCTGTTGAACCATCTGGATATGTTACTTTTACTGGAATATCTACTTCTGTTCCTGGTGTTGCGTCCGCCGGTGGCGTTACTGATACTTTCCCATCTGGGTCTACTGTTACTGTCCATCCTTCTGGTACTCGATCTTTTGGAATTTCAAAGTTCGTTCCTGGTGGTAAGTCTTTATCTCCTGTTTGCGGAATCTCTACTTTTTGACCTGGTTTCGTTCTTCCATCTTCATATCCTGGTGTGTTATCTTGCGCATCATTTGGAATGATTGTAACTTTTACAGGTG
+                                            ************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************               
+
+NC_017338.1 2566159-2566189: TCGTTTCTTGCACACTTTTCTGTAGCTTTCG
+NC_017338.2 2573394-2573423: TCGTTTCTTGCACAC-TTTCTGTAGCTTTCG
+                                            *               
+
+NC_017338.1 2571174-2571656: GTCACCTTCATACTTAACGCCTT-CATAGTGTCATCGAGT-ATGTAA-TTATTTCTTGGGAAATCTGATTTAATTTA-AAAAAACAGGCTTACTTCATATAAT------TTA--T--GAAAT-AAACCTGTCAATTTTTGTTTAATTAT---GCTTTG--T-GATTCTTT----TTATT--TCTG---C---GTATTAACGCTAAACCTAGAATGCTGAATAATCCGCCGAACAACATACCTTTGTTTGT-T---GATTCTTCTCCACCTGTTTCAGGTAGTTCAGATTTCTTA--GATTG--TGTT-TGTTT-A-GTTGGTGC-CACT-GCTTTAACCTTTTCAT-TG----ATT-------TCAA---------TAACAGGTGTTACTAC---TT-TACCTTGTTCCACTGGTTTAGAAGGCT-TTTTAGGTT-CTTCTTTTGCGGGTGGTACTGGTGTGCCTGGCTCACTTGGTACTTC-TGGTGTCGGTGGCGTTGGTTCGCCTGGCTCACTCGGTACTTCCGGTGTCGGTGGTGTTGGTTTAAATTTAATTC
+NC_017338.2 2578408-2578890: GTCACCTTCATACTTTA----TTACATAATCT-TTTGTTTGATCTAAGTTATT-------AAA----ATTTAA---AGAATAACCACCATTACTT-GTATAATGTAAAGTTAGTTCCGCAGTCACATCT-TCAAATTTGCTGGAATCATCAAGCTTTGCATAAACACTTTCAGCTAATTCATCTGAACCGATGTGTTTA---TATACTTTAACTGTTGGATTATTAG----------TA-TTTTGTTTATATCCAGATGTTACTTGACCAGTTACTGTCA---CAGA--GCTTAACGACTGGTTGTTAGGTTTCACGT--ATGCAAAATGGC--TAAATTTTTCATCTGTTTTATTCAAGGTATCAATTCGACCATTAACA---GTAAC-ACCCATTCTATCTT-TAACAC-CGTCT--AAG--TATTTAATATTAAATGTTTTAC---T--AACT-GTATTTCT-CCCCAATTTG-ACTTCAACATTTTGGTCCCCATGCTT----TG--TCAC-C-GTTGTT--GG-ATCGAT-AAATAAGTTTAAATTTAATTC
+                                            * ****  *    * * ** * ** *  *   *     *******   ****      *** *  *  *  ***      **      ******   ** ** * * * * *  *    *   ** **   *  ***      ** ** **    **** *   **    *** ***  *  * ***  *  * ** *  *  *  *  ** **********  **       * * ***   ** *  **   *   * * ** ***    ***    **  *  **    **    * *  ***   ** * *  **   **       *  ****   *******    *********     ***  *  *  ***  *  *   * **   **  * **   ** *   * **  *** *    * *** ***   *  * **  ** *  *  * *     **** * *   ** **  *  ****  **    * *  **  **  **   * **** **               
+
+NC_017338.1 2715088-2715130: TGAGTCGCTGTCTGAGTCTGAGTCACTATCTGAGTCTGAGTCA
+NC_017338.2 2722322-2722364: TGAGTCGCTGTCTGAATCTGAGTCACTGTCTGAGTCTGAGTCA
+                                            *           *               
+
+NC_017338.1 2715306-2715355: AATCGCTGTCTGAATCTGAGTCGCTGTCTGAATCTGAGTCACTGTCTGAG
+NC_017338.2 2722540-2722589: AATCGCTGTCTGAATTCGAGTCGCTGTCTGAATCCGAGTCACTGTCTGAG
+                                            **                 *               
+
+NC_017338.1 2739021-2739050: ACGTCTTATATACTT-AAAAAAATATATAGA
+NC_017338.2 2746255-2746285: ACGTCTTATATACTTAAAAAAAATATATAGA
+                                            *               
+
+
+Aligning NC_017339.1 to NC_017339.1:
+  0 differences
+  worst 10 bp identity:   100.0%
+  worst 100 bp identity:  100.0%
+  worst 1000 bp identity: 100.0%
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 16:07:46)[0m
+Time to run: 0:00:03.788925
+

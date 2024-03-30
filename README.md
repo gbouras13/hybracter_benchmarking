@@ -81,6 +81,7 @@ hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybrac
 * `Graphs_Ghais` contains R scripts used to make plots for the Hybracter manuscript.
 * `bulk_assemble_lerminiaux_config.yaml` is the modified config file used on my system to benchmark `hybracter hybrid` showing the efficiency benefits of `hybracter` when run on multiple samples.
 * `atcc_trycycler_comparisons` contains the output of comparing the ATCC reference assemblies to the curated Trycycler assemblies of the same data
+    * Note for `ATCC_17802_atcc.fasta`, the second chromosome was reoriented to begin with the `repA` gene using `dnaapler all v0.7.0` to allow for comparison with `compare_assemblies.py`.
     * These were run as follows:
 
 ```bash
@@ -95,7 +96,15 @@ python compare_assemblies.py  reference_genome_chromosomes/ATCC_33560.fasta refe
 python compare_assemblies.py  reference_genome_chromosomes/ATCC_BAA_679.fasta reference_genome_chromosomes/ATCC_BAA_679_atcc.fasta > atcc_trycycler_comparisons/ATCC_BAA_679_comparison.txt  2>&1
 ``` 
 
-* Note for `ATCC_17802_atcc.fasta`, the second chromosome was reoriented to begin with the `repA` gene using `dnaapler all v0.7.0` to allow for comparison with `compare_assemblies.py`.
+* `jkd6159_reference_comparisons` contains the output comparing the old [2010 Chua _et al_](https://doi.org/10.1128/jb.00878-10) JKD6159 reference and the perfect [2023 Wick _et al_](https://doi.org/10.1128/mra.01129-22) reference.
+    * The reason this is included is that a reviewer of v1 of the manuscript noticed that a couple of samples consistently had worse performance (for all assemblers) than the rest.
+    * It turns out these were the JKD6159 R9 and R10 samples, and it was because we erroneously used the old 2010 reference instead of the perfect 2023 one. 
+    * When we included the correct reference (v2), the number of errors was greatly reduced
+    * Running `compare_assemblies.py` on the two assemblies shows 8,255 differences (!), though this is inflated by a few large insertions/deletions
+
+```bash
+python compare_assemblies.py jkd6159_reference_comparisons/JDK6159_Chua_2010.fasta jkd6159_reference_comparisons/JKD6159_Wick_2023.fasta > jkd6159_reference_comparisons/JKD6159_comparison.txt  2>&1
+```
 
 
 
