@@ -1,0 +1,206 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 14:07:12)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  reference_genome_chromosomes/ATCC_25922.fasta
+
+Assembly 2:
+  reference_genome_chromosomes/ATCC_25922_atcc.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 14:07:12)[0m
+reference_genome_chromosomes/ATCC_25922.fasta
+  chromosome: 5,132,220 bp
+
+reference_genome_chromosomes/ATCC_25922_atcc.fasta
+  1dad9b1ccf124c63_1: 5,132,220 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 14:07:12)[0m
+Aligning chromosome to 1dad9b1ccf124c63_1:
+  63 differences
+  worst 10 bp identity:   60.0%
+  worst 100 bp identity:  88.0%
+  worst 1000 bp identity: 98.1%
+
+          chromosome 479733-479763: ACTACGGTGCTGAAGTGACAAATGCCCTGCT
+  1dad9b1ccf124c63_1 479733-479763: ACTACGGTGCTGAAGCGACAAATGCCCTGCT
+                                                   *               
+
+          chromosome 479793-479823: CATCAAATCGTACCCCAAACCGACACAGGTG
+  1dad9b1ccf124c63_1 479793-479823: CATCAAATCGTACCCAAAACCGACACAGGTG
+                                                   *               
+
+          chromosome 832323-832374: GTGATTGTGCGCCAGCACCACGGCAGCGGCATTGTGGTACAGGGCGCGTTTA
+  1dad9b1ccf124c63_1 832323-832374: GTGATTGTGCGCCAGTACCACGGCAGCGGCATTGTGATACAGGGCGCGTTTA
+                                                   *                    *               
+
+        chromosome 1293746-1293776: GGGCTCAACCTGGGAGCTGCATCTGATACTG
+1dad9b1ccf124c63_1 1293746-1293776: GGGCTCAACCTGGGAACTGCATCTGATACTG
+                                                   *               
+
+        chromosome 1927219-1927249: ATGACATTAGTAGAAGCCGATGTTCCCCGCG
+1dad9b1ccf124c63_1 1927219-1927249: ATGACATTAGTAGAAACCGATGTTCCCCGCG
+                                                   *               
+
+        chromosome 1937570-1937600: GCGAAGCTCTTCAAGCGCCACATAACAACGT
+1dad9b1ccf124c63_1 1937570-1937600: GCGAAGCTCTTCAAGTGCCACATAACAACGT
+                                                   *               
+
+        chromosome 1937606-1937636: AGGGGAAAATGACGCATATCGCCCGGCGCTC
+1dad9b1ccf124c63_1 1937606-1937636: AGGGGAAAATGACGCGTATCGCCCGGCGCTC
+                                                   *               
+
+        chromosome 1937884-1937926: GCAGGGACGCCTCAAGGCCCTGTGCAACCGAAGCATTGATGGC
+1dad9b1ccf124c63_1 1937884-1937926: GCAGGGACGCCTCAACGCCCTGTGCAAGCGAAGCATTGATGGC
+                                                   *           *               
+
+        chromosome 1937977-1938007: AGAACGTGCGCTCTCCGGCCGTGCGGATATG
+1dad9b1ccf124c63_1 1937977-1938007: AGAACGTGCGCTCTCTGGCCGTGCGGATATG
+                                                   *               
+
+        chromosome 1939898-1939928: AAAGGAAATTCAGTCTCCATTGCCGCAGCAA
+1dad9b1ccf124c63_1 1939898-1939928: AAAGGAAATTCAGTCCCCATTGCCGCAGCAA
+                                                   *               
+
+        chromosome 1941795-1941825: TTCCAGCACCACTGTTACTAAAGAGATGATT
+1dad9b1ccf124c63_1 1941795-1941825: TTCCAGCACCACTGTAACTAAAGAGATGATT
+                                                   *               
+
+        chromosome 2910391-2910421: CACAAACTCATCCGGGTCCGGCAACACCATC
+1dad9b1ccf124c63_1 2910391-2910421: CACAAACTCATCCGGATCCGGCAACACCATC
+                                                   *               
+
+        chromosome 3094370-3094426: ATAATGCTGCTCATCTGAATGCCCGTCCTGATTCAGTTCAGGGTGACGCTCATCAGC
+1dad9b1ccf124c63_1 3094370-3094426: ATAATGCTGCTCATCAGAATGCCTTTACTGACTCAGTTCAGAGTGACGCTCATCAGC
+                                                   *       ** *    *         *               
+
+        chromosome 3094461-3094491: CAGCAAACACGGCCAACACACCGGGAATATC
+1dad9b1ccf124c63_1 3094461-3094491: CAGCAAACACGGCCAGCACACCGGGAATATC
+                                                   *               
+
+        chromosome 3095097-3095202: GGCCCGCAGAATGAGACTGCGCTCGCCGGGCGTCATTTCTCCGGGCAGAAAGGAAATCTGTTGCATTGTTCCTGCCCCCTTTCAGTCAATAATGCGCATAATGGCG
+1dad9b1ccf124c63_1 3095097-3095202: GGCCCGCAGAATGAGGCTGCGCTCTCTGGTTGTCATTTCTCCGGGCAGAAAGGAAAGCTGCTGCATTGTCCCTGCCTCCATTCAGTCGATGATGCGCATAATGGCG
+                                                   *        * *  **                         *   *        *      *  *       *  *               
+
+        chromosome 3098638-3098668: AGCCGGGACGCTTCTGCGGGATCGGTTACAC
+1dad9b1ccf124c63_1 3098638-3098668: AGCCGGGACGCTTCTTCGGGATCGGTTACAC
+                                                   *               
+
+        chromosome 3098772-3098802: ACGATACTGTCCGTTTTGTCCGTCGAATGCC
+1dad9b1ccf124c63_1 3098772-3098802: ACGATACTGTCCGTTCTGTCCGTCGAATGCC
+                                                   *               
+
+        chromosome 3098803-3098833: GCACCGACGCTACGGACTGCAGTTGAACAAT
+1dad9b1ccf124c63_1 3098803-3098833: GCACCGACGCTACGGGCTGCAGTTGAACAAT
+                                                   *               
+
+        chromosome 3162041-3162071: ACCGATACCATACCCGGCAGCAGAACCGATA
+1dad9b1ccf124c63_1 3162041-3162071: ACCGATACCATACCCAGCAGCAGAACCGATA
+                                                   *               
+
+        chromosome 3162174-3162204: ATGCTGAACACATTCACCCAGCCTGCAATGG
+1dad9b1ccf124c63_1 3162174-3162204: ATGCTGAACACATTCCCCCAGCCTGCAATGG
+                                                   *               
+
+        chromosome 3162266-3162297: TCCAAGTCCCCACATAGCCTGAGCACTACCGG
+1dad9b1ccf124c63_1 3162266-3162297: TCCAAGTCCCCACATTACCTGAGCACTACCGG
+                                                   **               
+
+        chromosome 3162310-3162340: CAGTACCTGTTGCCAGAGCCAGCCCTACAGC
+1dad9b1ccf124c63_1 3162310-3162340: CAGTACCTGTTGCCAAAGCCAGCCCTACAGC
+                                                   *               
+
+        chromosome 3162418-3162448: GGCGTATCCACGCAGAATGAGCATATTCACT
+1dad9b1ccf124c63_1 3162418-3162448: GGCGTATCCACGCAGCATGAGCATATTCACT
+                                                   *               
+
+        chromosome 3162661-3162691: ACCATACTATATCGATCAAGTAATTCTTAAC
+1dad9b1ccf124c63_1 3162661-3162691: ACCATACTATATCGACCAAGTAATTCTTAAC
+                                                   *               
+
+        chromosome 3162905-3162935: AAATAGTAAACTATAGAAATTATTTAAAATC
+1dad9b1ccf124c63_1 3162905-3162935: AAATAGTAAACTATAAAAATTATTTAAAATC
+                                                   *               
+
+        chromosome 3163438-3163468: ATATTGTTCCAGCCAGCACTGAGTGAGTTAT
+1dad9b1ccf124c63_1 3163438-3163468: ATATTGTTCCAGCCATCACTGAGTGAGTTAT
+                                                   *               
+
+        chromosome 3163476-3163506: AGCATTCTTCCCGCTCTGTGCTCCCACTGCT
+1dad9b1ccf124c63_1 3163476-3163506: AGCATTCTTCCCGCTTTGTGCTCCCACTGCT
+                                                   *               
+
+        chromosome 3163515-3163572: GGTGCTGTTTCCGGTTAGACCGCCGGCCAGCCCTGCTGACACGGTTGCCAGCGTACTT
+1dad9b1ccf124c63_1 3163515-3163572: GGTGCTGTTTCCGGTAAGACCGCAGGCCAGCCCTGCTGACACAGTTGCCAGCGTACTT
+                                                   *       *                  *               
+
+        chromosome 3163619-3163649: GATACAGCATTCCGGCAATCGCTCTGGCTGC
+1dad9b1ccf124c63_1 3163619-3163649: GATACAGCATTCCGGTAATCGCTCTGGCTGC
+                                                   *               
+
+        chromosome 3163672-3163702: GCTGCACCGGCAGCGGCATTATTACCCTGCA
+1dad9b1ccf124c63_1 3163672-3163702: GCTGCACCGGCAGCGACATTATTACCCTGCA
+                                                   *               
+
+        chromosome 4013553-4013583: TCCCAGCAACAGGCGGGAAATATGCGGTGCA
+1dad9b1ccf124c63_1 4013553-4013583: TCCCAGCAACAGGCGAGAAATATGCGGTGCA
+                                                   *               
+
+        chromosome 4014774-4014804: GACTTCACCCGAACGATTTTGTTGATGCTCG
+1dad9b1ccf124c63_1 4014774-4014804: GACTTCACCCGAACGGTTTTGTTGATGCTCG
+                                                   *               
+
+        chromosome 4776471-4776501: GTTCATATCACCTCATCGACGCTTATCGCAG
+1dad9b1ccf124c63_1 4776471-4776501: GTTCATATCACCTCACCGACGCTTATCGCAG
+                                                   *               
+
+        chromosome 4777186-4777216: GCTTGCTCTCGCGAGATCGCTTCTCTTTGTA
+1dad9b1ccf124c63_1 4777186-4777216: GCTTGCTCTCGCGAGGTCGCTTCTCTTTGTA
+                                                   *               
+
+        chromosome 4808991-4809021: TGGTTCCGGAATGTAGGAATCCAGGAAGCCA
+1dad9b1ccf124c63_1 4808991-4809021: TGGTTCCGGAATGTAAGAATCCAGGAAGCCA
+                                                   *               
+
+        chromosome 4815118-4815148: CACCTGTGTCGGTTTGGGGTACGATTTGATG
+1dad9b1ccf124c63_1 4815118-4815148: CACCTGTGTCGGTTTTGGGTACGATTTGATG
+                                                   *               
+
+        chromosome 4815178-4815208: AGCAGGGCATTTGTCACTTCAGCACCGTAGT
+1dad9b1ccf124c63_1 4815178-4815208: AGCAGGGCATTTGTCGCTTCAGCACCGTAGT
+                                                   *               
+
+        chromosome 4955230-4955260: GCTTGCTCTCGCGAGATCGCTTCTCTTTGTA
+1dad9b1ccf124c63_1 4955230-4955260: GCTTGCTCTCGCGAGGTCGCTTCTCTTTGTA
+                                                   *               
+
+        chromosome 5070135-5070165: ACGTTCCTTCAGGACTCTCAAGGAGTCAGGG
+1dad9b1ccf124c63_1 5070135-5070165: ACGTTCCTTCAGGACCCTCAAGGAGTCAGGG
+                                                   *               
+
+        chromosome 5071068-5071098: CAAGAGCTTCGCGTTGCCGCTAACCCCATCA
+1dad9b1ccf124c63_1 5071068-5071098: CAAGAGCTTCGCGTTACCGCTAACCCCATCA
+                                                   *               
+
+        chromosome 5071332-5071362: CACCTGTGTCGGTTTGGGGTACGATTTGATG
+1dad9b1ccf124c63_1 5071332-5071362: CACCTGTGTCGGTTTTGGGTACGATTTGATG
+                                                   *               
+
+        chromosome 5073208-5073238: AGACGAAGGGGACGTATCAGTCTGCTTCGCA
+1dad9b1ccf124c63_1 5073208-5073238: AGACGAAGGGGACGTGTCAGTCTGCTTCGCA
+                                                   *               
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 14:07:18)[0m
+Time to run: 0:00:06.443121
+

@@ -1,0 +1,158 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 14:03:55)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  reference_genome_chromosomes/ATCC_10708.fasta
+
+Assembly 2:
+  reference_genome_chromosomes/ATCC_10708_atcc.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 14:03:55)[0m
+reference_genome_chromosomes/ATCC_10708.fasta
+  chromosome: 4,752,118 bp
+
+reference_genome_chromosomes/ATCC_10708_atcc.fasta
+  0ed0c0d5a3af45ae_1: 4,754,999 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 14:03:56)[0m
+Aligning chromosome to 0ed0c0d5a3af45ae_1:
+  2,926 differences
+  worst 10 bp identity:   0.0%
+  worst 100 bp identity:  0.0%
+  worst 1000 bp identity: 0.0%
+
+          chromosome 677291-677321: CTGGAGCGCATCCGTTAGCAATTTCAGCGCA
+  0ed0c0d5a3af45ae_1 677291-677321: CTGGAGCGCATCCGTCAGCAATTTCAGCGCA
+                                                   *               
+
+        chromosome 1168355-1168385: GTGCGCCAGCGCCGTTGGCAAAGAACAAACC
+0ed0c0d5a3af45ae_1 1168355-1168385: GTGCGCCAGCGCCGTCGGCAAAGAACAAACC
+                                                   *               
+
+        chromosome 1564650-1564679: CGACCCTGCTGATTC-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------TTCTCAGACCTATAA
+0ed0c0d5a3af45ae_1 1564650-1567560: CGACCCTGCTGATTCTTCTCATACAAACGCTGCGCCTGTTTGAGCTTCTTATTCACCAGCACTTCCCGGTCCTGATCGCGAATAATAAAGATCTGCGTGCGGGGAGCGATCTGGCTGCGAAACAGACGGATCTCATACAGTTCGTTATTAATTGTCGCCTGAATCACGCCCTGATGCTGTTCCGCCATGCTGGTAATATTTTGCAGGTTAAGATGCGGCAACAGATGATCGGCGATTTTATTGCTGATCACGGTGCGGTTGCCTTCCTGATCGTAGACCAGCAGACCCAGCGGCAGCAGAGAAACGATCTCTTCATTAATGGCGCGTAAGACGCGAAGCTCATTATTCGCCGCGTTGCTGGATGTCGATTCCGTCGACCGTCCCGGCTGATGACGGAACGTGGCGTAGCCAAATAACGCCAACGCCAGCAGCCCGATGTTCAGCAGTAAAGGCAGCAAAATATTTTGCAACGTATCAAGCAAAAGCGTACCGAACGGTACCTGCCAGATCAGGCGCATTCCGGTAGAGTTAAGCGCTGAGGAGATCTCAATTTTTGAACCGTTAAAGCTAATCGTGACGCTATCAGGCGCTTCCTTTTCACTGCTTCGCCCCGTCGCCTGGGTTGCGTCAGGCTCTATCCGAAAACTGTCCAGCGGCATTCCCGGCGGGATTAAATCATTAATGGGCAGATCAAACGCCACCACGGTTGCCAGATGTCCTGGCTGATTGAAGGTCGTGCGCAGCGTAAAATAGTGACCGTTTTGCCAGGCCAGTTTTCGCAATGAGGAGAAACTTTCGCGCTCATCCAGCGCATTCGCCTGCTGCAACATCTCTGCCCGGCGGGAATCGACGATATTGCCAATAGTGGACTCTTTAAAGCCGGAAGAGAGATCTTTCAACGGTAGGGTAGAGATAAGAATCAGGCTGTTATCCTGTCCGTTGAGGTAATACATTGACCACGGCACGTTTTCCGCGCCCCACAGCGTATCCAGATAAGTTGACATACGCTGCGTCATTTCCAGCGTGGCGCTGTCATGGGAACCGAAAATCAGCGCTTCAGTTTTACGTCGCGGCTTTTCAAGATAATACACATCCTGCTTCAGACGCGTTTCCTGAAGTCCTTCACCTGTCGATGGCGTAGTGGTCGCGGCGATGTTGTCATAAATTTGCCAGGTAACATACCGCCAGGTGTCCACGCGTTTATGAATAGCGTGGGTGATATCGACAATTTGATAGCTTTTGTCTTTCAACCAGGCGTTGACGGCGCTCTGTACCATAACGCCCATCGTTACCAGCAGCACAATGATCAGCAATAAGAAGAAACGGGTAATGCTTCCCGGTAGAAGGGAGAATCGGGTAGAGACCGTTGTGTCAGACTGACTCATTTATGTTTACGACCTGTAAAAGCAACGCTGAAGGTGAAGGGCAGTATAAAGGGTAATGAATGAATTTCCAGACTCTTACGTCATGCCGGGCAACTTAACACGCGTTCCGTCGGCGGGACGGGAAAAGCGTACAACCTTCGCAGAACGGTACAAATATAAAGACTACTTATAAATGTTTAGCACTAAATATCAAGAAATTATTTGCTAATGTCTTACGAACGGTCGAGCTGGAGAGGGTAGTGAATAACCGTGATAGTTTTAGGCAGGTAGCATAAATCAGCCAGGTGTGCCTGAAAAAGGGTAAAAAAAACCGAATGCGAAGCATCCGGTTGAAATAGGGGTAAACAGACATTCAGAAGTGAATGACGGTAATAAATAAAGTTAATGATGATAGCGGTCACTATTTTAGTTGCGAATGAAGATTCTGTTTTATCATTCAGTGCTATGAATTTCATCAATTTAACCCATTGATTTTAAAAGTCTCGTGAATATATTTTGTCTATTTGTGCTTATTTTTACTTGATTTTTGCTTTAAAAAAGTTCCGTAAACTTCATATTTTGAAACATCTATGTAGATAACTGTAACATATTAAAAGTTTTAGTATCATATTCGTGTTGGATTATTCTGTATTTTTGCGGAGAATGGACTTGCCGACTGGTTAATGAGGGTTAACCAGTAAGCAGTGGCATAAAAAAGCAATAAAGGCATATAACAGAGGGTTAATAACATGAAAGTTAAAGTACTGTCCCTCCTGGTACCAGCTCTGCTGGTGGCGGGCGCAGCGAATGCGGCTGAAATTTATAATAAAGACGGCAACAAATTAGACCTGTTTGGTAAAGTTGATGGCCTGCACTACTTCTCTGACGACAATCTCTGACGACAAAGGCAGCGACGGCGACCAGACCTACATGCGTATCGGCTTCAAAGGCGAAACGCAGGTTAACGATCAGCTGACCGGTTATGGCCAGTGGGAATATCAGATTCAGGGCAACCAGACTGAAGGCAGCAACGACTCCTGGACGCGTGTGGCGTTTGCGGGTCTGAAATTCGCTGACGCAGGTTCCTTCGATTATGGTCGTAACTACGGCGTAACCTATGATGTGACCTCCTGGACCGATGTTCTGCCGGAGTTCGGCGGCGACACCTACGGCGCTGACAACTTTATGCAGCAGCGTGGTAACGGCTATGCCACTTACCGTAACACCGACTTCTTCGGCCTGGTGGATGGCCTGGACTTCGCGTTGCAGTATCAGGGCAAAAATGGCAGCGTGAGCGGTGAAAACACCAACGGTCGCAGCCTGCTGAACCAGAACGGTGACGGTTACGGCGGATCGCTGACTTATGCAATCGGCGAAGGCTTCTCTGTCGGTGGCGCTATCACCACGTCTAAACGTACTGCCGATCAGAACAACACTGCTGACGAACACCTGTATGGTAACGGCGATCGCGCTACGGTCTACACCGGCGGCCTGAAATACGATGCGAACAACATCTATCTGGCAGCGCAGTATTCTCAGACCTATAA
+                                                   *************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************               
+
+        chromosome 1579771-1579801: CGGCAACTCGAACACACAGCTGCCGGTGTGG
+0ed0c0d5a3af45ae_1 1582652-1582682: CGGCAACTCGAACACGCAGCTGCCGGTGTGG
+                                                   *               
+
+        chromosome 2684134-2684164: AGCAGGCATCGGTGATCAGACTCAGATAGGC
+0ed0c0d5a3af45ae_1 2687015-2687045: AGCAGGCATCGGTGACCAGACTCAGATAGGC
+                                                   *               
+
+        chromosome 2705629-2705659: GTTGAGGCATTAGCCAGGTTGCTGGCCGTTA
+0ed0c0d5a3af45ae_1 2708510-2708540: GTTGAGGCATTAGCCGGGTTGCTGGCCGTTA
+                                                   *               
+
+        chromosome 2828678-2828708: AAGTACTGGCATATTGCCTCCATAAAAAAGC
+0ed0c0d5a3af45ae_1 2831559-2831589: AAGTACTGGCATATTACCTCCATAAAAAAGC
+                                                   *               
+
+        chromosome 2828725-2828755: TTCAGATTCATTCACATCTCAGCACTGATTA
+0ed0c0d5a3af45ae_1 2831606-2831636: TTCAGATTCATTCACGTCTCAGCACTGATTA
+                                                   *               
+
+        chromosome 2828767-2828797: TAAATATGCCGGCAGAGAACACTGGACGCTC
+0ed0c0d5a3af45ae_1 2831648-2831678: TAAATATGCCGGCAGCGAACACTGGACGCTC
+                                                   *               
+
+        chromosome 2828982-2829012: TCATATTTGTTCCTCATTAAACGAAAGGGAC
+0ed0c0d5a3af45ae_1 2831863-2831893: TCATATTTGTTCCTCGTTAAACGAAAGGGAC
+                                                   *               
+
+        chromosome 2829144-2829223: GTAGACCGAAAAGACGACGGTCTGATACATGGCCGGAATCCCTGCGGTATACGGCATAACCTCCGCCGTTTTCACCTGGC
+0ed0c0d5a3af45ae_1 2832025-2832104: GTAGACCGAAAAGACAACGGTCTGATACATGGCCGGAAGCCCTGCGGTATACGGCATAACCTCCCCCGTTTTCACCTGGC
+                                                   *                      *                         *               
+
+        chromosome 2829242-2829272: CTGTGATGGCACCGGTGCCACCGTTACGCTC
+0ed0c0d5a3af45ae_1 2832123-2832153: CTGTGATGGCACCGGAGCCACCGTTACGCTC
+                                                   *               
+
+        chromosome 2829405-2829435: ACCGACAAACTCTCTTGCTTCTATCACGCCA
+0ed0c0d5a3af45ae_1 2832286-2832316: ACCGACAAACTCTCTCGCTTCTATCACGCCA
+                                                   *               
+
+        chromosome 2829468-2829513: CGTAAACGAGCCAGATACAGCGTTGATATGGCCGCTGATATCCGCA
+0ed0c0d5a3af45ae_1 2832349-2832394: CGTAAACGAGCCAGACACAGCGTTAATATGCCCGCTGATATCCGCA
+                                                   *        *     *               
+
+        chromosome 2829523-2829553: GTCAGCTTTCCATCCTGCGTCAGGGAAAATG
+0ed0c0d5a3af45ae_1 2832404-2832434: GTCAGCTTTCCATCCGGCGTCAGGGAAAATG
+                                                   *               
+
+        chromosome 2829579-2829627: GGTCGGCGCGCTCAGGTATTTCAGGAACGCCTCATTCATGATTATCTGG
+0ed0c0d5a3af45ae_1 2832460-2832508: GGTCGGCGCGCTCAGATATTTCAGAAACACCTCGTTCATGATTATCTGG
+                                                   *        *   *    *               
+
+        chromosome 2848423-2848453: TATGATGAATGCCGTAAGGTGCTATCACGCA
+0ed0c0d5a3af45ae_1 2851304-2851334: TATGATGAATGCCGTGAGGTGCTATCACGCA
+                                                   *               
+
+        chromosome 3088177-3088207: CCGGAGGCGGCAGGCCTCTCTGCTTTTGCCA
+0ed0c0d5a3af45ae_1 3091058-3091088: CCGGAGGCGGCAGGCTTCTCTGCTTTTGCCA
+                                                   *               
+
+        chromosome 3655945-3656000: ATGATAGTGTGACGAATCACACTGGGTTTCCCCATTCGGAAATCGCCGGTTATAAC
+0ed0c0d5a3af45ae_1 3658826-3658881: ATGATAGTGTGACGAGTCACACTGGGTTTCCCCATTCGGGTATCGCCGGTTATAAC
+                                                   *                       **               
+
+        chromosome 3656027-3656057: TCGCAGATTAGCACGTCCTTCATCGCCTCTG
+0ed0c0d5a3af45ae_1 3658908-3658938: TCGCAGATTAGCACGCCCTTCATCGCCTCTG
+                                                   *               
+
+        chromosome 3656107-3656150: GAAGATGTTTCGTAAAACATTCTCGTGTTGCGAAAATTTGAGAG
+0ed0c0d5a3af45ae_1 3658988-3659031: GAAGATGTTTCGTAAGACATTCTCGTGTCGCGAAAATTTGAGAG
+                                                   *            *               
+
+        chromosome 3656952-3656982: ACTTGACGTCATCCCTACCTTCCTCCAGTTT
+0ed0c0d5a3af45ae_1 3659833-3659863: ACTTGACGTCATCCCCACCTTCCTCCAGTTT
+                                                   *               
+
+        chromosome 3657098-3657164: CAGCACCTGTCTCACGGTTCCCGAAGGCA-CATTCTCATCTCTGAAAACTTCCGTGGATGTCAAGACC
+0ed0c0d5a3af45ae_1 3659979-3660045: CAGCACCTGTCTCACAGTTCCCGAAGGCACCAGTC-CATCTCTGGAAAGTTCTGTGGATGTCAAGACC
+                                                   *             *  *  *        *   *   *               
+
+        chromosome 3657464-3657494: TACACCTGGAATTCTCCCCCCCTCTACAAGA
+0ed0c0d5a3af45ae_1 3660345-3660375: TACACCTGGAATTCTACCCCCCTCTACAAGA
+                                                   *               
+
+        chromosome 3657692-3657722: CAACACCTTCCTCCCTGCTGAAAGTACTTTA
+0ed0c0d5a3af45ae_1 3660573-3660603: CAACACCTTCCTCCCCGCTGAAAGTACTTTA
+                                                   *               
+
+        chromosome 4404029-4404059: AGTTGCAGCCAGCTGATATCTTCGACTGACT
+0ed0c0d5a3af45ae_1 4406910-4406940: AGTTGCAGCCAGCTGGTATCTTCGACTGACT
+                                                   *               
+
+        chromosome 4404826-4404856: TTCCCTCTTCACGACAGACGTTAGCACCCGC
+0ed0c0d5a3af45ae_1 4407707-4407737: TTCCCTCTTCACGACGGACGTTAGCACCCGC
+                                                   *               
+
+        chromosome 4446785-4446815: AGTTGCAGCCAGCTGATATCTTCGACTGACT
+0ed0c0d5a3af45ae_1 4449666-4449696: AGTTGCAGCCAGCTGGTATCTTCGACTGACT
+                                                   *               
+
+        chromosome 4496567-4496597: GCGTAACTGTTATTTCGGGGGCCTGACTTTG
+0ed0c0d5a3af45ae_1 4499448-4499478: GCGTAACTGTTATTTTGGGGGCCTGACTTTG
+                                                   *               
+
+        chromosome 4604002-4604032: AAAATTTGAGAGACTCACGAACAACTTTCGT
+0ed0c0d5a3af45ae_1 4606883-4606913: AAAATTTGAGAGACTTACGAACAACTTTCGT
+                                                   *               
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 14:04:01)[0m
+Time to run: 0:00:05.714755
+

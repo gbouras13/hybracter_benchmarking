@@ -1,0 +1,147 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 14:43:49)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  reference_genome_chromosomes/ATCC_17802.fasta
+
+Assembly 2:
+  reference_genome_chromosomes/ATCC_17802_atcc.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 14:43:49)[0m
+reference_genome_chromosomes/ATCC_17802.fasta
+  chromosome_1: 3,281,443 bp
+  chromosome_2: 1,865,648 bp
+
+reference_genome_chromosomes/ATCC_17802_atcc.fasta
+  4d92384fd28d4306_1: 3,281,325 bp
+  4d92384fd28d4306_2: 1,865,654 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 14:43:49)[0m
+Aligning chromosome_1 to 4d92384fd28d4306_1:
+  195 differences
+  worst 10 bp identity:   0.0%
+  worst 100 bp identity:  0.0%
+  worst 1000 bp identity: 88.5%
+
+          chromosome_1 26210-26262: CAGTCGTGAGGAAGGCGGGTA-CGTTAATAGC-GTATTCGTTTGACGTTAGCGAC
+    4d92384fd28d4306_1 26210-26262: CAGTCGTGAGGAAGG-TGGTAGTGTTAATAGCACTA-TCATTTGACGTTAGCGAC
+                                                   **    **         **  *  *               
+
+        chromosome_1 705982-706012: CCACTCGTAGATTTTATTGAGAGCGAATCCA
+  4d92384fd28d4306_1 705982-706012: CCACTCGTAGATTTTGTTGAGAGCGAATCCA
+                                                   *               
+
+        chromosome_1 747460-747604: AGAATGGTGCGGAAAGAGAGACTTGAACTCTCACACCTTGCGGCGCCAGAACCTAAATCTGGTGCGTCTGCCAATTCCGCCATTTCCGCAAATATTCTTTATATAGAGTTGAATCAAGATGGTGCGGAAGGAGAGACTTGAACTC
+  4d92384fd28d4306_1 747460-747489: AGAATGGTGCGGAAA-------------------------------------------------------------------------------------------------------------------GAGAGACTTGAACTC
+                                                   *******************************************************************************************************************               
+
+      chromosome_1 1265066-1265096: GATCAAATTATGTCGGTCTATCAAAGCTCAC
+4d92384fd28d4306_1 1264951-1264981: GATCAAATTATGTCGATCTATCAAAGCTCAC
+                                                   *               
+
+      chromosome_1 1428494-1428536: TGGCACCTACACCGTGGTGGTGACGGGGACCAATGCCTCGAAC
+4d92384fd28d4306_1 1428379-1428421: TGGCACCTACACCGTCGTTGTCACAGGCACCAATGCCTCGAAC
+                                                   *  *  *  *  *               
+
+      chromosome_1 1428545-1428626: AACAGAAAGCACAAACTTCACGTTGGCACAGGCGTTGCCAAAACTGACCAACGCAACCTTTAACCCAACGCACCAAGCGGAA
+4d92384fd28d4306_1 1428430-1428511: AACAGAAAGCACAAATTTCACGTTGGCACAGGCGTTGCCAACACTGAACAACGCAACATTCAATCCGACGCACCAAGCGGAA
+                                                   *                         *     *         *  *  *  *               
+
+      chromosome_1 1429278-1429308: ATCACGCTGACTAAGGCAGCGGATGCGAAAG
+4d92384fd28d4306_1 1429163-1429193: ATCACGCTGACTAAGACAGCGGATGCGAAAG
+                                                   *               
+
+      chromosome_1 2742445-2742475: CTGAGTTCGGAATGGAAATCAGGTGGGTCCA
+4d92384fd28d4306_1 2742330-2742359: CTGAGTTCGGAATGG-AATCAGGTGGGTCCA
+                                                   *               
+
+      chromosome_1 2742481-2742511: CTATGGTCGCCAAGTAAAATTCTTTACATTT
+4d92384fd28d4306_1 2742365-2742394: CTATGGTCGCCAAGT-AAATTCTTTACATTT
+                                                   *               
+
+      chromosome_1 2742886-2742916: TTCAATTCTGTTCTTTCTTCGAGTCCATCAA
+4d92384fd28d4306_1 2742769-2742799: TTCAATTCTGTTCTTGCTTCGAGTCCATCAA
+                                                   *               
+
+      chromosome_1 3054936-3055005: CCCCCGGTTCGCCTCGTTATGCTATGTATTCACATAACGATACTTACTTATGTAAGTGGGTTTCCCCATT
+4d92384fd28d4306_1 3054819-3054888: CCCCCGGTTCGCCTCCTTACCCTATGTATTCAGGTAAGGATACGTGCTTATGCACGTGGGTTTCCCCATT
+                                                   *   **           **   *     * *      * *               
+
+      chromosome_1 3060427-3060496: CCCCCGGTTCGCCTCGTTATGCTATGTATTCACATAACGATACTTACTTATGTAAGTGGGTTTCCCCATT
+4d92384fd28d4306_1 3060310-3060379: CCCCCGGTTCGCCTCCTTACCCTATGTATTCAGGTAAGGATACGTGCTTATGCACGTGGGTTTCCCCATT
+                                                   *   **           **   *     * *      * *               
+
+      chromosome_1 3066113-3066143: CGAAGGAGTTTCGAGTTGATGAACAAGTCAC
+4d92384fd28d4306_1 3065996-3066026: CGAAGGAGTTTCGAGCTGATGAACAAGTCAC
+                                                   *               
+
+      chromosome_1 3070352-3070382: CCTAGCCTTCTCCGTCCCCCCCATCGCAATT
+4d92384fd28d4306_1 3070235-3070264: CCTAGCCTTCTCCGT-CCCCCCATCGCAATT
+                                                   *               
+
+      chromosome_1 3073499-3073529: CGACGCCGTTATCGTCCCCCGAAGGTTCAGA
+4d92384fd28d4306_1 3073381-3073411: CGACGCCGTTATCGTTCCCCGAAGGTTCAGA
+                                                   *               
+
+      chromosome_1 3116068-3116098: CGGTTGATTTCTTTTTCTCGGGGTACTTAGA
+4d92384fd28d4306_1 3115950-3115980: CGGTTGATTTCTTTTCCTCGGGGTACTTAGA
+                                                   *               
+
+      chromosome_1 3116304-3116334: CGAAGGAGTTTCGAGTTGATGAACAAGTCAC
+4d92384fd28d4306_1 3116186-3116216: CGAAGGAGTTTCGAGCTGATGAACAAGTCAC
+                                                   *               
+
+      chromosome_1 3117443-3117473: TACCCCCCTCTACAGCACTCTAGTCTGCCAG
+4d92384fd28d4306_1 3117325-3117355: TACCCCCCTCTACAGTACTCTAGTCTGCCAG
+                                                   *               
+
+      chromosome_1 3117624-3117676: GTCGCTAACGTCAAACGAATA-CGCTATTAACGTAC--CCGCCTTCCTCACGACTG
+4d92384fd28d4306_1 3117506-3117558: GTCGCTAACGTCAAATG-ATAGTGCTATTAAC--ACTACCACCTTCCTCACGACTG
+                                                   * *   **         **  **  *               
+
+      chromosome_1 3181361-3181430: CCCCCGGTTCGCCTCGTTATGCTATGTATTCACATAACGATACTTACTTATGTAAGTGGGTTTCCCCATT
+4d92384fd28d4306_1 3181243-3181312: CCCCCGGTTCGCCTCCTTACCCTATGTATTCAGGTAAGGATACGTGCTTATGCACGTGGGTTTCCCCATT
+                                                   *   **           **   *     * *      * *               
+
+      chromosome_1 3183122-3183174: GTCGCTAACGTCAAACGAATA-CGCTATTAACGTAC--CCGCCTTCCTCACGACTG
+4d92384fd28d4306_1 3183004-3183056: GTCGCTAACGTCAAATG-ATAGTGCTATTAAC--ACTACCACCTTCCTCACGACTG
+                                                   * *   **         **  **  *               
+
+
+Aligning chromosome_2 to 4d92384fd28d4306_2:
+  9 differences
+  worst 10 bp identity:   40.0%
+  worst 100 bp identity:  94.0%
+  worst 1000 bp identity: 99.4%
+
+      chromosome_2 1017585-1017615: TCGATATGAACTCTTAGGCGGTATCAGCCTG
+4d92384fd28d4306_2 1017585-1017615: TCGATATGAACTCTTGGGCGGTATCAGCCTG
+                                                   *               
+
+      chromosome_2 1019085-1019115: TTTCCCTCTCCACGATGGACGTTAGCACCCG
+4d92384fd28d4306_2 1019085-1019115: TTTCCCTCTCCACGACGGACGTTAGCACCCG
+                                                   *               
+
+      chromosome_2 1469074-1469103: CTATTCTGAGACTTT------TGTTGCTGTTGCTGT
+4d92384fd28d4306_2 1469074-1469109: CTATTCTGAGACTTTTGTTGCTGTTGCTGTTGCTGT
+                                                   ******               
+
+      chromosome_2 1569121-1569151: GCAAGCGTCGTCGGGGCCGGCGAAGCGTTGG
+4d92384fd28d4306_2 1569127-1569157: GCAAGCGTCGTCGGGTCCGGCGAAGCGTTGG
+                                                   *               
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 14:43:56)[0m
+Time to run: 0:00:06.797874
+

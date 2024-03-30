@@ -1,0 +1,98 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 14:04:07)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  reference_genome_chromosomes/ATCC_33560.fasta
+
+Assembly 2:
+  reference_genome_chromosomes/ATCC_33560_atcc.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 14:04:07)[0m
+reference_genome_chromosomes/ATCC_33560.fasta
+  chromosome: 1,768,448 bp
+
+reference_genome_chromosomes/ATCC_33560_atcc.fasta
+  0e3ece5f73a9450c_1: 1,768,424 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 14:04:07)[0m
+Aligning chromosome to 0e3ece5f73a9450c_1:
+  72 differences
+  worst 10 bp identity:   10.0%
+  worst 100 bp identity:  63.0%
+  worst 1000 bp identity: 95.0%
+
+            chromosome 44309-44339: AAGTCCTTTAGCTGACCAGTACTAATAGAGC
+    0e3ece5f73a9450c_1 44309-44339: AAGTCCTTTAGCTGATCAGTACTAATAGAGC
+                                                   *               
+
+          chromosome 625465-625495: CTAATTTATCTTTATGGGGGGGGGGTAAAAT
+  0e3ece5f73a9450c_1 625465-625494: CTAATTTATCTTTAT-GGGGGGGGGTAAAAT
+                                                   *               
+
+          chromosome 965041-965079: ATTTATATCCTCTATATCTTTTAAATCTTTTAAATCTTT
+  0e3ece5f73a9450c_1 965040-965069: ATTTATATCCTCTAT---------ATCTTTTAAATCTTT
+                                                   *********               
+
+          chromosome 988787-988817: TAATTCCCCAAAATACCCCCCCCCCAAGCAA
+  0e3ece5f73a9450c_1 988777-988806: TAATTCCCCAAAATA-CCCCCCCCCAAGCAA
+                                                   *               
+
+          chromosome 995205-995386: ATGAGTGAGACTTATAAAATTTATACACCTAATGGAATAGCTGTAAAAGTAGATAAAGAAACAAACAAAATATATTTTGTAGAAA--GTTTAGATTCACATCCACCAGCAAAGGGCAATTATACCGAAGAATATTCCAAAGCTTTGTTTGAAGCACACAACATTA--AACGAAACTCCCCCTACAA
+  0e3ece5f73a9450c_1 995194-995363: ATGAGTGAGACTTATGAGATTTATACACCTAATGGATTAACATTAGATGTGGAAAAAGATACCAATAAAATACTCTTTAAAGAAAATGTTAAG-----C--CCAC------A-GGCAACTATACCGAAGAATATTCCAAAGCGGTTTTTAAATCTTATCATATTATGAA--AAACTCCCCCTACAA
+                                                   * *                  *  * **  * *  *  *     *  *  *      ***   **     **   *  ***** **    ****** *     *                       ** *   *  * ** ** *    **  **               
+
+        chromosome 1025476-1025506: GGCTACAACAATGCCTCAATATAATTATCCA
+0e3ece5f73a9450c_1 1025453-1025483: GGCTACAACAATGCCCCAATATAATTATCCA
+                                                   *               
+
+        chromosome 1030158-1030188: TTAAATCTTTGTAAAAGAATCAGTGCTGATT
+0e3ece5f73a9450c_1 1030135-1030165: TTAAATCTTTGTAAAGGAATCAGTGCTGATT
+                                                   *               
+
+        chromosome 1034838-1034868: TGAAATACAAGGAGCTAGTATAAGTGGATGT
+0e3ece5f73a9450c_1 1034815-1034845: TGAAATACAAGGAGCCAGTATAAGTGGATGT
+                                                   *               
+
+        chromosome 1188991-1189021: AATTATGGATTCATAGGGGGGGGGGATCAAC
+0e3ece5f73a9450c_1 1188968-1188997: AATTATGGATTCATA-GGGGGGGGGATCAAC
+                                                   *               
+
+        chromosome 1272654-1272683: ACTTATTTTAATCAC-TTATTATTTTTCATA
+0e3ece5f73a9450c_1 1272630-1272660: ACTTATTTTAATCACTTTATTATTTTTCATA
+                                                   *               
+
+        chromosome 1346983-1347013: GTATCCTCCATAAGACCCCCCCCCATAAATT
+0e3ece5f73a9450c_1 1346960-1346989: GTATCCTCCATAAGA-CCCCCCCCATAAATT
+                                                   *               
+
+        chromosome 1366935-1366965: GGGAGCAAAATATTAGGGGGGGGGGATATTG
+0e3ece5f73a9450c_1 1366911-1366940: GGGAGCAAAATATTA-GGGGGGGGGATATTG
+                                                   *               
+
+        chromosome 1457519-1457548: TAACCGATGGCTTTA-TAAAAATGTTTATTT
+0e3ece5f73a9450c_1 1457494-1457524: TAACCGATGGCTTTATTAAAAATGTTTATTT
+                                                   *               
+
+        chromosome 1462067-1462096: TCATAAATTCGTAAT-CCCCCCCCCCGTCCG
+0e3ece5f73a9450c_1 1462043-1462073: TCATAAATTCGTAATCCCCCCCCCCCGTCCG
+                                                   *               
+
+        chromosome 1471681-1471711: AAATAATGCTATATACCCCCCCCCATTGTTT
+0e3ece5f73a9450c_1 1471658-1471687: AAATAATGCTATATA-CCCCCCCCATTGTTT
+                                                   *               
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 14:04:09)[0m
+Time to run: 0:00:02.112020
+

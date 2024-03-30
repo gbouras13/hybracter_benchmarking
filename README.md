@@ -75,16 +75,33 @@ hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybrac
 # Other Utilities
 
 * `genomes` directory contains the reference genomes
-* `reference_genome_chromosomes` directory contains the reference chromosomes
+* `reference_genome_chromosomes` directory contains the reference chromosomes. The ATCC references for the 5 ATCC strains (which were replaced by the curated Trycycler references in v2 of the preprint) are labelled as `_atcc.fasta`
 * `reference_genome_plasmids` directory contains the reference plasmids
 * `parse_genomes.py` was used to generate per contig and overall genome lengths for all reference genomes (output contained in the `genome_info` directory).
 * `Graphs_Ghais` contains R scripts used to make plots for the Hybracter manuscript.
 * `bulk_assemble_lerminiaux_config.yaml` is the modified config file used on my system to benchmark `hybracter hybrid` showing the efficiency benefits of `hybracter` when run on multiple samples.
+* `atcc_trycycler_comparisons` contains the output of comparing the ATCC reference assemblies to the curated Trycycler assemblies of the same data
+    * These were run as follows:
+
+```bash
+mamba create -n compare_assembliesENV mappy edlib
+conda activate compare_assembliesENV
+python compare_assemblies.py 
+
+python compare_assemblies.py  reference_genome_chromosomes/ATCC_10708.fasta reference_genome_chromosomes/ATCC_10708_atcc.fasta > atcc_trycycler_comparisons/ATCC_10708_comparison.txt  2>&1
+python compare_assemblies.py  reference_genome_chromosomes/ATCC_17802.fasta reference_genome_chromosomes/ATCC_17802_atcc.fasta > atcc_trycycler_comparisons/ATCC_17802_comparison.txt  2>&1
+python compare_assemblies.py  reference_genome_chromosomes/ATCC_25922.fasta reference_genome_chromosomes/ATCC_25922_atcc.fasta > atcc_trycycler_comparisons/ATCC_25922_comparison.txt  2>&1
+python compare_assemblies.py  reference_genome_chromosomes/ATCC_33560.fasta reference_genome_chromosomes/ATCC_33560_atcc.fasta > atcc_trycycler_comparisons/ATCC_33560_comparison.txt  2>&1
+python compare_assemblies.py  reference_genome_chromosomes/ATCC_BAA_679.fasta reference_genome_chromosomes/ATCC_BAA_679_atcc.fasta > atcc_trycycler_comparisons/ATCC_BAA_679_comparison.txt  2>&1
+``` 
+
+* Note for `ATCC_17802_atcc.fasta`, the second chromosome was reoriented to begin with the `repA` gene using `dnaapler all v0.7.0` to allow for comparison with `compare_assemblies.py`.
+
 
 
 # Usage
 
-```
+```bash
 Usage: hybracter_benchmarking [OPTIONS] COMMAND [ARGS]...
 
   hybracter_benchmarking For more options, run: hybracter_benchmarking

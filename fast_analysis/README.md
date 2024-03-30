@@ -99,10 +99,10 @@ nanoq -i hybracter_benchmarking_data/PRJNA1020811/SRR26162834_100x.fastq.gz  -s 
 
 ```bash
 export CUDA_VISIBLE_DEVICES=""
-hybracter_benchmarking assemble-real --input fast.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output  hybracter_benchmarking_results_fast --threads 32 --cores 16
+hybracter_benchmarking assemble-real --input fast.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output  hybracter_benchmarking_results_fast --threads 32  --cores 16  --keep-going
 ```
 
 ```bash
 
-hybracter_benchmarking assess-real --input fast.csv  --output  hybracter_benchmarking_results_duplex --threads 32 --cores 16
+hybracter_benchmarking assess-real --input fast.csv  --output  hybracter_benchmarking_results_fast --threads 32 --cores 16
 ```

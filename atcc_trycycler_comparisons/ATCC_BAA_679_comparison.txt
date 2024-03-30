@@ -1,0 +1,106 @@
+
+[93m[1m[4mAssembly comparison tool[0m [2m(2024-03-30 14:04:09)[0m
+[2m    This script produces a human-readable file showing all of the differences[0m
+[2mbetween two alternative assemblies of a genome. This can help to spot[0m
+[2mtroublesome regions of the genome with a large number of changes.[0m
+
+Assembly 1:
+  reference_genome_chromosomes/ATCC_BAA_679.fasta
+
+Assembly 2:
+  reference_genome_chromosomes/ATCC_BAA_679_atcc.fasta
+
+Settings:
+  --padding 15
+  --merge 30
+  --aligner mappy
+
+
+[93m[1m[4mLoading assemblies[0m [2m(2024-03-30 14:04:09)[0m
+reference_genome_chromosomes/ATCC_BAA_679.fasta
+  chromosome: 2,944,530 bp
+
+reference_genome_chromosomes/ATCC_BAA_679_atcc.fasta
+  a700b48714084244_1: 2,944,536 bp
+
+
+[93m[1m[4mAligning sequences[0m [2m(2024-03-30 14:04:09)[0m
+Aligning chromosome to a700b48714084244_1:
+  44 differences
+  worst 10 bp identity:   30.0%
+  worst 100 bp identity:  86.0%
+  worst 1000 bp identity: 97.6%
+
+          chromosome 172091-172120: CACTAATTCTGTGTC-TGTTTTTCGCCAATG
+  a700b48714084244_1 172091-172121: CACTAATTCTGTGTCTTGTTTTTCGCCAATG
+                                                   *               
+
+          chromosome 172252-172282: TAAGTGGTTTTCTGTTTGATAGTAGGCGGAG
+  a700b48714084244_1 172253-172283: TAAGTGGTTTTCTGTCTGATAGTAGGCGGAG
+                                                   *               
+
+          chromosome 172410-172501: AAGTGAACTGATATGTTTTACATAACTGCCCTA-TTTTTTCTCCAATGAGCTCTGTGCGAAATCTTTCTTTTTCCAGTGATAATAGGTAGATA
+  a700b48714084244_1 172411-172503: AAGTGAACTGATATGCTTTACATAACTGCCCTATTTTTTTCTCCAATGAGCTCTGTGAGAAATCTTTCTTTTTCCAGCGATAATAGGTAGATA
+                                                   *                 *                       *                   *               
+
+          chromosome 172703-172733: ATATTGTTTACCTACCCCTTGGTGAAACCTG
+  a700b48714084244_1 172705-172735: ATATTGTTTACCTACTCCTTGGTGAAACCTG
+                                                   *               
+
+          chromosome 245051-245081: GAGCTGTACGTAAGCATTGATCCAGAGATTT
+  a700b48714084244_1 245053-245083: GAGCTGTACGTAAGCGTTGATCCAGAGATTT
+                                                   *               
+
+        chromosome 1742000-1742038: TTGAGCTATGGGCGC----AAATATAAGTGCCGAGGACCGGAA
+a700b48714084244_1 1742002-1742043: TTGAGCTATGGGCGCATATAAAAATAA-TGCCGAGGACCGGAA
+                                                   ****   *    *               
+
+        chromosome 1742095-1742141: TTCCGCCACCCCGGC--GTTG---CTAT--AAAATATGGAGCGGAAGACGGGGT
+a700b48714084244_1 1742100-1742150: TTCCGCCACCCCGGCATATTGGAACTTTTGTAAACA---AGCGGAAGACGGGGT
+                                                   ***   ***  * ***   * ***               
+
+        chromosome 1742189-1742222: CTACTTCCGCATATTCCATAATAAGTGCGGGTGA
+a700b48714084244_1 1742198-1742230: CTACTTCCGCATATT-TAAAATAAGTGCGGGTGA
+                                                   ** *               
+
+        chromosome 1742690-1742720: TACCAGACAATATTGAAGTTGTTGAAAGATT
+a700b48714084244_1 1742698-1742727: TACCAGACAATATTG-AGTTGTTGAAAGATT
+                                                   *               
+
+        chromosome 1745300-1745330: CTCTGGAGGGAAAGCCATTTCAACTACCGGG
+a700b48714084244_1 1745307-1745337: CTCTGGAGGGAAAGCTATTTCAACTACCGGG
+                                                   *               
+
+        chromosome 1747302-1747334: GTGGCATGCGCCACATTCTATCATTCGGTATTA
+a700b48714084244_1 1747309-1747341: GTGGCATGCGCCACACTTTATCATTCGGTATTA
+                                                   * *               
+
+        chromosome 1747393-1747423: CCGTCCGCCACTAACTTTGGAAGAGCAAGCT
+a700b48714084244_1 1747400-1747430: CCGTCCGCCACTAACATTGGAAGAGCAAGCT
+                                                   *               
+
+        chromosome 1848611-1848641: TACCAGACAATATTGAAGTTGTTGAAAGATT
+a700b48714084244_1 1848618-1848647: TACCAGACAATATTG-AGTTGTTGAAAGATT
+                                                   *               
+
+        chromosome 1851221-1851251: CTCTGGAGGGAAAGCCATTTCAACTACCGGG
+a700b48714084244_1 1851227-1851257: CTCTGGAGGGAAAGCTATTTCAACTACCGGG
+                                                   *               
+
+        chromosome 2442585-2442615: CCGTCCGCCACTAACTTTGGAAGAGCAAGCT
+a700b48714084244_1 2442591-2442621: CCGTCCGCCACTAACATTGGAAGAGCAAGCT
+                                                   *               
+
+        chromosome 2471009-2471057: AGCTACTTCCGACACACTGAACGGCAAAATCGACGCACCTTATCAAACT
+a700b48714084244_1 2471015-2471063: AGCTACTTCCGACACGCTTAACGGCAAAATTGATGCACCTTATCAAACT
+                                                   *  *           *  *               
+
+        chromosome 2677594-2677624: CCGTCCGCCACTAACTTTGGAAGAGCAAGCT
+a700b48714084244_1 2677600-2677630: CCGTCCGCCACTAACATTGGAAGAGCAAGCT
+                                                   *               
+
+
+
+[93m[1m[4mFinished![0m [2m(2024-03-30 14:04:12)[0m
+Time to run: 0:00:03.476808
+
