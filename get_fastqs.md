@@ -248,13 +248,45 @@ rm -rf *.zip
 
 #### ATCC FASTQs
 
-* Link to Ryan Wick's blogpost https://rrwick.github.io/2023/05/05/ont-only-accuracy-with-r10.4.1.html. DOI: https://doi.org/10.5281/zenodo.7898220
-* These will be publicly available with the hybracter manuscript.
-* All genomes were manually downloaded from the ATCC [website](https://www.atcc.org).
+# Download the FASTQs
+
+* Nanopore Fastqs
+
+```bash
+# Salmonella enterica
+fastq-dl -a SRR26899146
+# Vibrio parahaemolyticus
+fastq-dl -a SRR26899139
+# Escherichia coli
+fastq-dl -a SRR26899127
+# Campylobacter jejuni
+fastq-dl -a SRR26899122
+# Listeria monocytogenes
+fastq-dl -a SRR26899098
+```
+
+* Illumina Fastqs
+
+```bash
+# Salmonella enterica
+fastq-dl -a SRR26899135
+# Vibrio parahaemolyticus
+fastq-dl -a SRR26899140
+# Escherichia coli
+fastq-dl -a SRR26899125
+# Campylobacter jejuni
+fastq-dl -a SRR26899122
+# Listeria monocytogenes
+fastq-dl -a SRR28370636
+
+```
+
+* Ryan Wick's blogpost first introduced these isolates [https://rrwick.github.io/2023/05/05/ont-only-accuracy-with-r10.4.1.html](https://doi.org/10.5281/zenodo.7898220).
+* All ATCC 'reference' genomes were manually downloaded from the ATCC [website](https://www.atcc.org)
+* All reference genomes (actually used in benchmarking) were created using Trycycler v0.5.4. The chromosomes are available in `reference_genome_chromosomes` and the plasmids are available in `reference_genome_plasmids`
 
 
-
-# Subsampling 
+# Subsampling with Rasusa
 
 * Done with [Rasusa](https://github.com/mbhall88/rasusa) v0.7.0 to 100x approximate genome size
 
@@ -331,36 +363,34 @@ rasusa -i SRR26162850_1.fastq.gz -i SRR26162850_2.fastq.gz --coverage 100 --geno
 * SRR26162850 no subsampling was actually done, the estimated coverage was 40.72x
 
 
-
 #### ATCC 
 
 ```
 GENOME_SIZE="5.2mb"
-rasusa --input ATCC_25922.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x.fastq.gz
-rasusa -i ATCC_25922_1.fastq.gz -i ATCC_25922_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x_1.fastq.gz  -o ATCC_25922_100x_2.fastq.gz 
+rasusa --input SRR26899127_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x.fastq.gz
+rasusa -i SRR26899125_1.fastq.gz -i SRR26899125_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_25922_100x_1.fastq.gz  -o ATCC_25922_100x_2.fastq.gz 
 
 GENOME_SIZE="5.2mb"
-rasusa --input ATCC_17802.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x.fastq.gz
-rasusa -i ATCC_17802_1.fastq.gz -i ATCC_17802_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x_1.fastq.gz  -o ATCC_17802_100x_2.fastq.gz 
+rasusa --input SRR26899139_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x.fastq.gz
+rasusa -i SRR26899140_1.fastq.gz -i SRR26899140_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_17802_100x_1.fastq.gz  -o ATCC_17802_100x_2.fastq.gz 
 
 GENOME_SIZE="3mb"
-rasusa --input ATCC_BAA_679.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x.fastq.gz
-rasusa -i ATCC_BAA_679_1.fastq.gz -i ATCC_BAA_679_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x_1.fastq.gz  -o ATCC_BAA_679_100x_2.fastq.gz 
+rasusa --input SRR26899098_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x.fastq.gz
+rasusa -i SRR28370636_1.fastq.gz -i SRR28370636_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_BAA_679_100x_1.fastq.gz  -o ATCC_BAA_679_100x_2.fastq.gz 
 
 GENOME_SIZE="4.8mb"
-rasusa --input ATCC_10708.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x.fastq.gz
-rasusa -i ATCC_10708_1.fastq.gz -i ATCC_10708_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x_1.fastq.gz  -o ATCC_10708_100x_2.fastq.gz 
+rasusa --input SRR26899146_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x.fastq.gz
+rasusa -i SRR26899135_1.fastq.gz -i SRR26899135_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_10708_100x_1.fastq.gz  -o ATCC_10708_100x_2.fastq.gz 
 
 GENOME_SIZE="1.8mb"
-rasusa --input ATCC_33560.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x.fastq.gz
-rasusa -i ATCC_33560_1.fastq.gz -i ATCC_33560_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x_1.fastq.gz  -o ATCC_33560_100x_2.fastq.gz 
+rasusa --input SRR26899122_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x.fastq.gz
+rasusa -i SRR26899122_1.fastq.gz -i SRR26899122_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o ATCC_33560_100x_1.fastq.gz  -o ATCC_33560_100x_2.fastq.gz 
 
 ```
 
 #### Chitale et al
 
-```
-# run rasusa
+```bash
 GENOME_SIZE="4.4mb"
 rasusa --input SRR20082804_1.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082804_100x.fastq.gz
 rasusa -i SRR20082813_1.fastq.gz -i SRR20082813_2.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR20082813_100x_1.fastq.gz  -o SRR20082813_100x_2.fastq.gz 
@@ -370,17 +400,18 @@ rasusa -i SRR20082813_1.fastq.gz -i SRR20082813_2.fastq.gz --coverage 100 --geno
 #  QC with nanoq
 
 * [Nanoq](https://github.com/esteinig/nanoq) v0.10.0 was used for fast long read QC
+* The results can be found in Supplementary Table 2
 
 #### Install nanoq
 
-```
+```bash
 mamba create -n nanoq nanoq
 conda activate nanoq
 ```
 
 #### Run nanoq
 
-```
+```bash
 mkdir nanoq_hybracter_benchmarking
 
 nanoq -i hybracter_benchmarking_data/wick_judd_fastqs/ATCC_10708_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking/ATCC_10708_report.txt
