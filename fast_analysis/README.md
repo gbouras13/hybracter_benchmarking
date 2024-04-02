@@ -1,4 +1,4 @@
-# Instructions How to Download Fastqs
+# Instructions on how to run the Extra 5 fast model basecalled ATCC samples
 
 ## Download FASTQs
 
@@ -42,7 +42,6 @@ fastq-dl -a SRR28370662	  --cpus $CPUS
 rasusa --input SRR28370662.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR28370662_100x.fastq.gz
 ```
 
-
 ## _Campylobacter jejuni_ ATCC 33560
 
 ```bash
@@ -52,20 +51,20 @@ fastq-dl -a SRR28370658	  --cpus $CPUS
 rasusa --input SRR28370658.fastq.gz --coverage 100 --genome-size $GENOME_SIZE -o SRR28370658_100x.fastq.gz
 ```
 
-
 #  QC with nanoq
 
 * [Nanoq](https://github.com/esteinig/nanoq) v0.10.0 was used for fast long read QC
 
 #### Install nanoq
 
-```
+```bash
 mamba create -n nanoq nanoq
 conda activate nanoq
 ```
 
 #### Run nanoq
-```
+
+```bash
 mkdir nanoq_hybracter_benchmarking_fast
 
 nanoq -i fastqs/SRR28370659_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking_fast/SRR28370659_report.txt
@@ -76,12 +75,14 @@ nanoq -i fastqs/SRR28370658_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking
 ```
 
 
-# Run Fast
+#### Run Benchmarking Pipeline
 
 ```bash
 export CUDA_VISIBLE_DEVICES=""
 hybracter_benchmarking assemble-real --input fast.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output  hybracter_benchmarking_results_fast --threads 32  --cores 16  --keep-going
 ```
+
+* Note the bulk files are just to make the pipeline work, they are not actually used
 
 ```bash
 

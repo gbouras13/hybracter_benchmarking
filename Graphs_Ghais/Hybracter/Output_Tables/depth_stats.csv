@@ -1,0 +1,262 @@
+"Sample","Run","variable","value"
+"100x","Hybracter (hybrid)","SNVs",0
+"100x","Hybracter (hybrid)","Small InDels",0
+"100x","Hybracter (hybrid)","Large InDels",0
+"100x","Hybracter (long)","SNVs",55
+"100x","Hybracter (long)","Small InDels",10
+"100x","Hybracter (long)","Large InDels",0
+"100x","Unicycler","SNVs",63
+"100x","Unicycler","Small InDels",14
+"100x","Unicycler","Large InDels",1
+"100x","Dragonflye (hybrid)","SNVs",0
+"100x","Dragonflye (hybrid)","Small InDels",0
+"100x","Dragonflye (hybrid)","Large InDels",2
+"100x","Dragonflye (long)","SNVs",62
+"100x","Dragonflye (long)","Small InDels",82
+"100x","Dragonflye (long)","Large InDels",2
+"20x","Hybracter (hybrid)","SNVs",0
+"20x","Hybracter (hybrid)","Small InDels",0
+"20x","Hybracter (hybrid)","Large InDels",0
+"20x","Hybracter (long)","SNVs",97
+"20x","Hybracter (long)","Small InDels",43
+"20x","Hybracter (long)","Large InDels",0
+"20x","Unicycler","SNVs",62
+"20x","Unicycler","Small InDels",14
+"20x","Unicycler","Large InDels",1
+"20x","Dragonflye (hybrid)","SNVs",0
+"20x","Dragonflye (hybrid)","Small InDels",1
+"20x","Dragonflye (hybrid)","Large InDels",5
+"20x","Dragonflye (long)","SNVs",101
+"20x","Dragonflye (long)","Small InDels",78
+"20x","Dragonflye (long)","Large InDels",5
+"25x","Hybracter (hybrid)","SNVs",0
+"25x","Hybracter (hybrid)","Small InDels",0
+"25x","Hybracter (hybrid)","Large InDels",0
+"25x","Hybracter (long)","SNVs",69
+"25x","Hybracter (long)","Small InDels",33
+"25x","Hybracter (long)","Large InDels",0
+"25x","Unicycler","SNVs",62
+"25x","Unicycler","Small InDels",14
+"25x","Unicycler","Large InDels",1
+"25x","Dragonflye (hybrid)","SNVs",0
+"25x","Dragonflye (hybrid)","Small InDels",2
+"25x","Dragonflye (hybrid)","Large InDels",1
+"25x","Dragonflye (long)","SNVs",82
+"25x","Dragonflye (long)","Small InDels",50
+"25x","Dragonflye (long)","Large InDels",1
+"30x","Hybracter (hybrid)","SNVs",0
+"30x","Hybracter (hybrid)","Small InDels",0
+"30x","Hybracter (hybrid)","Large InDels",0
+"30x","Hybracter (long)","SNVs",74
+"30x","Hybracter (long)","Small InDels",33
+"30x","Hybracter (long)","Large InDels",0
+"30x","Unicycler","SNVs",62
+"30x","Unicycler","Small InDels",14
+"30x","Unicycler","Large InDels",1
+"30x","Dragonflye (hybrid)","SNVs",0
+"30x","Dragonflye (hybrid)","Small InDels",0
+"30x","Dragonflye (hybrid)","Large InDels",2
+"30x","Dragonflye (long)","SNVs",88
+"30x","Dragonflye (long)","Small InDels",53
+"30x","Dragonflye (long)","Large InDels",2
+"35x","Hybracter (hybrid)","SNVs",0
+"35x","Hybracter (hybrid)","Small InDels",0
+"35x","Hybracter (hybrid)","Large InDels",0
+"35x","Hybracter (long)","SNVs",65
+"35x","Hybracter (long)","Small InDels",23
+"35x","Hybracter (long)","Large InDels",0
+"35x","Unicycler","SNVs",62
+"35x","Unicycler","Small InDels",14
+"35x","Unicycler","Large InDels",1
+"35x","Dragonflye (hybrid)","SNVs",1
+"35x","Dragonflye (hybrid)","Small InDels",0
+"35x","Dragonflye (hybrid)","Large InDels",2
+"35x","Dragonflye (long)","SNVs",71
+"35x","Dragonflye (long)","Small InDels",60
+"35x","Dragonflye (long)","Large InDels",2
+"40x","Hybracter (hybrid)","SNVs",0
+"40x","Hybracter (hybrid)","Small InDels",0
+"40x","Hybracter (hybrid)","Large InDels",0
+"40x","Hybracter (long)","SNVs",62
+"40x","Hybracter (long)","Small InDels",20
+"40x","Hybracter (long)","Large InDels",0
+"40x","Unicycler","SNVs",62
+"40x","Unicycler","Small InDels",14
+"40x","Unicycler","Large InDels",1
+"40x","Dragonflye (hybrid)","SNVs",0
+"40x","Dragonflye (hybrid)","Small InDels",0
+"40x","Dragonflye (hybrid)","Large InDels",1
+"40x","Dragonflye (long)","SNVs",67
+"40x","Dragonflye (long)","Small InDels",45
+"40x","Dragonflye (long)","Large InDels",1
+"45x","Hybracter (hybrid)","SNVs",0
+"45x","Hybracter (hybrid)","Small InDels",0
+"45x","Hybracter (hybrid)","Large InDels",0
+"45x","Hybracter (long)","SNVs",61
+"45x","Hybracter (long)","Small InDels",17
+"45x","Hybracter (long)","Large InDels",0
+"45x","Unicycler","SNVs",62
+"45x","Unicycler","Small InDels",14
+"45x","Unicycler","Large InDels",1
+"45x","Dragonflye (hybrid)","SNVs",0
+"45x","Dragonflye (hybrid)","Small InDels",0
+"45x","Dragonflye (hybrid)","Large InDels",3
+"45x","Dragonflye (long)","SNVs",69
+"45x","Dragonflye (long)","Small InDels",70
+"45x","Dragonflye (long)","Large InDels",3
+"50x","Hybracter (hybrid)","SNVs",0
+"50x","Hybracter (hybrid)","Small InDels",0
+"50x","Hybracter (hybrid)","Large InDels",0
+"50x","Hybracter (long)","SNVs",61
+"50x","Hybracter (long)","Small InDels",17
+"50x","Hybracter (long)","Large InDels",0
+"50x","Unicycler","SNVs",62
+"50x","Unicycler","Small InDels",14
+"50x","Unicycler","Large InDels",1
+"50x","Dragonflye (hybrid)","SNVs",0
+"50x","Dragonflye (hybrid)","Small InDels",0
+"50x","Dragonflye (hybrid)","Large InDels",3
+"50x","Dragonflye (long)","SNVs",65
+"50x","Dragonflye (long)","Small InDels",59
+"50x","Dragonflye (long)","Large InDels",3
+"55x","Hybracter (hybrid)","SNVs",0
+"55x","Hybracter (hybrid)","Small InDels",0
+"55x","Hybracter (hybrid)","Large InDels",0
+"55x","Hybracter (long)","SNVs",57
+"55x","Hybracter (long)","Small InDels",16
+"55x","Hybracter (long)","Large InDels",0
+"55x","Unicycler","SNVs",62
+"55x","Unicycler","Small InDels",14
+"55x","Unicycler","Large InDels",1
+"55x","Dragonflye (hybrid)","SNVs",0
+"55x","Dragonflye (hybrid)","Small InDels",0
+"55x","Dragonflye (hybrid)","Large InDels",2
+"55x","Dragonflye (long)","SNVs",67
+"55x","Dragonflye (long)","Small InDels",52
+"55x","Dragonflye (long)","Large InDels",2
+"60x","Hybracter (hybrid)","SNVs",0
+"60x","Hybracter (hybrid)","Small InDels",0
+"60x","Hybracter (hybrid)","Large InDels",0
+"60x","Hybracter (long)","SNVs",60
+"60x","Hybracter (long)","Small InDels",14
+"60x","Hybracter (long)","Large InDels",0
+"60x","Unicycler","SNVs",62
+"60x","Unicycler","Small InDels",14
+"60x","Unicycler","Large InDels",1
+"60x","Dragonflye (hybrid)","SNVs",0
+"60x","Dragonflye (hybrid)","Small InDels",0
+"60x","Dragonflye (hybrid)","Large InDels",3
+"60x","Dragonflye (long)","SNVs",66
+"60x","Dragonflye (long)","Small InDels",49
+"60x","Dragonflye (long)","Large InDels",3
+"65x","Hybracter (hybrid)","SNVs",0
+"65x","Hybracter (hybrid)","Small InDels",0
+"65x","Hybracter (hybrid)","Large InDels",0
+"65x","Hybracter (long)","SNVs",56
+"65x","Hybracter (long)","Small InDels",10
+"65x","Hybracter (long)","Large InDels",0
+"65x","Unicycler","SNVs",63
+"65x","Unicycler","Small InDels",14
+"65x","Unicycler","Large InDels",1
+"65x","Dragonflye (hybrid)","SNVs",1
+"65x","Dragonflye (hybrid)","Small InDels",0
+"65x","Dragonflye (hybrid)","Large InDels",2
+"65x","Dragonflye (long)","SNVs",61
+"65x","Dragonflye (long)","Small InDels",58
+"65x","Dragonflye (long)","Large InDels",2
+"70x","Hybracter (hybrid)","SNVs",0
+"70x","Hybracter (hybrid)","Small InDels",0
+"70x","Hybracter (hybrid)","Large InDels",0
+"70x","Hybracter (long)","SNVs",48
+"70x","Hybracter (long)","Small InDels",12
+"70x","Hybracter (long)","Large InDels",0
+"70x","Unicycler","SNVs",62
+"70x","Unicycler","Small InDels",14
+"70x","Unicycler","Large InDels",1
+"70x","Dragonflye (hybrid)","SNVs",0
+"70x","Dragonflye (hybrid)","Small InDels",0
+"70x","Dragonflye (hybrid)","Large InDels",2
+"70x","Dragonflye (long)","SNVs",66
+"70x","Dragonflye (long)","Small InDels",84
+"70x","Dragonflye (long)","Large InDels",2
+"75x","Hybracter (hybrid)","SNVs",0
+"75x","Hybracter (hybrid)","Small InDels",0
+"75x","Hybracter (hybrid)","Large InDels",0
+"75x","Hybracter (long)","SNVs",49
+"75x","Hybracter (long)","Small InDels",11
+"75x","Hybracter (long)","Large InDels",0
+"75x","Unicycler","SNVs",63
+"75x","Unicycler","Small InDels",14
+"75x","Unicycler","Large InDels",1
+"75x","Dragonflye (hybrid)","SNVs",0
+"75x","Dragonflye (hybrid)","Small InDels",0
+"75x","Dragonflye (hybrid)","Large InDels",2
+"75x","Dragonflye (long)","SNVs",70
+"75x","Dragonflye (long)","Small InDels",84
+"75x","Dragonflye (long)","Large InDels",2
+"80x","Hybracter (hybrid)","SNVs",0
+"80x","Hybracter (hybrid)","Small InDels",0
+"80x","Hybracter (hybrid)","Large InDels",0
+"80x","Hybracter (long)","SNVs",62
+"80x","Hybracter (long)","Small InDels",12
+"80x","Hybracter (long)","Large InDels",1
+"80x","Unicycler","SNVs",63
+"80x","Unicycler","Small InDels",14
+"80x","Unicycler","Large InDels",1
+"80x","Dragonflye (hybrid)","SNVs",1
+"80x","Dragonflye (hybrid)","Small InDels",0
+"80x","Dragonflye (hybrid)","Large InDels",2
+"80x","Dragonflye (long)","SNVs",60
+"80x","Dragonflye (long)","Small InDels",86
+"80x","Dragonflye (long)","Large InDels",2
+"85x","Hybracter (hybrid)","SNVs",0
+"85x","Hybracter (hybrid)","Small InDels",0
+"85x","Hybracter (hybrid)","Large InDels",0
+"85x","Hybracter (long)","SNVs",60
+"85x","Hybracter (long)","Small InDels",10
+"85x","Hybracter (long)","Large InDels",0
+"85x","Unicycler","SNVs",63
+"85x","Unicycler","Small InDels",14
+"85x","Unicycler","Large InDels",1
+"85x","Dragonflye (hybrid)","SNVs",0
+"85x","Dragonflye (hybrid)","Small InDels",0
+"85x","Dragonflye (hybrid)","Large InDels",2
+"85x","Dragonflye (long)","SNVs",58
+"85x","Dragonflye (long)","Small InDels",83
+"85x","Dragonflye (long)","Large InDels",2
+"90x","Hybracter (hybrid)","SNVs",0
+"90x","Hybracter (hybrid)","Small InDels",0
+"90x","Hybracter (hybrid)","Large InDels",0
+"90x","Hybracter (long)","SNVs",57
+"90x","Hybracter (long)","Small InDels",12
+"90x","Hybracter (long)","Large InDels",0
+"90x","Unicycler","SNVs",63
+"90x","Unicycler","Small InDels",14
+"90x","Unicycler","Large InDels",1
+"90x","Dragonflye (hybrid)","SNVs",0
+"90x","Dragonflye (hybrid)","Small InDels",0
+"90x","Dragonflye (hybrid)","Large InDels",2
+"90x","Dragonflye (long)","SNVs",65
+"90x","Dragonflye (long)","Small InDels",110
+"90x","Dragonflye (long)","Large InDels",2
+"95x","Hybracter (hybrid)","SNVs",0
+"95x","Hybracter (hybrid)","Small InDels",0
+"95x","Hybracter (hybrid)","Large InDels",0
+"95x","Hybracter (long)","SNVs",57
+"95x","Hybracter (long)","Small InDels",11
+"95x","Hybracter (long)","Large InDels",0
+"95x","Unicycler","SNVs",63
+"95x","Unicycler","Small InDels",14
+"95x","Unicycler","Large InDels",1
+"95x","Dragonflye (hybrid)","SNVs",0
+"95x","Dragonflye (hybrid)","Small InDels",2
+"95x","Dragonflye (hybrid)","Large InDels",2
+"95x","Dragonflye (long)","SNVs",64
+"95x","Dragonflye (long)","Small InDels",101
+"95x","Dragonflye (long)","Large InDels",2
+"10x","Unicycler","SNVs",63
+"10x","Unicycler","Small InDels",14
+"10x","Unicycler","Large InDels",1
+"15x","Unicycler","SNVs",62
+"15x","Unicycler","Small InDels",14
+"15x","Unicycler","Large InDels",1

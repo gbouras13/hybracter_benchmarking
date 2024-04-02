@@ -1,4 +1,4 @@
-# Instructions How to Download Fastqs
+# Instructions on how to run the Extra 5 super-accuracy duplex model basecalled ATCC samples
 
 ## Download FASTQs
 
@@ -74,7 +74,8 @@ conda activate nanoq
 ```
 
 #### Run nanoq
-```
+
+```bash
 mkdir nanoq_hybracter_benchmarking_duplex
 
 nanoq -i fastqs/SRR28370642_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking_duplex/SRR28370642_report.txt
@@ -84,12 +85,15 @@ nanoq -i fastqs/SRR28370644_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking
 nanoq -i fastqs/SRR28370641_100x.fastq.gz  -s -H  > nanoq_hybracter_benchmarking_duplex/SRR28370641_report.txt
 ```
 
-# Run Duplex
+#### Run Benchmarking Pipeline
 
 ```bash
 export CUDA_VISIBLE_DEVICES=""
-hybracter_benchmarking assemble-real --input duplex.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output  hybracter_benchmarking_results_duplex --threads 32  --cores 16  --keep-going
+hybracter_benchmarking assemble-real --input duplex.csv --bulk_lerminiaux_csv depth_assemble_bulk.csv --bulk_lerminiaux_config bulk_config.yaml --output  hybracter_benchmarking_results_duplex --duplex --threads 32  --cores 16  --keep-going 
 ```
+
+* Note the bulk files are just to make the pipeline work, they are not actually used
+* Note `--duplex` turns off Medaka 
 
 ```bash
 

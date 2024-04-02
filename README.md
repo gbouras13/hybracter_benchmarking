@@ -72,14 +72,16 @@ hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybrac
   
 * It will also contain a number of other subdirectories `_SUMMARIES`, `_PLASMIDS`, `_CHROMOSOMES` with parsed summary outputs and parsed specific plasmids and chromosome assemblies for Unicycler and Dragonflye (this made the assessment a lot easier and automated).
 
-# Other Utilities
+# Other Directories in this Repository
 
 * `genomes` directory contains the reference genomes
 * `reference_genome_chromosomes` directory contains the reference chromosomes. The ATCC references for the 5 ATCC strains (which were replaced by the curated Trycycler references in v2 of the preprint) are labelled as `_atcc.fasta`
-* `reference_genome_plasmids` directory contains the reference plasmids
+* `reference_genome_plasmids` directory contains the reference plasmids.
 * `parse_genomes.py` was used to generate per contig and overall genome lengths for all reference genomes (output contained in the `genome_info` directory).
-* `Graphs_Ghais` contains R scripts used to make plots for the Hybracter manuscript.
+* `Graphs_Ghais` contains R script and data used to make plots for the Hybracter manuscript.
 * `bulk_assemble_lerminiaux_config.yaml` is the modified config file used on my system to benchmark `hybracter hybrid` showing the efficiency benefits of `hybracter` when run on multiple samples.
+* `fast_analysis` contains the benchmarking scripts and input for the extra 5 fast model basecalled ATCC samples added in v2 of the preprint. See the `README.md` for more information
+* `duplex_analysis` contains the benchmarking scripts and input for the extra 5 duplex super-accuracy model basecalled ATCC samples added in v2 of the preprint. See the `README.md` for more information.
 * `atcc_trycycler_comparisons` contains the output of comparing the ATCC reference assemblies to the curated Trycycler assemblies of the same data
     * Note for `ATCC_17802_atcc.fasta`, the second chromosome was reoriented to begin with the `repA` gene using `dnaapler all v0.7.0` to allow for comparison with `compare_assemblies.py`.
     * These were run as follows:
