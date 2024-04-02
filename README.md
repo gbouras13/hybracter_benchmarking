@@ -64,7 +64,6 @@ hybracter_benchmarking assess-real --input real_assemble.csv --output  ../hybrac
   * `REAL` - this contains all the actual output for each assembler. The following 5 directories will contain the all the raw output with subdirectories for each sample:
     * `HYBRACTER_HYBRID_OUTPUT`
     * `HYBRACTER_LONG_OUTPUT`
-      * Note there will also be a `LAST` subdirectory in the `HYBRACTER_HYBRID_OUTPUT` and `HYBRACTER_LONG_OUTPUT`. The output contained in it are the sample, but where hybracter is run with `--logic last`. These were mostly done to test the functionality, not so much from a benchmarking perspective.
     * `DRAGONFLYE_HYBRID_OUTPUT`
     * `DRAGONFLYE_LONG_OUTPUT`
     * `UNICYCLER_OUTPUT`
