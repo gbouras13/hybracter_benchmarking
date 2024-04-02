@@ -26,7 +26,7 @@ done
 
 #### Run Benchmarking Pipeline
 
-* Note the bulk files are just to make the pipeline work, they are not actually used
+* Note the bulk files are just to make the pipeline work
 
 ```bash
 export CUDA_VISIBLE_DEVICES=""
