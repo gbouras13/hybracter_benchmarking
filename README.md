@@ -12,7 +12,9 @@ I used [Snaketool](https://github.com/beardymcjohnface/Snaketool) to make this p
 
 To use this repository, you will need to change the 2 `csv` input files in this directory with the correct FASTQ paths of the required files on your system. 
 
-You can get the FASTQs from the Zenodo repository [here](https://doi.org/10.5281/zenodo.10158013) or follow the instructions in [get_fastqs.md](get_fastqs.md).
+You can get the FASTQs from the Zenodo repository [here](https://doi.org/10.5281/zenodo.10906937) or follow the instructions in [get_fastqs.md](get_fastqs.md).
+
+
 
 # Step 1: Download hybracter_benchmarking and install it from source in a conda env
 
